@@ -15,7 +15,7 @@ Discovery, locked from the work already in the repo:
 
 Inception, memory, Jev, evals, and rollback shipped as v0.2.0. The menu-bar tray is the last release. Open it with `apps/mac/run.sh`. It is unsigned and local.
 
-R2 is Raycast and Hermes on the same intent. R3 is the rooms. `tasks/todo.md` is the earlier ledger, not the queue.
+Raycast and Hermes ship with the menu bar. They write the same intent. R3 is the rooms. `tasks/todo.md` is the earlier ledger, not the queue.
 
 ## Releases
 

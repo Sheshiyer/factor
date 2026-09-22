@@ -32,9 +32,9 @@ The same employee answers from the Mac menu bar, from Raycast, and from Hermes. 
 |---|---|
 | Mac applet | Say the job without opening a project |
 | Raycast | Say the job from the command bar |
-| Hermes | Say the job from the chat you already use |
+| Hermes | Say the job from the chat you already use. It reads the intent and opens one card. |
 
-Each door hands over one intent: the job, the room it belongs in, and the draft that comes back.
+Each door hands over one intent: the job, the room it belongs in, and the draft that comes back. Raycast and Hermes write the same file the menu bar writes.
 
 ## The rooms
 
