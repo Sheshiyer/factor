@@ -49,7 +49,7 @@ Start with one room. Content or numbers. They are frequent, easy to check, and n
 | Partners | A vetted list and the briefs | Choose who is asked |
 | Money | Invoices and the week, already drafted | Send or hold |
 
-A healthy room is quiet. You do not check every campaign. You see the one that changed.
+A healthy room is quiet. You do not check every campaign. You see the one that changed. Content brings a short list and does not publish it. Numbers stay silent when no line was crossed. Partners and money draft, then wait for one yes.
 
 <img src="assets/instinct-memory.jpg" width="100%" alt="A small instinct, and a memory that stays on the shelf" />
 
