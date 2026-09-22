@@ -319,7 +319,8 @@ struct FactorMenuApp: App {
         MenuBarExtra {
             FactorMenu(door: door)
         } label: {
-            Text(door.menuTitle)
+            Label(door.menuTitle, systemImage: "circle.fill")
+                .accessibilityLabel("Factor \(door.menuTitle)")
         }
         .menuBarExtraStyle(.window)
     }

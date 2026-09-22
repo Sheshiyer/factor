@@ -11,8 +11,10 @@ Set the company folder, then run the menu from this directory.
 Write one absolute path into `~/Library/Application Support/Factor/company.path`, or leave that file missing and choose the folder in the menu. The menu keeps one company folder. Quit does not delete it.
 
 ```bash
-FACTOR_ROOT=/absolute/path/to/factor swift run
+apps/mac/run.sh
 ```
+
+That sets `FACTOR_ROOT` to this repository and opens the tray. The tray is a filled circle and the company name. There is no Dock icon.
 
 `FACTOR_ROOT` is the Factor repository. The menu runs `python3` on `$FACTOR_ROOT/scripts/write_intent.py`. Set `FACTOR_WRITE_INTENT` to that script if the repository root is not `FACTOR_ROOT`.
 
