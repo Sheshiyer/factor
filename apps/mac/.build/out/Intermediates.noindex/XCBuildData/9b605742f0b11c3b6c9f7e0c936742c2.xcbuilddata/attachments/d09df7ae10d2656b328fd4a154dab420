@@ -1,0 +1,19 @@
+{
+  "" : {
+    "diagnostics" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenu--63AAD5DDECEBA302-testable-primary.dia",
+    "emit-module-dependencies" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenu--63AAD5DDECEBA302-testable-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenu--63AAD5DDECEBA302-testable-primary-emit-module.dia",
+    "pch" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenu--63AAD5DDECEBA302-testable-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenu--63AAD5DDECEBA302-testable-primary.swiftdeps"
+  },
+  "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/Sources/FactorMenu/FactorMenuApp.swift" : {
+    "const-values" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.swiftconstvalues",
+    "dependencies" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.d",
+    "diagnostics" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.dia",
+    "index-unit-output-path" : "/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.o",
+    "llvm-bc" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.bc",
+    "object" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.o",
+    "swift-dependencies" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp.swiftdeps",
+    "swiftmodule" : "/Volumes/madara/2026/Projects/thoughtseed/factor/apps/mac/.build/out/Intermediates.noindex/FactorMenu.build/Debug/FactorMenu--63AAD5DDECEBA302-testable-t.build/Objects-normal/arm64/FactorMenuApp~partial.swiftmodule"
+  }
+}

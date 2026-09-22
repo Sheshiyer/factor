@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'AllExcludingTests' in project 'Aggregate'
+➜ Explicit dependency on target 'FactorMenu-product' in project 'FactorMenu'
+➜ Explicit dependency on target 'FactorMenu' in project 'FactorMenu'
+Target 'FactorMenu' in project 'FactorMenu' (no dependencies)
+Target 'FactorMenu-product' in project 'FactorMenu' (no dependencies)

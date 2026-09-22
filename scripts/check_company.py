@@ -41,10 +41,60 @@ def problems(root: Path) -> list[str]:
             found.append(f"unfilled {rel}")
     found.extend(enabled_problems(root))
     found.extend(money_problems(root))
+    found.extend(length_problems(root))
+    found.extend(wiki_problems(root))
+    found.extend(fill_problems(root))
     return found
 
 
 AMOUNT = re.compile(r"\$\d[\d,]*(?:\.\d+)?")
+WIKILINK = re.compile(r"\[\[([^\]]+)\]\]")
+SOUL_LINES = 80
+INSTINCT_LINES = 40
+
+
+def nonempty_lines(path: Path) -> int:
+    return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
+
+
+def length_problems(root: Path) -> list[str]:
+    found: list[str] = []
+    soul = root / "profile-soul.md"
+    if soul.is_file() and nonempty_lines(soul) > SOUL_LINES:
+        found.append("profile soul exceeds 80 lines")
+    instinct = root / "instinct.md"
+    if instinct.is_file() and nonempty_lines(instinct) > INSTINCT_LINES:
+        found.append("instinct exceeds 40 lines")
+    return found
+
+
+def wiki_problems(root: Path) -> list[str]:
+    index = root / "wiki" / "index.md"
+    if not index.is_file():
+        return []
+    stems = {path.stem for path in root.rglob("*.md") if path.is_file()}
+    found: list[str] = []
+    seen: set[str] = set()
+    for name in WIKILINK.findall(index.read_text(encoding="utf-8")):
+        if "/" in name or name in seen:
+            continue
+        seen.add(name)
+        if name not in stems:
+            found.append(f"missing wiki page {name}")
+    return found
+
+
+def fill_problems(root: Path) -> list[str]:
+    output = root / "output"
+    if not output.is_dir():
+        return []
+    found: list[str] = []
+    for draft in output.glob("*.md"):
+        if draft.name == "README.md":
+            continue
+        if UNFILLED in draft.read_text(encoding="utf-8"):
+            found.append(f"FILL treated as fact in output/{draft.name}")
+    return found
 
 
 def money_problems(root: Path) -> list[str]:

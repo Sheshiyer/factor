@@ -175,6 +175,17 @@ def apply_harvest(company: Path, harvest: Path) -> None:
         body = sections[key] or f"FILL: the harvest left {key} blank."
         (company / "context" / f"{key}.md").write_text(f"# {title}\n\n{body}\n", encoding="utf-8")
     write_business_and_brand(company, sections, harvest)
+    maybe_snapshot(company)
+
+
+def maybe_snapshot(company: Path) -> None:
+    import subprocess
+    from check_company import problems
+
+    if problems(company):
+        return
+    script = Path(__file__).resolve().parent / "snapshot.py"
+    subprocess.run([sys.executable, str(script), str(company)], check=False)
 
 
 def write_instinct(company: Path, soul: str, sections: dict[str, str]) -> None:
