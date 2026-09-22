@@ -1,5 +1,7 @@
 # Factor tasks
 
+This is the earlier ledger. The queue for the next release is `specs/` and the R1 issues.
+
 Eighty tasks. Grouped by release, wave, and swarm.
 
 Owner for every task is the founder. Hours are 4 unless the id is a door or a first room template, which are 8: R2-W2-M-01, R2-W3-R-01, R3-W1-C-01, R3-W2-N-01.
