@@ -162,6 +162,7 @@ def apply_harvest(company: Path, harvest: Path) -> None:
         soul if soul.lstrip().startswith("#") else f"# Soul\n\n{soul}\n",
         encoding="utf-8",
     )
+    write_instinct(company, soul, sections)
     titles = {
         "company": "Company",
         "customer": "Customer",
@@ -174,6 +175,23 @@ def apply_harvest(company: Path, harvest: Path) -> None:
         body = sections[key] or f"FILL: the harvest left {key} blank."
         (company / "context" / f"{key}.md").write_text(f"# {title}\n\n{body}\n", encoding="utf-8")
     write_business_and_brand(company, sections, harvest)
+
+
+def write_instinct(company: Path, soul: str, sections: dict[str, str]) -> None:
+    stays = sections.get("stays", "").strip() or "FILL: nothing is locked yet."
+    dna = one_line(sections.get("style dna", ""))
+    (company / "instinct.md").write_text(
+        "# Instinct\n\n"
+        "Load this every time. It is small on purpose. The company memory is the wiki, and it stays on disk.\n\n"
+        "## Who\n\n"
+        f"{one_line(soul)}\n\n"
+        "## Voice\n\n"
+        f"{dna}\n\n"
+        "## Locked\n\n"
+        f"{stays}\n\n"
+        "Hermes session memory is a scratch pad. Do not copy these pages into it.\n",
+        encoding="utf-8",
+    )
 
 
 def write_desk(company: Path, desk: str) -> None:

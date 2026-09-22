@@ -143,6 +143,7 @@ class OnboardTest(unittest.TestCase):
             self.assertIn("No invented prices.", (dest / "brand" / "lock.md").read_text(encoding="utf-8"))
             self.assertIn("Average sentence length 11.", (dest / "brand" / "style-dna.md").read_text(encoding="utf-8"))
             self.assertIn("Never contact them.", (dest / "departments" / "leads" / "playbook.md").read_text(encoding="utf-8"))
+            self.assertIn("Average sentence length 11.", (dest / "instinct.md").read_text(encoding="utf-8"))
             self.assertTrue((dest / "profile-soul.md").is_file())
             self.assertIn("Original", (dest / "wiki" / "corrections.md").read_text(encoding="utf-8"))
             steps = subprocess.run(

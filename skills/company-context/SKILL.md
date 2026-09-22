@@ -26,7 +26,7 @@ Any card, draft, or answer that depends on the business. Load it before writing.
 ## Procedure
 
 1. Resolve `factor.company_root` from the skill config block injected with this skill. If it is empty, stop and ask for the absolute path. Do not search the disk for a likely repo.
-2. Read `SOUL.md` in the company root first, then `wiki/index.md`. Open a linked page only when its line matches the card. Then read these files, and only these, unless the card names more:
+2. Read `instinct.md` first. It is the short layer. Then `wiki/index.md`. Open a linked page only when its line matches the card. Do not copy the wiki into Hermes session memory. Then read these files, and only these, unless the card names more:
    - `context/company.md`
    - `context/customer.md`
    - `context/offer.md`
