@@ -12,7 +12,7 @@ You keep the decisions.
 <!-- readme-gen:start:badges -->
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.5.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/github/license/Sheshiyer/factor?style=for-the-badge)
 
 </div>
@@ -26,15 +26,17 @@ Factor takes the job. You say it in plain language. The employee reads the busin
 
 ## One intent, three doors
 
-The same employee answers from the Mac menu bar, from Raycast, and from Hermes. The door is only where you speak. The job is the same sentence wherever you are, including your phone.
+The same employee answers from the Mac menu bar, from Raycast, and from Hermes. The door is only where you speak. The job is the same sentence wherever you are.
 
 | Door | What you do |
 |---|---|
-| Mac applet | Say the job without opening a project |
-| Raycast | Say the job from the command bar |
-| Hermes | Say the job from the chat you already use. It reads the intent and opens one card. |
+| Menu bar | Say the job without opening a project. `apps/mac/run.sh`. Unsigned and local. |
+| Raycast | Say the job from the command bar. Add `surfaces/raycast`. |
+| Hermes | Say the job from the chat you already use. The `take-intent` skill reads the intent and opens one card. |
 
-Each door hands over one intent: the job, the room it belongs in, and the draft that comes back. Raycast and Hermes write the same file the menu bar writes.
+Each door writes the same file: the sentence, the room, and the door. The card does not change with the door.
+
+<img src="assets/rooms.jpg" width="100%" alt="One room open, the others quiet" />
 
 ## The rooms
 
@@ -106,9 +108,16 @@ scripts/onboard.py --company ~/companies/acme \
 
 That writes the instinct, the rooms, and the business. Tools come after, and only the one the first room needs.
 
-The Mac applet and the Raycast command are the next doors on this same intent. Hermes is the door that already runs.
+Then pick a door: `apps/mac/run.sh`, the Factor command in Raycast, or the `take-intent` skill in Hermes.
 
-The next three releases are in [.planning/ROADMAP.md](.planning/ROADMAP.md).
+## Shipped
+
+| Release | What it is |
+|---|---|
+| [v0.2.0](https://github.com/Sheshiyer/factor/releases/tag/v0.2.0) | Harvest, instinct, memory, Jev, evals, rollback |
+| [v0.3.0](https://github.com/Sheshiyer/factor/releases/tag/v0.3.0) | Menu-bar tray |
+| [v0.4.0](https://github.com/Sheshiyer/factor/releases/tag/v0.4.0) | Raycast and Hermes |
+| [v0.5.0](https://github.com/Sheshiyer/factor/releases/tag/v0.5.0) | Rooms |
 
 <!-- readme-gen:start:footer -->
 <div align="center">
