@@ -34,7 +34,7 @@ HARVEST_SECTIONS = (
 STEPS = """Factor onboarding
 1. Harvest. In the project you have been building, paste prompts/harvest-claude.md into Claude, or prompts/harvest-codex.md into Codex. Save the reply as factor-harvest.md.
 2. Apply. scripts/onboard.py --company <company> --apply-harvest <project>/factor-harvest.md
-   This writes SOUL.md and the six context files. SOUL.md is who the owner is and how the business sounds.
+   This writes SOUL.md, the six context files, and the business and brand folders. SOUL.md is who the owner is and how the business sounds.
 3. Choose. Skills, then plugins, then other capabilities.
 4. Confirm. python3 scripts/check_company.py <company>
 """
@@ -152,7 +152,14 @@ def apply_harvest(company: Path, harvest: Path) -> None:
     soul = sections["soul"] or "FILL: the harvest left the soul blank."
     owner = sections["owner"] or "FILL: the harvest left the owner blank."
     (company / "SOUL.md").write_text(
-        f"# Soul\n\n{soul}\n\n## Owner\n\n{owner}\n",
+        "# Soul\n\n"
+        "Paste `profile-soul.md` into the Hermes profile. That file is what Hermes reads on every turn. "
+        "Keep it to identity, voice, and refusals. The business lives in `wiki/` and `brand/`.\n\n"
+        f"{soul}\n\n## Owner\n\n{owner}\n",
+        encoding="utf-8",
+    )
+    (company / "profile-soul.md").write_text(
+        soul if soul.lstrip().startswith("#") else f"# Soul\n\n{soul}\n",
         encoding="utf-8",
     )
     titles = {
@@ -166,6 +173,170 @@ def apply_harvest(company: Path, harvest: Path) -> None:
     for key, title in titles.items():
         body = sections[key] or f"FILL: the harvest left {key} blank."
         (company / "context" / f"{key}.md").write_text(f"# {title}\n\n{body}\n", encoding="utf-8")
+    write_business_and_brand(company, sections, harvest)
+
+
+def write_desk(company: Path, desk: str) -> None:
+    text = desk.strip()
+    if not text or text.upper().startswith("FILL"):
+        return
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    name = lines[0]
+    slug = "".join(ch.lower() if ch.isalnum() else "-" for ch in name).strip("-")
+    slug = "-".join(part for part in slug.split("-") if part)[:40] or "desk"
+    scope = "\n".join(lines[1:]).strip() or "FILL: the harvest did not state the scope."
+    folder = company / "departments" / slug
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "playbook.md").write_text(
+        f"# {name}\n\n"
+        "This is the one desk the harvest named. Other desks wait.\n\n"
+        f"## Scope\n\n{scope}\n\n"
+        "## Heartbeat\n\n"
+        "Stay quiet unless a card for this desk is blocked or waiting on review.\n",
+        encoding="utf-8",
+    )
+
+
+def one_line(body: str) -> str:
+    for line in body.splitlines():
+        text = line.strip()
+        if text:
+            return text[:120]
+    return "FILL: empty"
+
+
+def page(title: str, body: str, source: str) -> str:
+    text = body.strip() or f"FILL: nothing harvested for {title.lower()}."
+    return (
+        f"# {title}\n\n"
+        f"Source: `{source}`. That file is the archive. Update this page when the understanding changes, "
+        f"and append a line to `wiki/log.md`.\n\n"
+        f"{text}\n"
+    )
+
+
+def write_business_and_brand(company: Path, sections: dict[str, str], harvest: Path) -> None:
+    """Turn harvested context into a business wiki and a brand folder.
+
+    The shape follows a second-brain vault: raw sources stay untouched,
+    wiki/index.md is the catalog to read first, and brand pages hold
+    voice, proof, and what is locked.
+    """
+    raw = company / "raw"
+    raw.mkdir(parents=True, exist_ok=True)
+    (raw / "harvest.md").write_text(harvest.read_text(encoding="utf-8"), encoding="utf-8")
+    (raw / "README.md").write_text(
+        "# Raw\n\nSources land here and are not edited after they land.\n",
+        encoding="utf-8",
+    )
+
+    entities = company / "wiki" / "entities"
+    concepts = company / "wiki" / "concepts"
+    entities.mkdir(parents=True, exist_ok=True)
+    concepts.mkdir(parents=True, exist_ok=True)
+    brand = company / "brand"
+    brand.mkdir(parents=True, exist_ok=True)
+
+    pages = {
+        entities / "owner.md": ("Owner", sections.get("owner", "")),
+        entities / "company.md": ("Company", sections.get("company", "")),
+        concepts / "customer.md": ("Customer", sections.get("customer", "")),
+        concepts / "offer.md": ("Offer", sections.get("offer", "")),
+        concepts / "positioning.md": ("Positioning", sections.get("positioning", "")),
+        brand / "voice.md": ("Voice", sections.get("voice", "")),
+        brand / "proof.md": ("Proof", sections.get("proof", "")),
+    }
+    for path, (title, body) in pages.items():
+        path.write_text(page(title, body, "raw/harvest.md"), encoding="utf-8")
+
+    lock_parts = []
+    if sections.get("lock", "").strip():
+        lock_parts.append(sections["lock"].strip())
+    if sections.get("stays", "").strip():
+        lock_parts.append("## Stays\n\n" + sections["stays"].strip())
+    if sections.get("may change", "").strip():
+        lock_parts.append("## May change\n\n" + sections["may change"].strip())
+    lock = "\n\n".join(lock_parts).strip()
+    if lock:
+        (brand / "lock.md").write_text(f"# Lock\n\n{lock}\n", encoding="utf-8")
+    else:
+        (brand / "lock.md").write_text(
+            "# Lock\n\n"
+            "What the brand must keep, and what a later draft is allowed to change.\n\n"
+            "## Stays\n\n"
+            "FILL: the harvest did not name what must stay.\n\n"
+            "## May change\n\n"
+            "FILL: the harvest did not name what a draft may change.\n",
+            encoding="utf-8",
+        )
+    dna = sections.get("style dna", "").strip()
+    (brand / "style-dna.md").write_text(
+        "# Style DNA\n\n"
+        "Measured from the owner's own samples. A draft matches these numbers, or it does not ship.\n\n"
+        + (dna or "FILL: the harvest did not measure a sample.\n"),
+        encoding="utf-8",
+    )
+    write_desk(company, sections.get("desk", ""))
+    corrections = company / "wiki" / "corrections.md"
+    if not corrections.exists():
+        corrections.write_text(
+            "# Corrections\n\n"
+            "One row each time the founder rewrites a draft. The same reason twice becomes a voice rule.\n\n"
+            "| Original | Rewrite | Reason |\n"
+            "| --- | --- | --- |\n",
+            encoding="utf-8",
+        )
+
+    index = company / "wiki" / "index.md"
+    index.write_text(
+        "# Index\n\n"
+        "Read this first. Open a page only when its line matches the work.\n\n"
+        f"The owner, [[owner]], runs [[company]]. {one_line(sections.get('company', ''))}\n\n"
+        f"The customer is [[customer]]. {one_line(sections.get('customer', ''))}\n\n"
+        f"The offer is [[offer]]. {one_line(sections.get('offer', ''))}\n\n"
+        f"The position is [[positioning]]. {one_line(sections.get('positioning', ''))}\n\n"
+        f"The brand sounds like [[voice]]. {one_line(sections.get('voice', ''))}\n\n"
+        "Claims live in [[proof]]. What stays locked is [[lock]].\n\n"
+        "Sources stay in `raw/` and are not edited after they land. "
+        "A synthesis page belongs in `wiki/synthesis/` only when it says something no source said.\n",
+        encoding="utf-8",
+    )
+    (company / "wiki" / "synthesis").mkdir(exist_ok=True)
+    synthesis_readme = company / "wiki" / "synthesis" / "README.md"
+    if not synthesis_readme.exists():
+        synthesis_readme.write_text(
+            "# Synthesis\n\n"
+            "Pages here say something no single source said. Leave this folder empty until that is true.\n",
+            encoding="utf-8",
+        )
+
+    log = company / "wiki" / "log.md"
+    line = "- structure written from raw/harvest.md\n"
+    if log.exists():
+        prior = log.read_text(encoding="utf-8")
+        if line not in prior:
+            log.write_text(prior.rstrip() + "\n" + line, encoding="utf-8")
+    else:
+        log.write_text("# Log\n\n" + line, encoding="utf-8")
+
+    template_dir = company / "templates"
+    template_dir.mkdir(exist_ok=True)
+    (template_dir / "entity.md").write_text(
+        "# Name\n\nSource: `raw/....md`\n\nOne entity. People, organisations, products, tools.\n",
+        encoding="utf-8",
+    )
+    (template_dir / "concept.md").write_text(
+        "# Name\n\nSource: `raw/....md`\n\nOne idea. Link it from `wiki/index.md` in a sentence.\n",
+        encoding="utf-8",
+    )
+    output = company / "output"
+    output.mkdir(exist_ok=True)
+    output_readme = output / "README.md"
+    if not output_readme.exists():
+        output_readme.write_text(
+            "# Output\n\nDrafts and reports land here. Filed understanding goes back into `wiki/` or `brand/`.\n",
+            encoding="utf-8",
+        )
 
 
 def resolve_enable(items: list[dict[str, str]], raw: str) -> list[dict[str, str]]:

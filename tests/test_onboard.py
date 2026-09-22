@@ -108,6 +108,9 @@ class OnboardTest(unittest.TestCase):
             "## Positioning\n\nChosen for the voice.\n"
             "## Voice\n\nPlain speech.\n"
             "## Proof\n\nNo approved claims yet.\n"
+            "## Style DNA\n\nAverage sentence length 11. No hedging.\n"
+            "## Lock\n\n## Stays\n\nNo invented prices.\n\n## May change\n\nExamples.\n"
+            "## Desk\n\nleads\nFind prospects. Never contact them.\n"
         )
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -133,6 +136,15 @@ class OnboardTest(unittest.TestCase):
             self.assertIn("Ada, decides in writing.", soul)
             self.assertIn("Short sentences.", soul)
             self.assertIn("FILL: price not in the repo.", (dest / "context" / "offer.md").read_text(encoding="utf-8"))
+            self.assertIn("Ada, decides in writing.", (dest / "wiki" / "entities" / "owner.md").read_text(encoding="utf-8"))
+            self.assertIn("[[owner]]", (dest / "wiki" / "index.md").read_text(encoding="utf-8"))
+            self.assertIn("Plain speech.", (dest / "brand" / "voice.md").read_text(encoding="utf-8"))
+            self.assertTrue((dest / "raw" / "harvest.md").is_file())
+            self.assertIn("No invented prices.", (dest / "brand" / "lock.md").read_text(encoding="utf-8"))
+            self.assertIn("Average sentence length 11.", (dest / "brand" / "style-dna.md").read_text(encoding="utf-8"))
+            self.assertIn("Never contact them.", (dest / "departments" / "leads" / "playbook.md").read_text(encoding="utf-8"))
+            self.assertTrue((dest / "profile-soul.md").is_file())
+            self.assertIn("Original", (dest / "wiki" / "corrections.md").read_text(encoding="utf-8"))
             steps = subprocess.run(
                 [sys.executable, str(ONBOARD), "--steps"],
                 capture_output=True,

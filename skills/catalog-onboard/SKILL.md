@@ -26,11 +26,11 @@ The profile does not carry the bookmark cards. They live in `catalog/cards/` of 
 Onboarding has four steps. Do them in order. `python3 scripts/onboard.py --steps` prints the same list.
 
 1. Harvest. The founder pastes a prompt into the project they have already been building. Claude gets `prompts/harvest-claude.md`. Codex gets `prompts/harvest-codex.md`. Print the prompt with `python3 scripts/onboard.py --prompt claude` or `--prompt codex`. The seat saves `factor-harvest.md` in that project. It does not invent missing facts.
-2. Apply. This writes `<company>/SOUL.md` and the six context files. SOUL.md is who the owner is and how the business sounds.
+2. Apply. This writes `<company>/SOUL.md`, the six context files, and the business and brand folders. `raw/harvest.md` is the archive. `wiki/index.md` is the catalog to read first. `wiki/entities/` and `wiki/concepts/` are the business. `brand/` is voice, proof, and the lock. SOUL.md is who the owner is and how the business sounds.
 
    `python3 scripts/onboard.py --company <company_root> --apply-harvest <project>/factor-harvest.md`
 
-3. Choose. Show skills, then plugins, then other capabilities:
+3. Choose. Show skills, then plugins, then other capabilities. Enable the one skill the desk will actually run. A longer list waits. A pile of unused skills is how the agent starts routing work to the wrong place.
 
    `python3 scripts/onboard.py --text --category skills`
 

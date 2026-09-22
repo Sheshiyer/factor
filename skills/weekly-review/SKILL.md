@@ -29,7 +29,7 @@ Use this on Monday, or when the founder asks how the company work is going.
 2. Run `hermes kanban list` and `hermes kanban stats`.
 3. For each open card, note the desk, the seat, and whether done can be checked.
 4. A blocked card, a card waiting on review, or a second failed run belongs in the message.
-5. If the founder corrected a draft since the last review, name the context file or skill that should change. Do not edit it in this pass.
+5. If the founder corrected a draft since the last review, append a row to `wiki/corrections.md`: the original line, the rewrite, and the reason. Name the voice or style file that should change. Do not edit it in this pass. The same reason twice means that file changes before the next draft.
 6. A card that is moving and needs nothing gets one line at most, or silence.
 7. If every card is healthy, do not deliver a message.
 

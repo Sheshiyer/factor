@@ -29,6 +29,7 @@ Use this when work should move on the board instead of happening inside the chat
 5. Writing and review cards assign to this profile. Code cards assign to the Codex profile and use `--workspace worktree`.
 6. Link follow-up work with `hermes kanban link`. A later desk does not start until the parent card is complete.
 7. Anything public, paid, or hard to undo is created with the founder as the reviewer. Do not `complete` that card yourself.
+8. A card is finished when a review says ship. The worker's own "done" is not the stop. Request review before completion. Drafts are drafted. They are not sent.
 
 ## Verification
 

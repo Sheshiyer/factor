@@ -87,7 +87,7 @@ Pick a Claude model for `factor`. The Codex profile is in [docs/seats.md](docs/s
 Four steps, in this order. `scripts/onboard.py --steps` prints them.
 
 1. In the project you have been building, paste [prompts/harvest-claude.md](prompts/harvest-claude.md) into Claude, or [prompts/harvest-codex.md](prompts/harvest-codex.md) into Codex. Save `factor-harvest.md`.
-2. Apply it. This writes `SOUL.md` and the context files.
+2. Apply it. This writes `SOUL.md`, the context files, and the business and brand folders. `wiki/index.md` is the catalog. `brand/` holds voice, proof, and the lock.
 
 ```bash
 scripts/onboard.py --prompt claude

@@ -4,7 +4,7 @@ This repo is the company. Hermes reads it. The profile that operates it is `fact
 
 ## Read
 
-Standing facts live in `context/`. A line that still says `FILL:` is unknown. Stop and name the file.
+Read `SOUL.md`, then `wiki/index.md`. Open a linked page only when its line matches the work. Standing facts also live in `context/`. A line that still says `FILL:` is unknown. Stop and name the file. `raw/` is the archive and is not edited after it lands.
 
 A card may name extra files. Do not load the rest of the repo "for context."
 

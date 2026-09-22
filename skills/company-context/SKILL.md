@@ -26,7 +26,7 @@ Any card, draft, or answer that depends on the business. Load it before writing.
 ## Procedure
 
 1. Resolve `factor.company_root` from the skill config block injected with this skill. If it is empty, stop and ask for the absolute path. Do not search the disk for a likely repo.
-2. Read `SOUL.md` in the company root first. Then read these files, and only these, unless the card names more:
+2. Read `SOUL.md` in the company root first, then `wiki/index.md`. Open a linked page only when its line matches the card. Then read these files, and only these, unless the card names more:
    - `context/company.md`
    - `context/customer.md`
    - `context/offer.md`
@@ -35,7 +35,7 @@ Any card, draft, or answer that depends on the business. Load it before writing.
    - `context/proof.md`
 3. If a file is missing, or any line contains `FILL:`, stop. Name the path and the missing fact. Leave the draft unwritten.
 4. Treat `context/proof.md` as the only source of claims. A claim with no line there stays out of the draft.
-5. Match `context/voice.md` on anything a person outside the company might read.
+5. Match `brand/style-dna.md` and `brand/lock.md` on anything a person outside the company might read. A draft that breaks a locked line does not ship. `context/voice.md` is the sample behind those two files.
 
 ## Verification
 
