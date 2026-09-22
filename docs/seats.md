@@ -1,6 +1,6 @@
 # Seats
 
-Two Hermes profiles. One company repo.
+Two Hermes profiles. One company repo. The menu bar, Raycast, and Hermes write an intent. They do not change the seat.
 
 | Profile | Model | Owns |
 |---|---|---|

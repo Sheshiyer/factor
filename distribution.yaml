@@ -1,6 +1,6 @@
 name: factor
-version: 0.1.0
-description: "Company operator for Hermes. Claude judges and writes. Codex builds. Connectors stay off until a company turns them on."
+version: 0.5.0
+description: "One employee, three doors, rooms that stay quiet. Claude writes. Codex builds. Jev picks and scores."
 hermes_requires: ">=0.21.0"
 author: Thoughtseed
 license: MIT
