@@ -11,11 +11,9 @@ Discovery, locked from the work already in the repo:
 - Claude and Codex write. Jev only picks, scores, and says yes or no. Options come from files.
 - Hermes session memory is a scratch pad. Instinct is one screen. Company memory stays on disk.
 
-## Next release
+## Releases as shipped
 
-R1 is the employee on the Mac. It is specified in [specs/](../specs/README.md), one folder per feature. An issue does not start until that spec is on main.
-
-The order is inception and memory, then Jev and evals, then the menu-bar app, then debug and rollback. The app is not done until a bad apply can be undone.
+Inception, memory, Jev, evals, and rollback ship together. The menu-bar app is the last release. It is specified and the source is in `apps/mac`, and it is not part of this cut.
 
 R2 is Raycast and Hermes on the same intent. R3 is the rooms. `tasks/todo.md` is the earlier ledger, not the queue.
 

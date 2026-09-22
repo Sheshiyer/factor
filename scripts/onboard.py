@@ -591,6 +591,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--steps", action="store_true", help="print the four onboarding steps")
     parser.add_argument("--prompt", choices=("claude", "codex"), help="print the harvest prompt to copy")
     parser.add_argument("--apply-harvest", type=Path, help="write SOUL.md and context files from a harvest")
+    parser.add_argument("--debug", action="store_true", help="append a redacted line to io/debug.log")
     args = parser.parse_args(argv[1:])
     items = load_items()
 
@@ -604,6 +605,11 @@ def main(argv: list[str]) -> int:
         if args.company is None:
             raise SystemExit("--apply-harvest needs --company")
         apply_harvest(args.company, args.apply_harvest)
+        if args.debug:
+            from check_company import problems
+            from debug_log import append_log
+
+            append_log(args.company, "apply", "fail" if problems(args.company) else "pass")
         print(f"wrote {args.company / 'SOUL.md'}")
         if not args.enable and not args.enable_category:
             return 0
