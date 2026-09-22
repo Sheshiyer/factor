@@ -1,4 +1,5 @@
 .DS_Store
+apps/mac/.build/
 README.old.md
 __pycache__/
 *.pyc
