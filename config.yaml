@@ -1,0 +1,7 @@
+# Model is chosen after install, on this profile:
+#   hermes -p factor model
+# Pick a Claude model here. Code work goes to a second profile whose model is Codex.
+# See docs/seats.md.
+
+kanban:
+  dispatch_in_gateway: true

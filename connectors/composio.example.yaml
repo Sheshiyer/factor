@@ -1,0 +1,35 @@
+# Example only. Do not copy this into the profile until the company
+# has an entry for `composio` in connectors/enabled.yaml.
+#
+# Composio is one MCP server in front of many SaaS tools. The framework
+# does not depend on it. Pick the tools for this company and list them.
+#
+# 1. Put COMPOSIO_API_KEY in the profile .env. Never in the company repo.
+# 2. Add the server to this profile:
+#
+#    hermes -p factor mcp add composio \
+#      --url "$COMPOSIO_MCP_URL" \
+#      --auth header
+#
+# 3. Restrict the tool list. Header auth uses the profile .env.
+#    In ~/.hermes/profiles/factor/config.yaml:
+#
+# mcp_servers:
+#   composio:
+#     url: ${COMPOSIO_MCP_URL}
+#     headers:
+#       x-api-key: ${COMPOSIO_API_KEY}
+#     tools:
+#       include: []
+#
+# 4. Record it on the company:
+#
+# connectors:
+#   - id: composio
+#     kind: mcp
+#     risk: low
+#     approval: no
+#
+# Raise approval to yes before any tool that sends, spends, or changes
+# an account. A custom Composio toolkit is the same shape: an HTTPS MCP
+# URL, a header, an allowlist, and a line in enabled.yaml.

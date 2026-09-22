@@ -1,0 +1,16 @@
+name: factor
+version: 0.1.0
+description: "Company operator for Hermes. Claude judges and writes. Codex builds. Connectors stay off until a company turns them on."
+hermes_requires: ">=0.21.0"
+author: Thoughtseed
+license: MIT
+distribution_owned:
+  - SOUL.md
+  - config.yaml
+  - skills
+  - distribution.yaml
+env_requires:
+  - name: COMPOSIO_API_KEY
+    description: "Only if a company enables the Composio connector. Leave unset otherwise."
+    required: false
+    default: ""

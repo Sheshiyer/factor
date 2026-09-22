@@ -1,0 +1,4 @@
+version: 1
+# One entry per tool this company has turned on.
+# Credentials do not go in this file.
+connectors: []

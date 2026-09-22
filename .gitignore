@@ -1,0 +1,12 @@
+.DS_Store
+README.old.md
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.*
+!.env.example
+auth.json
+*.db
+*.db-shm
+*.db-wal
