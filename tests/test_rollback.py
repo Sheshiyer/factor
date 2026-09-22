@@ -12,9 +12,11 @@ LOG = ROOT / "scripts" / "debug_log.py"
 
 class RollbackTest(unittest.TestCase):
     def test_redacts_secrets(self):
-        from importlib.machinery import SourceFileLoader
+        import importlib.util
 
-        module = SourceFileLoader("debug_log", str(LOG)).load_module()
+        spec = importlib.util.spec_from_file_location("debug_log", LOG)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
         text = module.redact("sk-abc and ghp_abc and Bearer tok")
         self.assertNotIn("sk-abc", text)
         self.assertNotIn("ghp_abc", text)

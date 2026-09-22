@@ -191,7 +191,7 @@ final class Door: ObservableObject {
         guard let text = try? String(contentsOf: url, encoding: .utf8) else { return "Factor" }
         var inWho = false
         for raw in text.split(separator: "\n", omittingEmptySubsequences: false) {
-            let line = raw.trimmingCharacters(in: .whitespaces)
+            let line = raw.trimmingCharacters(in: .whitespacesAndNewlines)
             if line == "## Who" {
                 inWho = true
                 continue

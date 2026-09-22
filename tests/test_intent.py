@@ -1,9 +1,11 @@
+import contextlib
 import importlib.util
 import json
 import subprocess
 import sys
 import tempfile
 import unittest
+from io import StringIO
 from pathlib import Path
 from unittest import mock
 
@@ -112,18 +114,19 @@ class IntentTest(unittest.TestCase):
                 raise OSError("replace failed")
 
             with mock.patch.object(module.os, "replace", side_effect=fail_replace):
-                code = module.main(
-                    [
-                        "write_intent.py",
-                        str(company),
-                        "--sentence",
-                        "replace me",
-                        "--room",
-                        "numbers",
-                        "--door",
-                        "hermes",
-                    ]
-                )
+                with contextlib.redirect_stderr(StringIO()):
+                    code = module.main(
+                        [
+                            "write_intent.py",
+                            str(company),
+                            "--sentence",
+                            "replace me",
+                            "--room",
+                            "numbers",
+                            "--door",
+                            "hermes",
+                        ]
+                    )
             self.assertEqual(code, 1)
             self.assertEqual(intent.read_text(encoding="utf-8"), original)
             self.assertEqual((io / "status.txt").read_text(encoding="utf-8"), "ready")
