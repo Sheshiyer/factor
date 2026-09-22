@@ -1,0 +1,46 @@
+{
+  "schema": "temperance.project.v1",
+  "name": "factor",
+  "cwd": "/Volumes/madara/2026/Projects/thoughtseed/factor",
+  "github": "Sheshiyer/factor",
+  "generated_at": "2026-09-22T18:52:25.064Z",
+  "host_runtime": {
+    "temperance_home": "/Users/sheshnarayaniyer/.temperance_engine",
+    "opencode": "/Users/sheshnarayaniyer/.config/opencode",
+    "omniroute": "http://127.0.0.1:20128",
+    "proxy": "http://127.0.0.1:20129"
+  },
+  "ownership": {
+    "models_routing": "host",
+    "credentials": "host",
+    "planning": "project",
+    "acceptance_isa": "project",
+    "handoff": "optional"
+  },
+  "surfaces": {
+    "planning": ".planning",
+    "isa": "ISA.md",
+    "agents": "AGENTS.md",
+    "next_wave_cli": "temperance-next-wave",
+    "fleet_combo": "noesis-execute",
+    "batch": "temperance-batch"
+  },
+  "planning": {
+    "github_project": "https://github.com/users/Sheshiyer/projects/21",
+    "teamforge": {
+      "project_id": null,
+      "client_id": null
+    },
+    "horizons": {
+      "long": "One employee. Three doors. Rooms that stay quiet until a decision is needed.",
+      "short": "R1 inception holds. R2 three doors. R3 rooms run."
+    }
+  },
+  "checks": {
+    "host_ready": true,
+    "has_planning": false,
+    "has_isa": true,
+    "has_codegraph": false,
+    "github_project": false
+  }
+}

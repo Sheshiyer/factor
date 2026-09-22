@@ -108,6 +108,8 @@ That writes the instinct, the rooms, and the business. Tools come after, and onl
 
 The Mac applet and the Raycast command are the next doors on this same intent. Hermes is the door that already runs.
 
+The next three releases are in [.planning/ROADMAP.md](.planning/ROADMAP.md).
+
 <!-- readme-gen:start:footer -->
 <div align="center">
 

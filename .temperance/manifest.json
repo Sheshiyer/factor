@@ -1,0 +1,9 @@
+{
+  "schema": "temperance.manifest.project.v1",
+  "project_id": "factor-8adb499c8c",
+  "name": "factor",
+  "cwd": "/Volumes/madara/2026/Projects/thoughtseed/factor",
+  "bridge_url": "http://127.0.0.1:8766",
+  "initialized_at": "2026-09-22T18:52:25.244Z",
+  "updated_at": "2026-09-22T18:52:25.244Z"
+}
