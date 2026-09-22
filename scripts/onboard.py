@@ -194,6 +194,41 @@ def write_instinct(company: Path, soul: str, sections: dict[str, str]) -> None:
     )
 
 
+def write_io_and_evals(company: Path) -> None:
+    io = company / "io"
+    io.mkdir(exist_ok=True)
+    (io / "in.md").write_text(
+        "# Job in\n\n"
+        "A job arrives as one sentence from the Mac menu, Raycast, or Hermes.\n\n"
+        "- Room. One of content, numbers, growth, ads, partners, money, or the desk the harvest named.\n"
+        "- Sentence. The founder's words, unchanged.\n"
+        "- Pages. Only the wiki lines the index matched. Do not attach the whole company.\n",
+        encoding="utf-8",
+    )
+    (io / "out.md").write_text(
+        "# Job out\n\n"
+        "A finished job returns:\n\n"
+        "- The draft path under `output/`.\n"
+        "- The pages it read.\n"
+        "- Every number it claims, and the page that number came from.\n"
+        "- A yes or no on whether a person must see it, with a confidence from 0 to 1.\n\n"
+        "A number with no page is a failed output. Under 0.5, ask Claude or the founder. "
+        "0.85 or above before anything that sends, spends, or publishes. "
+        "Jev may pick and score. It may not write the draft.\n",
+        encoding="utf-8",
+    )
+    checks = company / "evals"
+    checks.mkdir(exist_ok=True)
+    (checks / "checks.md").write_text(
+        "# Checks\n\n"
+        "- Every figure in a draft under `output/` appears in `wiki/` or `context/`.\n"
+        "- A line that still says `FILL:` is not a fact.\n"
+        "- Send, spend, and publish need a confidence of 0.85 or an approval comment.\n\n"
+        "Record the result in `wiki/log.md` as pass, fail, or could not tell.\n",
+        encoding="utf-8",
+    )
+
+
 def write_desk(company: Path, desk: str) -> None:
     text = desk.strip()
     if not text or text.upper().startswith("FILL"):
@@ -352,9 +387,11 @@ def write_business_and_brand(company: Path, sections: dict[str, str], harvest: P
     output_readme = output / "README.md"
     if not output_readme.exists():
         output_readme.write_text(
-            "# Output\n\nDrafts and reports land here. Filed understanding goes back into `wiki/` or `brand/`.\n",
+            "# Output\n\nDrafts and reports land here. Filed understanding goes back into `wiki/` or `brand/`.\n"
+            "A number in a draft must already appear in `wiki/` or `context/`. Otherwise the draft does not ship.\n",
             encoding="utf-8",
         )
+    write_io_and_evals(company)
 
 
 def resolve_enable(items: list[dict[str, str]], raw: str) -> list[dict[str, str]]:

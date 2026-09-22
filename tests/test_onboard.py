@@ -146,6 +146,17 @@ class OnboardTest(unittest.TestCase):
             self.assertIn("Average sentence length 11.", (dest / "instinct.md").read_text(encoding="utf-8"))
             self.assertTrue((dest / "profile-soul.md").is_file())
             self.assertIn("Original", (dest / "wiki" / "corrections.md").read_text(encoding="utf-8"))
+            self.assertTrue((dest / "io" / "in.md").is_file())
+            self.assertIn("0.85", (dest / "io" / "out.md").read_text(encoding="utf-8"))
+            self.assertIn("FILL:", (dest / "evals" / "checks.md").read_text(encoding="utf-8"))
+            draft = dest / "output" / "price.md"
+            draft.write_text("The price is $99.\n", encoding="utf-8")
+            checked = subprocess.run(
+                [sys.executable, str(ROOT / "scripts" / "check_company.py"), str(dest)],
+                capture_output=True,
+                text=True,
+            )
+            self.assertIn("unsourced amount $99", checked.stdout)
             steps = subprocess.run(
                 [sys.executable, str(ONBOARD), "--steps"],
                 capture_output=True,

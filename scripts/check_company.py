@@ -40,6 +40,32 @@ def problems(root: Path) -> list[str]:
         if rel != "context/proof.md" and UNFILLED in text:
             found.append(f"unfilled {rel}")
     found.extend(enabled_problems(root))
+    found.extend(money_problems(root))
+    return found
+
+
+AMOUNT = re.compile(r"\$\d[\d,]*(?:\.\d+)?")
+
+
+def money_problems(root: Path) -> list[str]:
+    corpus_parts: list[str] = []
+    for folder in ("context", "wiki", "brand"):
+        base = root / folder
+        if not base.is_dir():
+            continue
+        for path in base.rglob("*.md"):
+            corpus_parts.append(path.read_text(encoding="utf-8"))
+    corpus = "\n".join(corpus_parts)
+    output = root / "output"
+    if not output.is_dir():
+        return []
+    found: list[str] = []
+    for draft in output.glob("*.md"):
+        if draft.name == "README.md":
+            continue
+        for amount in AMOUNT.findall(draft.read_text(encoding="utf-8")):
+            if amount not in corpus:
+                found.append(f"unsourced amount {amount} in output/{draft.name}")
     return found
 
 

@@ -63,6 +63,24 @@ Hermes remembers a little, and that little fills. Factor does not put the compan
 
 When the numbers room sees a problem, the growth room can use it. When a partner angle works, the content room can use it. Six rooms. One picture of the business.
 
+## How a job enters and leaves
+
+You run one prompt in ChatGPT, Codex, or the project you already work in. It writes `factor-harvest.md`. That file is the only handoff.
+
+From it, Factor keeps three layers, and each has a size:
+
+| Layer | What it is | How big |
+|---|---|---|
+| Instinct | Who you are, how the voice measures, what is locked | One screen, every time |
+| Profile soul | The voice Hermes reads before anything else | Under 80 lines |
+| Company memory | Wiki, brand, and the correction log, on disk | Open the index, then one page |
+
+A job comes in as a sentence, a room, and the pages that match. It leaves as a draft, the pages it read, every number with the page that number came from, and a yes or no on whether you must see it.
+
+Jev only picks and scores. It chooses the room from the list, the page from the index, and whether a person is required. It does not write the draft, and it does not invent the choices. Under half confidence, it asks. Anything that sends, spends, or publishes needs a high confidence or your yes. When the chat gets long, Jev may drop a tool trace. It keeps the lines it keeps word for word. It does not retell them.
+
+Claude or Codex write. You send.
+
 ## What a week looks like
 
 You own what to build, what to publish, where to spend, and which opportunities are worth it.
