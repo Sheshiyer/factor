@@ -1,25 +1,13 @@
 # Project State
 
-## Project Reference
+Repository: Sheshiyer/factor
 
-Repository: `Sheshiyer/factor`
+Phase: 007 Company knowledge curation
+Status: Implementation authorized; parallel work pending
+Last activity: 2026-09-27 GitHub reconciliation and spec written
 
-## Current Position
+Baseline: v0.5.0 / 795ae67. Original 58 board items are Done. Prior inception-next state was stale.
 
-Phase: R1 The employee on the Mac
-Status: Active
-Last activity: specs written
+Resume: specs/007-knowledge-curation/plan.md and tasks.md. Acceptance: ISA.md ISC-33–40. Research: docs/research/2026-09-27-agent-knowledge/. Preserve external company ownership and existing catalog selection boundaries.
 
-Progress: [██░░░░░░░░] Spec 001 is the next work
-
-## Session Continuity
-
-Resume at `specs/001-inception/spec.md`. Do not start an issue until that spec is on main.
-
-Focus: specs/001-inception, then specs/002-memory.
-
-## Releases
-
-- R1 The employee on the Mac
-- R2 Three doors
-- R3 Rooms run
+Historical orchestration JSON and tasks/todo.md do not describe this new execution. No merge, deployment or live connector activation is included.

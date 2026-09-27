@@ -1,5 +1,7 @@
 # Factor roadmap
 
+Current phase: [007 Company knowledge curation](../specs/007-knowledge-curation/plan.md). Original releases are complete per the [GitHub reconciliation](GITHUB-RECONCILIATION.md). Sections below retain the historical design.
+
 Three releases. One employee. The founder keeps the decisions.
 
 Discovery, locked from the work already in the repo:
@@ -47,9 +49,9 @@ Release 1 is three waves. Each wave has two swarms that can proceed once the wav
 
 **Wave 2, Numbers.** Figures plus the page they came from. Silence when no line was crossed.
 
-**Wave 3, Approval.** Send, spend, and publish need 0.85 or a yes. Partners and money draft only.
+**Wave 3, Approval.** Send, spend, and publish require explicit human approval independent of confidence. Partners and money draft only.
 
-The next release is specified in `specs/` and tracked as R1 issues. `tasks/todo.md` is the earlier ledger.
+The next implementation is spec 007; R1 issues are closed. `tasks/todo.md` is the earlier ledger.
 
 ## Verification
 

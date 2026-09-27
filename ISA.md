@@ -1,11 +1,11 @@
 ---
 project: factor
 effort: E3
-phase: complete
-progress: 21/21
+phase: build
+progress: 32/40
 mode: algorithm
 started: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-27
 ---
 
 # Factor
@@ -31,6 +31,8 @@ A tool the company did not choose does not sit in the agent's prompt. The human 
 Hermes profile install owns `skills/` at the repo root. Catalog cards stay outside that tree until onboarding copies a chosen card into a company repo. Stdlib only.
 
 ## Goal
+
+2026-09-27 research extension: curate the available Field Theory corpus into a traceable research packet and implementation brief for Factor. Attempt a fresh sync, record its real result, and keep inaccessible material explicitly pending.
 
 A founder or an agent chooses offered skills, plugins, and other capabilities by category. The choice is written to that company's `connectors/enabled.yaml`, and only those cards are copied into that company's `skills/`.
 
@@ -58,7 +60,32 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 - [x] ISC-20: Anti: a non-tty run with no flags exits 0 without reading stdin.
 - [x] ISC-21: This file contains `## Goal` and `## Criteria`.
 
+- [x] ISC-22: A sync receipt records the actual ft sync exit result.
+- [x] ISC-23: The research manifest records the full cache record count.
+- [x] ISC-24: Every candidate has a stable source ID and URL.
+- [x] ISC-25: Each cached article body has a SHA-256 in the manifest.
+- [x] ISC-26: Every candidate has a recorded curation disposition.
+- [x] ISC-27: The synthesis maps the hand and glove to existing Factor files.
+- [x] ISC-28: The synthesis distinguishes authority from decision confidence.
+- [x] ISC-29: The implementation brief specifies a provenance-preserving knowledge lifecycle.
+- [x] ISC-30: The brief names observable acceptance checks for each proposed change.
+- [x] ISC-31: Missing linked article bodies are recorded as gaps.
+- [x] ISC-32: Anti: research ingestion enables no new connector or profile skill.
+
+## Knowledge implementation extension
+
+- [ ] ISC-33: GitHub history and current phase reconcile without reopening completed work.
+- [ ] ISC-34: Source imports are revisioned and idempotent; missing content remains explicit.
+- [ ] ISC-35: Indexed retrieval rejects escaped paths and surfaces provenance and conflicts.
+- [ ] ISC-36: Exact-action human approval is required regardless of confidence.
+- [ ] ISC-37: Reviewed correction affects next local draft and rejects stale or conflicting acceptance.
+- [ ] ISC-38: Shadow Jev results validate candidates and receipts without claiming live calls.
+- [ ] ISC-39: Failed compaction preserves context and retained messages remain byte-identical.
+- [ ] ISC-40: Content trial deduplicates, preserves citations, and passes the complete local suite.
+
 ## Test Strategy
+
+Research extension: compare manifest IDs, hashes and count against the read-only cache; inspect synthesis and brief; run git diff boundary checks. Historical ISC-1–21 remain prior evidence, not fresh runtime acceptance.
 
 | ISC | Type | Check | Tool |
 |---|---|---|---|
@@ -68,6 +95,8 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 
 ## Features
 
+Research extension: sync receipt (ISC-22); source inventory (ISC-23–26, ISC-31); architecture synthesis (ISC-27–28); implementation brief (ISC-29–30); boundary verification (ISC-32). These are documentation artifacts, not runtime activation.
+
 | Name | Satisfies | Depends on | Parallelizable |
 |---|---|---|---|
 | Move cards out of skills | ISC-1, ISC-2, ISC-3, ISC-5, ISC-19 | none | false |
@@ -76,11 +105,40 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 | Company check requires the card | ISC-17, ISC-18 | copy | false |
 | Docs and this ISA | ISC-21 | the rest | false |
 
-## Verification
-
-`python3 -m unittest discover tests` — 10 tests, OK. `skills/catalog` is absent. `catalog/cards/openspec/SKILL.md` names Fission-AI/OpenSpec. 60 card directories. Pipe run of `onboard.py` exits 0 and prints SKILLS.
-
 ## Decisions
 
 - 2026-09-22: Catalog cards stay in the repo and leave the profile skill path. Upstream packs are not vendored.
 - 2026-09-22: Rows with an empty repo stay offered. The card says the cache has no URL.
+
+- 2026-09-27: Research scope is the full 456-record local cache (444 at initial inspection) plus primary-source checks; failed sync prevents a claim of current X completeness. Broad scanning precedes manual curation. The framework retains reusable process; company facts require a company-owned promotion decision.
+- 2026-09-27: Read-only noesis-observe advisor dispatched for architecture review. Native orchestration handles corpus inventory and documentation; no bulk coding or runtime changes are in scope.
+- 2026-09-27: Final scan includes the independently updated 456-record cache. Own sync failed; full X refresh remains unverified. 92 candidate records, 36 curated, 44 shelf and 12 excluded.
+- 2026-09-27: Advisor allegations about missing onboarding generation were refuted by scripts/onboard.py. Final advisor and conflict recall both failed on configured 1M-context credits; no advisor endorsement is claimed.
+
+
+## Changelog
+
+- 2026-09-27 | conjectured: the initial 444-record cache was the stable ingestion input.
+  refuted by: the final corpus count check found 456 records and five additional candidates.
+  learned: verify source-store freshness again before closing a research ingestion.
+  criterion now: ISC-23 verifies the final snapshot count and the receipt separates observed refresh from own sync execution.
+
+## Verification
+
+`python3 -m unittest discover tests` — 10 tests, OK. `skills/catalog` is absent. `catalog/cards/openspec/SKILL.md` names Fission-AI/OpenSpec. 60 card directories. Pipe run of `onboard.py` exits 0 and prints SKILLS.
+
+Research verification, 2026-09-27 (historical ISC-1–21 were not re-run):
+
+- ISC-22: CLI — sync exited 1 with missing X CSRF cookie; recorded in sync-receipt.md.
+- ISC-23: SQLite — final snapshot contains 456 rows; full regex re-scan exactly matches 92 manifest candidates.
+- ISC-24: Python assertions — all 92 IDs are unique and URLs match source rows.
+- ISC-25: SHA-256 — every stored article hash matches the live read-only source row at verification.
+- ISC-26: Manifest read-back — 36 curated, 44 shelf, 12 excluded; all records have dispositions.
+- ISC-27: File read-back — README maps human, company, framework, runtime, seats and doors to current files.
+- ISC-28: File read-back — synthesis explicitly states confidence is not permission and identifies conflicting existing contracts.
+- ISC-29: File read-back — implementation brief defines source, claim, synthesis, procedure, correction and run receipt records.
+- ISC-30: File read-back — priority table names observable acceptance evidence for nine proposed work items.
+- ISC-31: File read-back — sync receipt lists missing quoted article pointers and the newly observed Company Brain article.
+- ISC-32: Git status — only ISA.md and docs/research/ change in this checkout; no company, connector, skill or runtime file changes.
+
+Library mirror created with ft library create; verified by reading it back and comparing its content hash. Content and source inventory are research artifacts; future integration remains proposed. Fresh sync and linked-body completion remain pending authenticated retrieval.
