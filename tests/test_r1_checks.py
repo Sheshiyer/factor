@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from check_company import problems
+from check_company import problems, wiki_problems
 
 
 def write(path: Path, text: str) -> None:
@@ -47,6 +47,45 @@ class R1ChecksTest(unittest.TestCase):
             found = problems(root)
             self.assertNotIn("missing wiki page offer", found)
             self.assertNotIn("missing wiki page entities/offer", found)
+
+    def test_path_qualified_wiki_and_markdown_links_are_checked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "acme"
+            write(root / "wiki/index.md", "[[entities/missing]] [Broken](pages/ghost.md)\n")
+            found = wiki_problems(root)
+            self.assertEqual(len(found), 2)
+            self.assertTrue(any("entities/missing" in error for error in found))
+            self.assertTrue(any("pages/ghost.md" in error for error in found))
+
+    def test_matching_stem_outside_wiki_does_not_satisfy_link(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "acme"
+            write(root / "wiki/index.md", "[[offer]]\n")
+            write(root / "context/offer.md", "# Offer\n")
+            self.assertTrue(wiki_problems(root))
+
+    def test_duplicate_bare_stems_fail_until_path_is_qualified(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "acme"
+            write(root / "wiki/index.md", "[[offer]]\n")
+            write(root / "wiki/a/offer.md", "First\n")
+            write(root / "wiki/b/offer.md", "Second\n")
+            self.assertTrue(wiki_problems(root))
+            write(root / "wiki/index.md", "[[a/offer]] [Second](b/offer.md)\n")
+            self.assertEqual(wiki_problems(root), [])
+
+    def test_traversal_and_symlink_links_fail(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "acme"
+            write(root / "context/secret.md", "Company context\n")
+            write(root / "wiki/index.md", "[Secret](../context/secret.md)\n")
+            self.assertTrue(wiki_problems(root))
+            (root / "wiki/alias.md").symlink_to(root / "context/secret.md")
+            write(root / "wiki/index.md", "[Alias](alias.md)\n")
+            self.assertTrue(wiki_problems(root))
+            (root / "wiki/index.md").unlink()
+            (root / "wiki/index.md").symlink_to(root / "context/secret.md")
+            self.assertTrue(wiki_problems(root))
 
     def test_sourced_price_is_not_reported(self):
         with tempfile.TemporaryDirectory() as tmp:

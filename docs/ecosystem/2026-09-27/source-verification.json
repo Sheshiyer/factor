@@ -1,0 +1,55 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "scope": "Factor framework only",
+  "sources": [
+    {
+      "source_id": "440f65ca-f1e7-4f38-b6b8-98a1a044b241",
+      "file": "sources/00-current-truth.md",
+      "indexed_char_count": 4144,
+      "indexed_content_sha256": "422b1a7678d9addb954ef1dd2b93a5ce1ebed01af136941372622e91e595723d",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "1689622e-79cf-44d4-8d61-33656951cce4",
+      "file": "sources/01-factor-architecture.md",
+      "indexed_char_count": 12053,
+      "indexed_content_sha256": "dac775a7eb7938c13ddbb94eaa01f54ebe44fdfc71f949632e524cbc9f24376c",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "b52cd38b-1874-40b2-a5b8-fc5fbddcb744",
+      "file": "sources/02-knowledge-and-intake.md",
+      "indexed_char_count": 14648,
+      "indexed_content_sha256": "aa8e2b77f3d60307e6e36608d64743b680a59333a17e75a45bd32e2ac5df5c36",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "2c6e8d46-f50a-45a8-ad27-6c8499ead927",
+      "file": "sources/03-native-learning.md",
+      "indexed_char_count": 32253,
+      "indexed_content_sha256": "992b789cc8e4c1e150eb0e25866a8956291f0c0f590bd1e004756061a8a45602",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "4056d280-3662-4c63-a907-04b58930d89d",
+      "file": "sources/04-implementation-and-evidence.md",
+      "indexed_char_count": 20775,
+      "indexed_content_sha256": "4736879f820cb6912f9319a03595e990ea9e0a538202ce25883fdf245cd4ad95",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "bc946005-049c-4cae-a579-18e091a0ab0f",
+      "file": "sources/05-research-and-use-cases.md",
+      "indexed_char_count": 40748,
+      "indexed_content_sha256": "2803a5f56f14d9033e567aec4d8b99993bb77df145dfe9ebb056794851e13be5",
+      "excluded_topic_matches": []
+    },
+    {
+      "source_id": "bb91979e-59d1-4d1a-9296-81ffa600f5e6",
+      "file": "sources/06-design-contracts.md",
+      "indexed_char_count": 5058,
+      "indexed_content_sha256": "4069390034229573c6454966b80157510e920ee093c8b65fa34b317f49d305e9",
+      "excluded_topic_matches": []
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "factor.research-batch.v1",
+  "selection": "first 7 JSONL records in cache order; actual bookmark save chronology unknown because bookmarkedAt is null",
+  "cache_count": 456,
+  "cache_last_updated": "2026-09-27T10:09:33.364Z",
+  "cache_sha256": "c773460e42e8a76a505177c92d7481cd9aef7f62b356866a747e273e00b19698",
+  "bookmarks": [
+    {
+      "position": 1,
+      "id": "2103828182541734166",
+      "url": "https://x.com/RoundtableSpace/status/2103828182541734166",
+      "author": "RoundtableSpace",
+      "posted_at": "Sat Sep 26 12:45:00 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "2b27321b6b09fc6373389b0b76c786b9ac0a7d7e61d9505c06d0cf4dee428b04",
+      "article_available": false,
+      "article_links": [],
+      "quoted_source_url": null,
+      "source_read_command": "ft show 2103828182541734166 --json"
+    },
+    {
+      "position": 2,
+      "id": "2103668795843973538",
+      "url": "https://x.com/supermemory/status/2103668795843973538",
+      "author": "supermemory",
+      "posted_at": "Sat Sep 26 02:11:39 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "83f93e55742d4d00fdc6cef55bc16895b18c547ab25205a404d730ee25d5dc56",
+      "article_available": false,
+      "article_links": [],
+      "quoted_source_url": "https://x.com/DhravyaShah/status/2103668051468300701",
+      "source_read_command": "ft show 2103668795843973538 --json"
+    },
+    {
+      "position": 3,
+      "id": "2103757085393490284",
+      "url": "https://x.com/beamnxw/status/2103757085393490284",
+      "author": "beamnxw",
+      "posted_at": "Sat Sep 26 08:02:29 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "b6d6b7540124425e3542db92197edcfd2e370f1fc563015c34f56f7b7c3bafd1",
+      "article_available": false,
+      "article_links": [],
+      "quoted_source_url": "https://x.com/beamnxw/status/2103335581115625571",
+      "source_read_command": "ft show 2103757085393490284 --json"
+    },
+    {
+      "position": 4,
+      "id": "2103605464382488798",
+      "url": "https://x.com/HermesWatcher/status/2103605464382488798",
+      "author": "HermesWatcher",
+      "posted_at": "Fri Sep 25 22:00:00 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "238f16d61ee440e8ecdcb4612f2f2724debdc891a50b4338c3f519cf891d2cc2",
+      "article_available": false,
+      "article_links": [],
+      "quoted_source_url": "https://x.com/BkashJosi/status/2103371422097621150",
+      "source_read_command": "ft show 2103605464382488798 --json"
+    },
+    {
+      "position": 5,
+      "id": "2103700886186848294",
+      "url": "https://x.com/coldemailchris/status/2103700886186848294",
+      "author": "coldemailchris",
+      "posted_at": "Sat Sep 26 04:19:10 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "31c3eb256e9976b7e094ae56894561ddf4d2b344fd7c154f00a3f243d2c048ab",
+      "article_available": false,
+      "article_links": [
+        "https://x.com/i/article/2099316575006240776"
+      ],
+      "quoted_source_url": null,
+      "source_read_command": "ft show 2103700886186848294 --json"
+    },
+    {
+      "position": 6,
+      "id": "2103668051468300701",
+      "url": "https://x.com/DhravyaShah/status/2103668051468300701",
+      "author": "DhravyaShah",
+      "posted_at": "Sat Sep 26 02:08:42 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "f22eabf009192fbf3cf6a22907f1fefb9be69ac6895716bf63e77c324d137e14",
+      "article_available": false,
+      "article_links": [
+        "https://x.com/i/article/2103652547227750400"
+      ],
+      "quoted_source_url": null,
+      "source_read_command": "ft show 2103668051468300701 --json"
+    },
+    {
+      "position": 7,
+      "id": "2103457845203116338",
+      "url": "https://x.com/goan999999/status/2103457845203116338",
+      "author": "goan999999",
+      "posted_at": "Fri Sep 25 12:13:25 +0000 2026",
+      "bookmarked_at": null,
+      "synced_at": "2026-09-27T10:09:33.362Z",
+      "text_sha256": "7502f8e77f034e2929bb720764480f661022171adc9ad6a7b532f052d06883ea",
+      "article_available": false,
+      "article_links": [],
+      "quoted_source_url": "https://x.com/goan999999/status/2103406347920314447",
+      "source_read_command": "ft show 2103457845203116338 --json"
+    }
+  ]
+}

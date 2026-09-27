@@ -4,4 +4,4 @@
 - Spend: wait
 - Publish: wait
 
-A confidence under 0.85 cannot complete the card. An approval comment from the founder is enough. The worker does not complete the card alone.
+Approval required. An explicit approval record from the founder must exist before any send, spend, or publish action. Confidence alone cannot authorise an action. The worker does not complete the card alone.

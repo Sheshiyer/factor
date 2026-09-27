@@ -1,3 +1,5 @@
+**English** · [Français](README.fr.md)
+
 <div align="center">
 
 <img src="assets/morning.jpg" width="100%" alt="The work is finished before you sit down" />
@@ -12,7 +14,7 @@ You keep the decisions.
 <!-- readme-gen:start:badges -->
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-0.5.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.6.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/github/license/Sheshiyer/factor?style=for-the-badge)
 
 </div>
@@ -61,7 +63,7 @@ Hermes remembers a little, and that little fills. Factor does not put the compan
 
 **Instinct** is the pocket notebook. Who the owner is, how the voice measures, and what is locked. It loads every time. It stays short.
 
-**Memory** is the card catalog. The wiki, the brand, and the correction log live on disk. The employee reads the index, then the one page the job needs. A correction is written down as the original line, the rewrite, and the reason. The same reason twice becomes a rule. The business does not have to be re-explained next week.
+**Memory** is the card catalog. The wiki, the brand, and the correction log live on disk. The employee reads the index, then the one page the job needs. A correction is written down as the original line, the rewrite, and the reason. The same reason twice proposes a rule for your review. Accepted rules improve the next draft. The business does not have to be re-explained next week.
 
 When the numbers room sees a problem, the growth room can use it. When a partner angle works, the content room can use it. Six rooms. One picture of the business.
 
@@ -79,7 +81,7 @@ From it, Factor keeps three layers, and each has a size:
 
 A job comes in as a sentence, a room, and the pages that match. It leaves as a draft, the pages it read, every number with the page that number came from, and a yes or no on whether you must see it.
 
-Jev only picks and scores. It chooses the room from the list, the page from the index, and whether a person is required. It does not write the draft, and it does not invent the choices. Under half confidence, it asks. Anything that sends, spends, or publishes needs a high confidence or your yes. When the chat gets long, Jev may drop a tool trace. It keeps the lines it keeps word for word. It does not retell them.
+Jev only picks and scores. It chooses the room from the list, the page from the index, and whether a person is required. It does not write the draft, and it does not invent the choices. Under half confidence, it asks. Anything that sends, spends, or publishes needs your explicit approval of the exact action and content. Confidence cannot replace that approval. When the chat gets long, Jev may drop a tool trace. It keeps the lines it keeps word for word. It does not retell them.
 
 Claude or Codex write. You send.
 
@@ -91,7 +93,28 @@ The employee owns the checking, the research, and the draft.
 
 Nothing goes out because a model finished a paragraph. It goes out because you approved it.
 
+## Learn it, then use it
+
+The [learning library](docs/learning.md) brings the reviewed English and French guides together with the NotebookLM slide decks, video and infographics. They are bundled with this repository, so onboarding does not depend on access to a private notebook.
+
+| Start here | Resource |
+|---|---|
+| Understand Factor | [English guide](docs/ecosystem/2026-09-27/ecosystem.en.md) · [Guide français](docs/ecosystem/2026-09-27/ecosystem.fr.md) |
+| Run your first task | [English playbook](docs/ecosystem/2026-09-27/playbook.en.md) · [Guide opérationnel](docs/ecosystem/2026-09-27/playbook.fr.md) |
+| Watch or present | [French video, two decks and two infographics](docs/learning.md#watch-present-or-explain) |
+
+English is the default. Select **FR** in the Mac menu or switch the onboarding interface with `--language fr`. Save a company preference with:
+
+```bash
+python3 scripts/onboard.py --company /absolute/path/to/company --set-language fr
+python3 scripts/onboard.py --company /absolute/path/to/company --resources
+```
+
+The preference guides Factor's explanations and drafts without rewriting existing company documents. Visual media currently remain French, including when opened from the English interface. [Language behavior and resource commands](docs/learning.md#choose-a-language).
+
 ## Begin
+
+For an assisted fresh install or upgrade, open this checkout in your coding assistant and paste [prompt-install.md](prompt-install.md). It covers the existing shell runners, Hermes doctor, profile updates, and the messaging gateway, with company data preserved.
 
 ```bash
 git clone https://github.com/Sheshiyer/factor.git
@@ -110,6 +133,14 @@ That writes the instinct, the rooms, and the business. Tools come after, and onl
 
 Then pick a door: `apps/mac/run.sh`, the Factor command in Raycast, or the `take-intent` skill in Hermes.
 
+## Local knowledge curation
+
+The [curation walkthrough](docs/knowledge-curation.md) imports source revisions, reviews attributed claims and replays accepted corrections in a local content packet. It preserves source gaps and conflicts, deduplicates unchanged runs and validates exact-action approval records. The [implementation plan](specs/007-knowledge-curation/plan.md) builds on the [Hermes, Grok and Jev research](docs/research/2026-09-27-agent-knowledge/README.md). These local tools do not publish or schedule work.
+
+The [bookmark intake](docs/bookmark-ingest.md) captures a bounded FT cache selection with explicit article gaps. The [native learning guide](docs/hermes-learning-loop.md) connects reviewed work and corrections to Hermes `/learn`, pending-write review and fresh-session evaluation. The intake is locally verified; a real company/profile learning trial remains pending.
+
+The [English and French framework documentation](docs/ecosystem/2026-09-27/README.md) brings the architecture and operator workflows together in a NotebookLM-generated documentation set.
+
 ## Shipped
 
 | Release | What it is |
@@ -117,6 +148,7 @@ Then pick a door: `apps/mac/run.sh`, the Factor command in Raycast, or the `take
 | [v0.2.0](https://github.com/Sheshiyer/factor/releases/tag/v0.2.0) | Harvest, instinct, memory, Jev, evals, rollback |
 | [v0.3.0](https://github.com/Sheshiyer/factor/releases/tag/v0.3.0) | Menu-bar tray |
 | [v0.4.0](https://github.com/Sheshiyer/factor/releases/tag/v0.4.0) | Raycast and Hermes |
+| [v0.6.0](https://github.com/Sheshiyer/factor/releases/tag/v0.6.0) | Knowledge curation, bilingual onboarding and learning library |
 | [v0.5.0](https://github.com/Sheshiyer/factor/releases/tag/v0.5.0) | Rooms |
 
 <!-- readme-gen:start:footer -->

@@ -1,0 +1,49 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "language": "fr",
+  "assets": [
+    {
+      "path": "docs/assets/fr/framework-slides-v2.pdf",
+      "artifact_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "sha256": "d6c8317fd20a1d9e46eb11a9be3e75a104c109cf845d6e0311bc5448d2464c71",
+      "bytes": 6646937
+    },
+    {
+      "path": "docs/assets/fr/framework-slides-v2.pptx",
+      "artifact_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "sha256": "382d49f4d4116f096c65f095a8e528b6f87b8270b9e59e7218c856b4f4be67cf",
+      "bytes": 7284021
+    },
+    {
+      "path": "docs/assets/fr/operations-slides-v2.pdf",
+      "artifact_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "sha256": "7f34f22a355b18c6905141fb53180742f9688725994b100888d713f8a0020772",
+      "bytes": 6248764
+    },
+    {
+      "path": "docs/assets/fr/operations-slides-v2.pptx",
+      "artifact_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "sha256": "abfd8a04fc0fd54c46545f37c87ab9d06cdab19c3fdd57b1f53ba3fecd1ef9d9",
+      "bytes": 6829660
+    },
+    {
+      "path": "docs/assets/fr/overview-video.mp4",
+      "artifact_id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+      "sha256": "98cd474db88f6c9c7abc82e663fd84330f0375c1772fddb465981c76256a3aea",
+      "bytes": 26399263
+    },
+    {
+      "path": "docs/assets/fr/architecture-infographic-v2.png",
+      "artifact_id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+      "sha256": "af2e8d99d28617bfd3d7c246651caabd0612befa84080e3b33736a21f8f09ccd",
+      "bytes": 4204071
+    },
+    {
+      "path": "docs/assets/fr/learning-infographic-v2.png",
+      "artifact_id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+      "sha256": "eb6b01f0baa2a13c98dcad093a61564c085eb0751b06ba39039ae4b6574f1714",
+      "bytes": 4443580
+    }
+  ],
+  "review_notes": "../ecosystem/2026-09-27/media-fr/verification.md"
+}

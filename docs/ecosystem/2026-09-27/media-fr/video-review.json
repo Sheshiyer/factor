@@ -1,0 +1,128 @@
+{
+  "schema": "factor.notebooklm-video-review.v1",
+  "reviewed_at": "2026-09-27",
+  "artifact_id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+  "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/overview-video.mp4",
+  "sha256": "98cd474db88f6c9c7abc82e663fd84330f0375c1772fddb465981c76256a3aea",
+  "original_unchanged": true,
+  "download_hash_matches": true,
+  "verdict": "technical_pass_sampled_visual_pass_with_minor_editorial_issues_narration_unreviewed",
+  "metadata": {
+    "duration_seconds": 309.730975,
+    "width": 1280,
+    "height": 720,
+    "video_codec": "h264",
+    "fps": 24,
+    "audio_codec": "aac",
+    "audio_sample_rate": 44100,
+    "audio_channels": 1,
+    "audio_language_tag": "und",
+    "subtitle_streams": 0,
+    "bytes": 26399263
+  },
+  "checks": {
+    "ffprobe": "passed",
+    "full_audio_video_decode": "passed, ffmpeg exit 0 with no error output",
+    "sampled_french_readability": "passed",
+    "sampled_factor_framework_scope": "passed",
+    "sampled_pending_pilot_distinction": "passed",
+    "sampled_founder_approval_distinction": "passed",
+    "sampled_no_automatic_publication_claim": "passed"
+  },
+  "visual_coverage": {
+    "timed_samples_seconds": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100,
+      120,
+      140,
+      160,
+      180,
+      200,
+      220,
+      240,
+      260,
+      280,
+      300,
+      309
+    ],
+    "scene_change_threshold": 0.35,
+    "scene_samples_seconds": [
+      35.125,
+      40.333333,
+      86.916667,
+      108.833333,
+      113.833333,
+      132.125,
+      137.208333,
+      175.583333,
+      181.375,
+      245.75,
+      249.75,
+      267.458333
+    ],
+    "timed_contact_sheet": "/tmp/factor-fr-video-qa/samples.png",
+    "scene_contact_sheet": "/tmp/factor-fr-video-qa/scenes.png",
+    "full_resolution_close_reads_seconds": [
+      20,
+      200,
+      240,
+      280
+    ]
+  },
+  "evidence": [
+    {
+      "seconds": 60,
+      "observation": "Hermes Main execution, company Espace Gant facts/voice, Factor Cadre procedures."
+    },
+    {
+      "seconds": 100,
+      "observation": "Jev optional local aid; no external authorization and no live call claimed."
+    },
+    {
+      "seconds": 140,
+      "observation": "Capture inert source, human claim review, content_trial.py assembly, correction recording."
+    },
+    {
+      "seconds": 200,
+      "observation": "Base v0.5.0: Livré; Ajouts locaux: 237 tests réussis; Pilote Hermes: Reste à valider."
+    },
+    {
+      "seconds": 240,
+      "observation": "Staging, inspection, explicit human approval, replay on independent case."
+    },
+    {
+      "seconds": 280,
+      "observation": "Approving a procedure does not authorize any external action; founder retains authority."
+    }
+  ],
+  "issues": [
+    {
+      "severity": "minor",
+      "seconds": 20,
+      "type": "brand_translation",
+      "detail": "Small decorative label reads Facteur instead of Factor. Main title preserves Factor. Do not translate the product name."
+    },
+    {
+      "severity": "minor",
+      "seconds": 240,
+      "type": "partial_localization",
+      "detail": "Main text is French, but Staging and decorative wait/CHECK/APPROVE/isolated module labels remain English; scene132.125 also has Review doodles."
+    }
+  ],
+  "limitations": [
+    "No listening or speech transcription performed; complete narration accuracy and spoken language are unverified.",
+    "No embedded subtitle stream available for transcript extraction.",
+    "Temporal/scene sampling does not certify every frame or transient text.",
+    "No provider/profile/runtime or automatic publishing action was executed."
+  ],
+  "tools": [
+    "/opt/homebrew/bin/ffprobe",
+    "/opt/homebrew/bin/ffmpeg",
+    "view_image"
+  ],
+  "original_video_modified": false
+}

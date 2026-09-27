@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "default_language": "en",
+  "supported_languages": [
+    "en",
+    "fr"
+  ],
+  "resources": [
+    {
+      "id": "framework-guide",
+      "kind": "guide",
+      "language": "bilingual",
+      "title": {
+        "en": "Understand Factor",
+        "fr": "Comprendre Factor"
+      },
+      "paths": {
+        "en": "docs/ecosystem/2026-09-27/ecosystem.en.md",
+        "fr": "docs/ecosystem/2026-09-27/ecosystem.fr.md"
+      }
+    },
+    {
+      "id": "operator-guide",
+      "kind": "guide",
+      "language": "bilingual",
+      "title": {
+        "en": "Set up and work with Factor",
+        "fr": "Configurer et utiliser Factor"
+      },
+      "paths": {
+        "en": "docs/ecosystem/2026-09-27/playbook.en.md",
+        "fr": "docs/ecosystem/2026-09-27/playbook.fr.md"
+      }
+    },
+    {
+      "id": "framework-slides",
+      "kind": "slides",
+      "language": "fr",
+      "title": {
+        "en": "Framework overview · French",
+        "fr": "Présentation du framework"
+      },
+      "paths": {
+        "en": "docs/assets/fr/framework-slides-v2.pdf",
+        "fr": "docs/assets/fr/framework-slides-v2.pdf"
+      }
+    },
+    {
+      "id": "operations-slides",
+      "kind": "slides",
+      "language": "fr",
+      "title": {
+        "en": "Operating workflow · French",
+        "fr": "Du travail à l’apprentissage"
+      },
+      "paths": {
+        "en": "docs/assets/fr/operations-slides-v2.pdf",
+        "fr": "docs/assets/fr/operations-slides-v2.pdf"
+      }
+    },
+    {
+      "id": "overview-video",
+      "kind": "video",
+      "language": "fr",
+      "title": {
+        "en": "Video overview · French · 5:10",
+        "fr": "Vue d’ensemble vidéo · 5 min 10"
+      },
+      "paths": {
+        "en": "docs/assets/fr/overview-video.mp4",
+        "fr": "docs/assets/fr/overview-video.mp4"
+      }
+    },
+    {
+      "id": "architecture-infographic",
+      "kind": "infographic",
+      "language": "fr",
+      "title": {
+        "en": "Architecture at a glance · French",
+        "fr": "Architecture en un regard"
+      },
+      "paths": {
+        "en": "docs/assets/fr/architecture-infographic-v2.png",
+        "fr": "docs/assets/fr/architecture-infographic-v2.png"
+      }
+    },
+    {
+      "id": "learning-infographic",
+      "kind": "infographic",
+      "language": "fr",
+      "title": {
+        "en": "Learning protocol · French · pilot pending",
+        "fr": "Protocole d’apprentissage · pilote à valider"
+      },
+      "paths": {
+        "en": "docs/assets/fr/learning-infographic-v2.png",
+        "fr": "docs/assets/fr/learning-infographic-v2.png"
+      }
+    }
+  ]
+}

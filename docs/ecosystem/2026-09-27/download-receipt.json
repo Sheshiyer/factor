@@ -1,0 +1,47 @@
+{
+  "schema": "factor.notebooklm-download.v1",
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "verified_at": "2026-09-27T12:17:47.276897+00:00",
+  "scope": "Factor framework only",
+  "method": "notebooklm download report with explicit notebook/artifact IDs and --no-clobber --json",
+  "original_downloads_unchanged": "byte-identical copies retained under raw/; top-level files are reviewed derivatives",
+  "word_count_method": "Unicode whitespace split",
+  "artifacts": [
+    {
+      "artifact_id": "d16cfb89-ce2c-412a-9070-e11bcd74c8d4",
+      "filename": "ecosystem.en.md",
+      "status": "downloaded",
+      "sha256": "0070ac28d0524d975000d80f0c256f242593b72a38cdc0d1f40f874ed5ce38f6",
+      "bytes": 41442,
+      "word_count": 4625,
+      "preserved_path": "raw/ecosystem.en.md"
+    },
+    {
+      "artifact_id": "493bb12f-0f77-4e32-8f04-659d571e2717",
+      "filename": "ecosystem.fr.md",
+      "status": "downloaded",
+      "sha256": "74638988f34bd9cbf4afc1835e4a8fd6ba5c343f3463f4b46060a2f8afb3bf5c",
+      "bytes": 41930,
+      "word_count": 5622,
+      "preserved_path": "raw/ecosystem.fr.md"
+    },
+    {
+      "artifact_id": "02e376eb-99c9-4719-8d31-edee9ac29451",
+      "filename": "playbook.en.md",
+      "status": "downloaded",
+      "sha256": "0b1028dee6c5f47dcecdf6e4fe92a593793cffadffb7e2edd6ae35cde38f9aa4",
+      "bytes": 33037,
+      "word_count": 4141,
+      "preserved_path": "raw/playbook.en.md"
+    },
+    {
+      "artifact_id": "e2ed1c67-2d0b-4dcf-a660-9a5183674848",
+      "filename": "playbook.fr.md",
+      "status": "downloaded",
+      "sha256": "a551c12c5cbbb2c7d1ed0c176bd09087296f39625d9679fb2f024e76142dcadb",
+      "bytes": 38389,
+      "word_count": 4974,
+      "preserved_path": "raw/playbook.fr.md"
+    }
+  ]
+}

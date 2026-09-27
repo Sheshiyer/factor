@@ -10,3 +10,5 @@ Spec: 003-jev.
 - F-22. Keep or drop tool lines without summarizing them.
 - F-23. Forbid Jev from writing prices, claims, or prose.
 - F-24. Record pass, fail, or could not tell in wiki/log.md.
+
+F-20 is historical: spec 007 supersedes the 0.85 action threshold. Confidence never creates action permission; the preparation threshold remains 0.5.

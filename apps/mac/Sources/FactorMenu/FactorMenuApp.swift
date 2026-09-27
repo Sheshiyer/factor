@@ -1,6 +1,131 @@
 import AppKit
 import SwiftUI
 
+// MARK: - Localization
+
+/// All user-visible strings keyed by language.
+/// Company facts, protocol keys, intent payload fields are intentionally not translated.
+enum L {
+    static func str(_ en: String, _ fr: String, lang: AppLanguage) -> String {
+        lang == .fr ? fr : en
+    }
+
+    static func menuTitle(lang: AppLanguage) -> String {
+        str("Factor", "Factor", lang: lang)
+    }
+    static func chooseFolder(lang: AppLanguage) -> String {
+        str("Choose a company folder.", "Choisissez un dossier entreprise.", lang: lang)
+    }
+    static func companyFolderPlaceholder(lang: AppLanguage) -> String {
+        str("Company folder", "Dossier entreprise", lang: lang)
+    }
+    static func useThisFolder(lang: AppLanguage) -> String {
+        str("Use this folder", "Utiliser ce dossier", lang: lang)
+    }
+    static func jobPlaceholder(lang: AppLanguage) -> String {
+        str("Job", "Tâche", lang: lang)
+    }
+    static func submit(lang: AppLanguage) -> String {
+        str("Submit", "Envoyer", lang: lang)
+    }
+    static func rollback(lang: AppLanguage) -> String {
+        str("Rollback", "Annuler", lang: lang)
+    }
+    static func quit(lang: AppLanguage) -> String {
+        str("Quit", "Quitter", lang: lang)
+    }
+    static func room(lang: AppLanguage) -> String {
+        str("Room", "Espace", lang: lang)
+    }
+    static func language(lang: AppLanguage) -> String {
+        str("Language", "Langue", lang: lang)
+    }
+    static func oneCompany(lang: AppLanguage) -> String {
+        str(
+            "This menu keeps one company folder.",
+            "Ce menu n'autorise qu'un seul dossier entreprise.",
+            lang: lang
+        )
+    }
+    static func noCompanyError(lang: AppLanguage) -> String {
+        str("Choose a company folder.", "Choisissez un dossier entreprise.", lang: lang)
+    }
+    static func noScriptError(lang: AppLanguage) -> String {
+        str(
+            "Set FACTOR_ROOT or FACTOR_WRITE_INTENT.",
+            "Définissez FACTOR_ROOT ou FACTOR_WRITE_INTENT.",
+            lang: lang
+        )
+    }
+
+    // Room labels: display label (translated) — canonical tag stays in door.room.
+    static func roomLabel(_ tag: String, lang: AppLanguage) -> String {
+        switch tag {
+        case "content":  return str("Content", "Contenu", lang: lang)
+        case "numbers":  return str("Numbers", "Chiffres", lang: lang)
+        case "growth":   return str("Growth", "Croissance", lang: lang)
+        case "ads":      return str("Ads", "Publicités", lang: lang)
+        case "partners": return str("Partners", "Partenaires", lang: lang)
+        case "money":    return str("Money", "Finances", lang: lang)
+        default:         return tag
+        }
+    }
+
+    // Known waiting statuses from io/status.txt (source data preserved).
+    static func statusDisplay(_ raw: String, lang: AppLanguage) -> String {
+        if lang == .en { return raw }
+        switch raw.lowercased() {
+        case "waiting":    return "en attente"
+        case "ready":      return "prêt"
+        case "needs you":  return "votre attention"
+        default:           return raw
+        }
+    }
+
+    // Accessibility
+    static func accessStatus(_ raw: String, lang: AppLanguage) -> String {
+        str("Status \(raw)", "Statut \(statusDisplay(raw, lang: lang))", lang: lang)
+    }
+    static func accessJob(lang: AppLanguage) -> String {
+        str("Job", "Tâche", lang: lang)
+    }
+    static func accessCompanyFolder(lang: AppLanguage) -> String {
+        str("Company folder", "Dossier entreprise", lang: lang)
+    }
+    static func accessLanguagePicker(lang: AppLanguage) -> String {
+        str("Language selector", "Sélecteur de langue", lang: lang)
+    }
+    static func accessMenuBarLabel(_ title: String, lang: AppLanguage) -> String {
+        str("Factor \(title)", "Factor \(title)", lang: lang)
+    }
+
+    // Learning resources section
+    static func learningTitle(lang: AppLanguage) -> String {
+        str("Learning resources", "Ressources", lang: lang)
+    }
+    static func frenchOnlyBadge(lang: AppLanguage) -> String {
+        str("· FR only", "· FR uniquement", lang: lang)
+    }
+    static func noFactorRoot(lang: AppLanguage) -> String {
+        str(
+            "Set FACTOR_ROOT to browse resources.",
+            "Définissez FACTOR_ROOT pour accéder aux ressources.",
+            lang: lang
+        )
+    }
+    static func resourceNotFound(_ path: String, lang: AppLanguage) -> String {
+        str("File not found: \(path)", "Fichier introuvable\u{00A0}: \(path)", lang: lang)
+    }
+    static func openEN(lang: AppLanguage) -> String {
+        str("EN", "EN", lang: lang)
+    }
+    static func openFR(lang: AppLanguage) -> String {
+        str("FR", "FR", lang: lang)
+    }
+}
+
+// MARK: - AppDelegate
+
 final class FactorAppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_: Notification) {
         DispatchQueue.main.async {
@@ -8,6 +133,8 @@ final class FactorAppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 }
+
+// MARK: - Door (model)
 
 @MainActor
 final class Door: ObservableObject {
@@ -23,7 +150,8 @@ final class Door: ObservableObject {
 
     let rooms = ["content", "numbers", "growth", "ads", "partners", "money"]
 
-    private let oneCompany = "This menu keeps one company folder."
+    @Published private(set) var language: AppLanguage = .en
+    let languageManager = LanguageManager()
 
     init() {
         reload()
@@ -33,6 +161,8 @@ final class Door: ObservableObject {
         let path = readStoredPath()
         companyPath = path
         menuTitle = Self.folderName(path)
+        notice = languageManager.load(companyPath: path)
+        language = languageManager.current
         guard let path else {
             subtitle = "Factor"
             statusLine = "waiting"
@@ -42,16 +172,22 @@ final class Door: ObservableObject {
         statusLine = readStatus(in: path)
     }
 
+    func setLanguage(_ lang: AppLanguage) {
+        let err = languageManager.setLanguage(lang, companyPath: companyPath)
+        language = languageManager.current
+        notice = err
+    }
+
     func saveFolder() {
         notice = nil
         stderrText = nil
         if readStoredPath() != nil {
-            notice = oneCompany
+            notice = L.oneCompany(lang: language)
             return
         }
         let typed = folderField.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !typed.isEmpty else {
-            notice = "Choose a company folder."
+            notice = L.chooseFolder(lang: language)
             return
         }
         let expanded = (typed as NSString).expandingTildeInPath
@@ -76,13 +212,13 @@ final class Door: ObservableObject {
         stderrText = nil
         notice = nil
         guard let company = companyPath, !company.isEmpty else {
-            stderrText = "Choose a company folder."
+            stderrText = L.noCompanyError(lang: language)
             return
         }
         let sentence = job.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !sentence.isEmpty else { return }
         guard let script = writeIntentScript() else {
-            stderrText = "Set FACTOR_ROOT or FACTOR_WRITE_INTENT."
+            stderrText = L.noScriptError(lang: language)
             return
         }
         let (code, err) = run(
@@ -156,25 +292,17 @@ final class Door: ObservableObject {
             .appendingPathComponent("factor-intent-\(UUID().uuidString).err")
         FileManager.default.createFile(atPath: errURL.path, contents: nil)
         guard let handle = try? FileHandle(forWritingTo: errURL) else {
-            return (1, "Could not record the command error.")
+            try? process.run()
+            process.waitUntilExit()
+            return (process.terminationStatus, "")
         }
-        process.standardOutput = FileHandle.nullDevice
         process.standardError = handle
-        do {
-            try process.run()
-        } catch {
-            try? handle.close()
-            try? FileManager.default.removeItem(at: errURL)
-            return (1, error.localizedDescription)
-        }
+        try? process.run()
         process.waitUntilExit()
-        try? handle.close()
-        let text = (try? String(contentsOf: errURL, encoding: .utf8)) ?? ""
+        handle.closeFile()
+        let errText = (try? String(contentsOf: errURL, encoding: .utf8)) ?? ""
         try? FileManager.default.removeItem(at: errURL)
-        return (
-            process.terminationStatus,
-            text.trimmingCharacters(in: .whitespacesAndNewlines)
-        )
+        return (process.terminationStatus, errText.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 
     private func readStoredPath() -> String? {
@@ -224,7 +352,12 @@ final class Door: ObservableObject {
     }
 
     private static func pathFile() -> URL {
-        FileManager.default.homeDirectoryForCurrentUser
+        // Explicit development fixture override; the normal user path is unchanged.
+        if let path = ProcessInfo.processInfo.environment["FACTOR_COMPANY_PATH_FILE"],
+           (path as NSString).isAbsolutePath {
+            return URL(fileURLWithPath: path)
+        }
+        return FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent("Library/Application Support/Factor/company.path")
     }
 
@@ -235,9 +368,145 @@ final class Door: ObservableObject {
     }
 }
 
+// MARK: - LanguagePicker
+
+struct LanguagePicker: View {
+    @ObservedObject var door: Door
+
+    var body: some View {
+        Picker(L.language(lang: door.language), selection: Binding(
+            get: { door.language },
+            set: { door.setLanguage($0) }
+        )) {
+            ForEach(AppLanguage.allCases) { lang in
+                Text(lang.displayName).tag(lang)
+            }
+        }
+        .pickerStyle(.segmented)
+        .accessibilityLabel(L.accessLanguagePicker(lang: door.language))
+    }
+}
+
+// MARK: - LearningResourcesView
+
+struct LearningResourcesView: View {
+    let language: AppLanguage
+    @State private var openError: String?
+
+    private var factorRoot: String? { ResourceLoader.factorRoot() }
+
+    private var resources: [FactorResource] {
+        let (list, _) = ResourceLoader.loadResources(factorRoot: factorRoot)
+        return list
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(L.learningTitle(lang: language))
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            if factorRoot == nil {
+                Text(L.noFactorRoot(lang: language))
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            } else if resources.isEmpty {
+                let (_, err) = ResourceLoader.loadResources(factorRoot: factorRoot)
+                Text(err == nil ? L.noFactorRoot(lang: language) : L.str("Resources unavailable. Check the manifest and file paths.", "Ressources indisponibles. Vérifiez le manifeste et les chemins des fichiers.", lang: language))
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 6) {
+                        ForEach(resources) { resource in
+                            ResourceRow(
+                                resource: resource,
+                                language: language,
+                                factorRoot: factorRoot!,
+                                openError: $openError
+                            )
+                        }
+                    }
+                }
+                .frame(maxHeight: 180)
+            }
+
+            if let openError {
+                Text(L.str(openError, "Impossible d’ouvrir la ressource. Vérifiez son chemin et les droits d’accès.", lang: language))
+                    .font(.caption2)
+                    .foregroundStyle(.red)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .onTapGesture { self.openError = nil }
+            }
+        }
+    }
+}
+
+// MARK: - ResourceRow
+
+struct ResourceRow: View {
+    let resource: FactorResource
+    let language: AppLanguage
+    let factorRoot: String
+    @Binding var openError: String?
+
+    private var displayTitle: String {
+        language == .fr ? resource.titleFR : resource.titleEN
+    }
+
+    private var isFrOnlyForENUser: Bool {
+        resource.isFrenchOnly && language == .en
+    }
+
+    var body: some View {
+        HStack(spacing: 4) {
+            // Title + optional FR-only badge
+            Group {
+                Text(displayTitle)
+                    .font(.caption)
+                if isFrOnlyForENUser {
+                    Text(L.frenchOnlyBadge(lang: language))
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Spacer()
+            // For bilingual resources show EN | FR buttons;
+            // for FR-only show a single open button.
+            if resource.resourceLanguage == "bilingual" {
+                Button(L.openEN(lang: language)) {
+                    openError = ResourceLoader.openRelativePath(resource.pathEN, factorRoot: factorRoot)
+                }
+                .buttonStyle(.borderless)
+                .font(.caption2)
+                .accessibilityLabel("\(displayTitle) EN")
+
+                Button(L.openFR(lang: language)) {
+                    openError = ResourceLoader.openRelativePath(resource.pathFR, factorRoot: factorRoot)
+                }
+                .buttonStyle(.borderless)
+                .font(.caption2)
+                .accessibilityLabel("\(displayTitle) FR")
+            } else {
+                // FR-only: single open button using the active language path
+                Button(resource.isFrenchOnly ? "FR" : "EN") {
+                    openError = ResourceLoader.openResource(resource, language: language, factorRoot: factorRoot)
+                }
+                .buttonStyle(.borderless)
+                .font(.caption2)
+                .accessibilityLabel(displayTitle)
+            }
+        }
+    }
+}
+
+// MARK: - FactorMenu (view)
+
 struct FactorMenu: View {
     @ObservedObject var door: Door
     @FocusState private var jobFocused: Bool
+
+    var lang: AppLanguage { door.language }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -245,37 +514,51 @@ struct FactorMenu: View {
                 .font(.headline)
             Text(door.subtitle)
                 .font(.subheadline)
+
+            // Language selector — always visible
+            LanguagePicker(door: door)
+
             if door.companyPath != nil {
-                Text(door.statusLine)
+                // Status line: translated display, source data preserved in door.statusLine
+                Text(L.statusDisplay(door.statusLine, lang: lang))
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                    .accessibilityLabel("Status \(door.statusLine)")
-                TextField("Job", text: $door.job)
+                    .accessibilityLabel(L.accessStatus(door.statusLine, lang: lang))
+
+                TextField(L.jobPlaceholder(lang: lang), text: $door.job)
                     .textFieldStyle(.roundedBorder)
-                    .accessibilityLabel("Job")
+                    .accessibilityLabel(L.accessJob(lang: lang))
                     .focused($jobFocused)
-                Picker("Room", selection: $door.room) {
-                    ForEach(door.rooms, id: \.self) { name in
-                        Text(name).tag(name)
+
+                // Room picker: translated labels, canonical tags as binding values
+                Picker(L.room(lang: lang), selection: $door.room) {
+                    ForEach(door.rooms, id: \.self) { tag in
+                        Text(L.roomLabel(tag, lang: lang)).tag(tag)
                     }
                 }
-                Button("Submit") { door.submit() }
+                .accessibilityLabel(L.room(lang: lang))
+
+                Button(L.submit(lang: lang)) { door.submit() }
                     .keyboardShortcut(.defaultAction)
                     .disabled(door.job.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+
                 if door.rollbackScript() != nil {
-                    Button("Rollback") { door.rollback() }
+                    Button(L.rollback(lang: lang)) { door.rollback() }
                 }
             } else {
-                Text("Choose a company folder.")
-                TextField("Company folder", text: $door.folderField)
+                Text(L.chooseFolder(lang: lang))
+
+                TextField(L.companyFolderPlaceholder(lang: lang), text: $door.folderField)
                     .textFieldStyle(.roundedBorder)
-                    .accessibilityLabel("Company folder")
-                Button("Use this folder") { door.saveFolder() }
+                    .accessibilityLabel(L.accessCompanyFolder(lang: lang))
+
+                Button(L.useThisFolder(lang: lang)) { door.saveFolder() }
                     .keyboardShortcut(.defaultAction)
                     .disabled(
                         door.folderField.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                     )
             }
+
             if let notice = door.notice, !notice.isEmpty {
                 Text(notice)
                     .font(.caption)
@@ -289,8 +572,15 @@ struct FactorMenu: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .textSelection(.enabled)
             }
+
             Divider()
-            Button("Quit") {
+
+            // Learning resources section — available before and after company selection
+            LearningResourcesView(language: lang)
+
+            Divider()
+
+            Button(L.quit(lang: lang)) {
                 NSApplication.shared.terminate(nil)
             }
         }
@@ -310,6 +600,8 @@ struct FactorMenu: View {
     }
 }
 
+// MARK: - App entry point
+
 @main
 struct FactorMenuApp: App {
     @NSApplicationDelegateAdaptor(FactorAppDelegate.self) private var appDelegate
@@ -320,7 +612,7 @@ struct FactorMenuApp: App {
             FactorMenu(door: door)
         } label: {
             Label(door.menuTitle, systemImage: "circle.fill")
-                .accessibilityLabel("Factor \(door.menuTitle)")
+                .accessibilityLabel(L.accessMenuBarLabel(door.menuTitle, lang: door.language))
         }
         .menuBarExtraStyle(.window)
     }

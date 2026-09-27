@@ -1,0 +1,47 @@
+[
+  {
+    "id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+    "exit_code": 0,
+    "result": {
+      "id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+      "renamed": true,
+      "new_title": "Factor — Architecture — FR — v2 relue"
+    }
+  },
+  {
+    "id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+    "exit_code": 0,
+    "result": {
+      "id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+      "renamed": true,
+      "new_title": "Factor — Protocole d’apprentissage à valider — FR — v2"
+    }
+  },
+  {
+    "id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+    "exit_code": 0,
+    "result": {
+      "id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+      "renamed": true,
+      "new_title": "Factor — Vue d’ensemble — FR — Vidéo"
+    }
+  },
+  {
+    "id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+    "exit_code": 0,
+    "result": {
+      "id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "renamed": true,
+      "new_title": "Factor — Comprendre le framework — FR — v2 relue"
+    }
+  },
+  {
+    "id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+    "exit_code": 0,
+    "result": {
+      "id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "renamed": true,
+      "new_title": "Factor — Du travail à l’apprentissage — FR — v2 relue"
+    }
+  }
+]

@@ -147,7 +147,9 @@ class OnboardTest(unittest.TestCase):
             self.assertTrue((dest / "profile-soul.md").is_file())
             self.assertIn("Original", (dest / "wiki" / "corrections.md").read_text(encoding="utf-8"))
             self.assertTrue((dest / "io" / "in.md").is_file())
-            self.assertIn("0.85", (dest / "io" / "out.md").read_text(encoding="utf-8"))
+            out_text = (dest / "io" / "out.md").read_text(encoding="utf-8")
+            self.assertIn("explicit founder approval record", out_text)
+            self.assertNotIn("0.85 or an approval comment", out_text)
             self.assertIn("FILL:", (dest / "evals" / "checks.md").read_text(encoding="utf-8"))
             draft = dest / "output" / "price.md"
             draft.write_text("The price is $99.\n", encoding="utf-8")

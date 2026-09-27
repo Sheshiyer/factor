@@ -1,5 +1,5 @@
 name: factor
-version: 0.5.0
+version: 0.6.0
 description: "One employee, three doors, rooms that stay quiet. Claude writes. Codex builds. Jev picks and scores."
 hermes_requires: ">=0.21.0"
 author: Thoughtseed

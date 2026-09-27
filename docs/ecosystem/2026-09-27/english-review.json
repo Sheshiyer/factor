@@ -1,0 +1,61 @@
+{
+  "reviewed_at": "2026-09-27",
+  "scope": "English Factor framework guides only",
+  "raw_preserved": true,
+  "edits": [
+    "Replaced fabricated author and controlling-document authority with reviewed derived guidance.",
+    "Removed mismatched test timing and offline NotebookLM claim; scoped runtime/install/schedule negatives to this work.",
+    "Corrected company/desks root path; Growth and Ads are conceptual room contracts without dedicated templates in this snapshot.",
+    "Corrected local corrections JSON/proposal storage and separated native skill learning from explicit correction actions.",
+    "Removed prose entailment/citation verification and structured-angle output overclaims; corrected blocked-packet and error exit behavior.",
+    "Fixed approval output key to id; required actual human review before real approval recording and labeled fixtures synthetic.",
+    "Added disposable fixture setup including wiki creation/index entry; preserved exact case and citations.",
+    "Added model selection steps for Claude and Codex profiles; distinguished shipped clone from locally reviewed additions.",
+    "Corrected legacy rollback scope and separate native-skill backup requirement.",
+    "Removed unsupported missing-article causal attribution; limited stale-rule acceptance to pending proposals.",
+    "Clarified FT tool versus offline intake, catalog discovery versus admission, and effective native gate preflight.",
+    "Corrected source-bundle references to sources/ and retained framework seat/phase history."
+  ],
+  "validation": {
+    "complete_read": true,
+    "excluded_development_orchestration_scan": "passed",
+    "git_diff_check": "passed",
+    "shell_block_syntax_check": "not run: local security hook rejected passing extracted document blocks to a shell interpreter",
+    "disposable_cli_fixture": {
+      "status": "passed",
+      "method": "direct subprocess argument lists, no shell block execution",
+      "steps": [
+        "new-company",
+        "source import",
+        "claim capture",
+        "synthetic claim review",
+        "two case-sensitive correction examples",
+        "proposal",
+        "digest acceptance",
+        "content trial",
+        "synthetic exact-action approval make",
+        "id extraction",
+        "approval validate"
+      ],
+      "expected_draft": "Useful product. It has three rooms. [Report](https://example.test/report)",
+      "approval_validation": "valid",
+      "temporary_company_removed": true,
+      "runtime_or_network_commands": false
+    },
+    "fixture_repair": "Initial validation exposed missing wiki directory setup in newly added ecosystem snippet; added mkdir -p and reran successfully."
+  },
+  "files": [
+    {
+      "path": "ecosystem.en.md",
+      "sha256": "6aec3078e84262cc47af6ff3f7ee13987ca373e4ff25465172da5ad5921ce94b",
+      "raw_sha256": "0070ac28d0524d975000d80f0c256f242593b72a38cdc0d1f40f874ed5ce38f6",
+      "bytes": 44834
+    },
+    {
+      "path": "playbook.en.md",
+      "sha256": "7d2598e3359b5a2d675172f91d39ce1b7781d7f49cd8ce957baa42dd856b66df",
+      "raw_sha256": "0b1028dee6c5f47dcecdf6e4fe92a593793cffadffb7e2edd6ae35cde38f9aa4",
+      "bytes": 35292
+    }
+  ]
+}

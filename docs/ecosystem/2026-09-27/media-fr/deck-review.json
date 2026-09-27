@@ -1,0 +1,361 @@
+{
+  "schema": "factor.french-deck-review.v1",
+  "reviewed_at": "2026-09-27T12:55:50.609700+00:00",
+  "status": "revised_decks_pass_with_minor_notes",
+  "scope": "All 42 pages visually reviewed: original framework 12, original operations 14, framework v2 8, operations v2 8. Original rejection findings preserved. PPTX not separately rendered.",
+  "render_directory": "/tmp/factor-fr-deck-qa",
+  "sources": [
+    "docs/ecosystem/2026-09-27/ecosystem.fr.md",
+    "docs/ecosystem/2026-09-27/playbook.fr.md",
+    "docs/hermes-learning-loop.md",
+    "docs/knowledge-curation.md",
+    "scripts/ingest_bookmarks.py",
+    "scripts/content_trial.py",
+    "scripts/corrections.py",
+    "scripts/approvals.py"
+  ],
+  "artifacts": [
+    {
+      "key": "framework-slides",
+      "artifact_id": "8718c202-fc63-4a69-9fa0-8797b8812321",
+      "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides.pdf",
+      "sha256": "ec75ec979c7b209cb69f5afc02ca6da6f66c2315272a8e9d88998782377b37ad",
+      "page_count": 12,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "status": "needs_regeneration",
+      "readability": "All main-body text legible at 1600px render; no main-body clipping observed.",
+      "findings": [
+        {
+          "pages": [
+            10
+          ],
+          "severity": "major",
+          "issue": "Learning loop arrows place validation before staging and /learn; fresh-session replay omitted.",
+          "correction": "Show baseline/feedback → /learn through skill_manage → persisted pending proposal → inspect diff and approve → verify approved bytes → fresh-session held-out replay. State verified enabled gates are a precondition."
+        },
+        {
+          "pages": [
+            3
+          ],
+          "severity": "major",
+          "issue": "Supplied local shadow Jev score and human validation presented as a physical execution filter.",
+          "correction": "Label supplied shadow decision validation; distinguish local approval record from an external executor or enforcement boundary."
+        },
+        {
+          "pages": [
+            8
+          ],
+          "severity": "major",
+          "issue": "Unscoped assertion: Rien n’est installé ni activé par défaut.",
+          "correction": "Scope to optional connectors not enabled by Factor profile and candidate repositories not installed by this work; other installed tools were not globally audited."
+        },
+        {
+          "pages": [
+            10
+          ],
+          "severity": "medium",
+          "issue": "Pas une réalité en production asserts global production status beyond this audit.",
+          "correction": "Say native pilot not executed or validated by this work; effective company profile configuration uninspected."
+        },
+        {
+          "pages": [
+            7
+          ],
+          "severity": "minor",
+          "issue": "Wiki labelled Base de données globale risks cross-company interpretation.",
+          "correction": "Use mémoire propre à cette entreprise / wiki indexé."
+        },
+        {
+          "pages": [
+            8
+          ],
+          "severity": "minor",
+          "issue": "Duplicate réseau réseau.",
+          "correction": "Remove duplicate."
+        },
+        {
+          "pages": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "severity": "minor",
+          "issue": "Bottom-right date/footer overlaps NotebookLM watermark.",
+          "correction": "Reserve a clear footer area away from the watermark."
+        },
+        {
+          "pages": [
+            6
+          ],
+          "severity": "minor",
+          "issue": "Concepts restent à définir conflates defined domain roles and absent templates.",
+          "correction": "Say Growth/Ads conceptual domains have no dedicated template in this snapshot."
+        }
+      ]
+    },
+    {
+      "key": "operations-slides",
+      "artifact_id": "8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c",
+      "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides.pdf",
+      "sha256": "0175a8260dead9c9ecb2a16bbe30f059ad8c0232f387bcb05699740225c5ab0f",
+      "page_count": 14,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "status": "needs_regeneration",
+      "readability": "All main-body text legible at 1600px render; no main-body clipping observed.",
+      "findings": [
+        {
+          "pages": [
+            2
+          ],
+          "severity": "major",
+          "issue": "Company described as immutable; Hermes said to have no memory of its own.",
+          "correction": "Company is mutable/versioned; immutable source revisions are a narrower property. Hermes provides native profile memory; company facts/authority remain company-owned."
+        },
+        {
+          "pages": [
+            3
+          ],
+          "severity": "major",
+          "issue": "Published baseline described as active framework/rooms; runtime negatives are unscoped.",
+          "correction": "Distinguish released source, 237 local tests, installed Hermes capability, and pending company pilot. Scope non-execution claims to this work."
+        },
+        {
+          "pages": [
+            4
+          ],
+          "severity": "major",
+          "issue": "Fail-open called blocage and said to disable all native protections.",
+          "correction": "Describe possible bypass of general gates under invalid config/import failure; destructive unattended memory remains subject to its separate staging/denial behavior. Verify both memory and skills effective gates."
+        },
+        {
+          "pages": [
+            6
+          ],
+          "severity": "major",
+          "issue": "Displayed ingest_bookmarks command omits required --cache.",
+          "correction": "Remove truncated commands or reproduce complete reviewed guide examples verbatim with labelled placeholders."
+        },
+        {
+          "pages": [
+            8
+          ],
+          "severity": "major",
+          "issue": "Displayed content_trial command omits required --root and --card-id.",
+          "correction": "Remove truncated command or include all required arguments and an indexed page under the isolated company root."
+        },
+        {
+          "pages": [
+            9
+          ],
+          "severity": "major",
+          "issue": "corrections command lacks root, --proposal-id, --approver; [ID] wrongly used as SHA-256.",
+          "correction": "Use corrections.py ROOT accept-rule --proposal-id ID --approver NAME --expected-sha256 REVIEWED_DIGEST. Prefer guide example, never executable invented arguments."
+        },
+        {
+          "pages": [
+            10,
+            11
+          ],
+          "severity": "major",
+          "issue": "Staging presented as unconditional; review-to-replay path omits explicit approval and verified approved bytes.",
+          "correction": "Require enabled verified skills.write_approval; inspect persisted pending diff, approve/reject, verify bytes, then fresh-session held-out replay. Native pilot remains proposed."
+        },
+        {
+          "pages": [
+            12
+          ],
+          "severity": "major",
+          "issue": "Approval validate example misses root/card_id/action/target/approval_id and uses invalid JSON; record described as jetable.",
+          "correction": "Use complete reviewed example or omit. Validation neither creates a record nor consumes it once; local trusted caller is not authenticated human approval or external execution."
+        },
+        {
+          "pages": [
+            12
+          ],
+          "severity": "major",
+          "issue": "Unscoped assertion that no external orchestration tool is installed.",
+          "correction": "State no candidate repository was installed by this work; do not infer global installation state."
+        },
+        {
+          "pages": [
+            14
+          ],
+          "severity": "major",
+          "issue": "Completed checkmarks and confirmed CLI gate/profile claims imply runtime acceptance already achieved.",
+          "correction": "Use empty checklist boxes and label proposed acceptance criteria; effective company profile and native pilot have not been verified by this work."
+        },
+        {
+          "pages": [
+            2,
+            7
+          ],
+          "severity": "medium",
+          "issue": "Founder described as exclusive owner of final truth / unique truth engine.",
+          "correction": "Founder owns decisions and claim acceptance; review does not make facts true or guarantee semantic entailment."
+        },
+        {
+          "pages": [
+            4
+          ],
+          "severity": "minor",
+          "issue": "Avertissement de Blocage (Fail-Open) mistranslates fail-open.",
+          "correction": "Use risque de contournement de la porte en cas d’erreur."
+        },
+        {
+          "pages": [
+            13
+          ],
+          "severity": "minor",
+          "issue": "Metrics combine targets and observed outcomes without a clear proposed label.",
+          "correction": "Label target metrics for the future pilot, not measured achievements."
+        }
+      ]
+    },
+    {
+      "key": "framework-slides-v2",
+      "artifact_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pdf",
+      "sha256": "d6c8317fd20a1d9e46eb11a9be3e75a104c109cf845d6e0311bc5448d2464c71",
+      "page_count": 8,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "status": "pass_with_minor_notes",
+      "readability": "Main text readable; no main-body clipping or watermark overlap.",
+      "findings": [
+        {
+          "pages": [
+            1
+          ],
+          "severity": "minor",
+          "issue": "Decorative engineering illustration includes tiny English/gibberish labels.",
+          "correction": "Optional polish: use unlabeled decorative drawing."
+        },
+        {
+          "pages": [
+            2,
+            4,
+            5
+          ],
+          "severity": "minor",
+          "issue": "Gold explanatory text has lower contrast than dark teal, though readable at reviewed size.",
+          "correction": "Optional accessibility polish: darken gold body text."
+        }
+      ],
+      "resolved": [
+        "Learning order and fresh-session replay",
+        "Pilot clearly not validated",
+        "Jev supplied shadow result instead of active execution filter",
+        "Optional connector scope",
+        "Company ownership without immutability or absence-of-memory claim"
+      ],
+      "limitations": [
+        "Concise conceptual deck, not a substitute for exact operational commands or full acceptance checklist."
+      ]
+    },
+    {
+      "key": "operations-slides-v2",
+      "artifact_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pdf",
+      "sha256": "7f34f22a355b18c6905141fb53180742f9688725994b100888d713f8a0020772",
+      "page_count": 8,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "status": "pass_with_minor_notes",
+      "readability": "All main text readable; no clipping or content-watermark overlap.",
+      "findings": [
+        {
+          "pages": [
+            6,
+            7
+          ],
+          "severity": "minor",
+          "issue": "Editorial instruction wording remains: Ne pas prétendre / Ne pas généraliser.",
+          "correction": "Optional polish: state the same accurate limitations directly as reader-facing facts."
+        },
+        {
+          "pages": [
+            2,
+            6,
+            7
+          ],
+          "severity": "minor",
+          "issue": "Gold text or white-on-gold heading has lower contrast than dark teal, though readable at reviewed render.",
+          "correction": "Optional accessibility polish: darken gold where used for text backgrounds or body text."
+        }
+      ],
+      "resolved": [
+        "Incomplete or invented commands omitted; exact commands referred to reviewed guide",
+        "Mutable versioned company and native Hermes memory explicit",
+        "Effective write approval preflight and correct learning order",
+        "Local approval neither executor nor single-use token",
+        "No-install claim scoped to candidates and this work",
+        "Acceptance checks visibly pending",
+        "Local evidence distinguished from real pilot"
+      ],
+      "limitations": [
+        "Overview is not a full runbook; profile isolation, persisted pending record checks, exact approved-byte verification and rollback details remain in reviewed guide."
+      ]
+    }
+  ],
+  "retained_correct_elements": [
+    "Claude/Codex product seats are in scope.",
+    "Framework Growth/Ads correctly distinguished as conceptual domains.",
+    "Both decks distinguish local 237 tests from external integration proof.",
+    "Content trial correctly described as supplied-text deterministic assembly without semantic truth validation."
+  ],
+  "limitations": [
+    "Visual review of PDF renders, not PowerPoint editability or accessibility certification.",
+    "No native pilot, active profile inspection, external executor, or global installation audit performed.",
+    "Original PDFs remain rejected; v2 PDFs pass for concise explanatory use, with minor style/contrast notes."
+  ],
+  "updated_at": "2026-09-27T13:02:29.248185+00:00",
+  "selected_artifacts": [
+    "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+    "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc"
+  ]
+}

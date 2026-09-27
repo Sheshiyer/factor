@@ -1,0 +1,32 @@
+{
+  "schema": "factor.knowledge-demo.v1",
+  "fixture": "synthetic disposable company; not a real founder approval",
+  "checked_at": "2026-09-27T10:41:17.430222+00:00",
+  "checks": {
+    "import_idempotent": true,
+    "run_deduplicated": true,
+    "accepted_rewrite_changes_next_draft": true,
+    "citation_preserved": true,
+    "changed_draft_new_receipt": true,
+    "exact_approval_valid": true,
+    "changed_payload_invalid": true,
+    "confidence_not_approval": true,
+    "failed_ranker_retains_original": true,
+    "jev_explicitly_synthetic": true,
+    "changed_source_blocks_old_claim": true
+  },
+  "first_output_sha256": "bea6b752edf1390508f9b04ee8cc54c6e88cb8f191e61e73e250bbda2477e05e",
+  "corrected_output_sha256": "a50dba503afaac1614a1290b8b87f6d0a9de482fd35c993f5c94f908ab4a9e84",
+  "source_revision": "327b28ce1b14a89439cb2ea474b540af4705b9503898ee1225520a554be7a50a",
+  "corrected_draft": "Useful demo. The demo has three rooms. [Source](https://example.test/demo)",
+  "jev": {
+    "outcome": "content",
+    "confidence": 0.8,
+    "synthetic": true,
+    "shadow_only": true,
+    "status": "synthetic",
+    "reason": "synthetic local fixture; no provider call implied"
+  },
+  "external_actions": [],
+  "temporary_company_removed": true
+}

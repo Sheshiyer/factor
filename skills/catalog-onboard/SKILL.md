@@ -13,6 +13,10 @@ metadata:
         description: Absolute path of the company repo this profile operates
         default: ""
         prompt: Company repo path
+      - key: factor.framework_root
+        description: Absolute path of the Factor framework checkout containing scripts and docs
+        default: ""
+        prompt: Factor framework checkout path
 ---
 
 # Catalog onboarding
@@ -43,3 +47,9 @@ Onboarding has four steps. Do them in order. `python3 scripts/onboard.py --steps
 ## Verification
 
 `enabled.yaml` lists the chosen ids, and each chosen id has a skill card in the company repo. The Factor profile skill list does not include `openspec` unless this company enabled it and that card was installed separately.
+
+## Language and learning resources
+
+Resolve `factor.framework_root` and `factor.company_root` from skill configuration. If the framework path is absent, ask for the actual checkout; do not search the disk or assume the installed profile contains the framework. Execute framework commands from that path. Offer the reviewed guides before the first task with `python3 scripts/onboard.py --company <company_root> --resources`; `--resources --json` returns machine-readable links from `docs/resources.json`. English is default; `--language fr` changes this invocation. A founder-selected `--set-language fr` (or `en`) persists `<company_root>/preferences.json`. The interactive menu and Mac menu expose the same language choice.
+
+Open a resource only after selection, using `--open-resource <id>`. Never open everything automatically. The guides have English/French variants; current decks, video and infographics are French-only. The notebook itself is restricted, but accepted local media are bundled in the framework. Use the selected-language harvest prompt while retaining its canonical English headings and `FILL:` markers. Show catalog descriptions as source text, without claiming they have been translated. No resource selection activates a connector or changes memory/learning policy.
