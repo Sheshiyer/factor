@@ -1,8 +1,8 @@
 ---
 project: factor
 effort: E3
-phase: build
-progress: 32/40
+phase: complete
+progress: 40/40
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -31,6 +31,8 @@ A tool the company did not choose does not sit in the agent's prompt. The human 
 Hermes profile install owns `skills/` at the repo root. Catalog cards stay outside that tree until onboarding copies a chosen card into a company repo. Stdlib only.
 
 ## Goal
+
+Current follow-up: reconcile GitHub and prior memory work, write spec 007, and execute the local knowledge/approval/correction/content loop using temperance-parallel-dispatch. Verification and scope limits: `specs/007-knowledge-curation/verification.md`. Prior research and criteria 1–32 remain historical records.
 
 2026-09-27 research extension: curate the available Field Theory corpus into a traceable research packet and implementation brief for Factor. Attempt a fresh sync, record its real result, and keep inaccessible material explicitly pending.
 
@@ -74,14 +76,14 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 
 ## Knowledge implementation extension
 
-- [ ] ISC-33: GitHub history and current phase reconcile without reopening completed work.
-- [ ] ISC-34: Source imports are revisioned and idempotent; missing content remains explicit.
-- [ ] ISC-35: Indexed retrieval rejects escaped paths and surfaces provenance and conflicts.
-- [ ] ISC-36: Exact-action human approval is required regardless of confidence.
-- [ ] ISC-37: Reviewed correction affects next local draft and rejects stale or conflicting acceptance.
-- [ ] ISC-38: Shadow Jev results validate candidates and receipts without claiming live calls.
-- [ ] ISC-39: Failed compaction preserves context and retained messages remain byte-identical.
-- [ ] ISC-40: Content trial deduplicates, preserves citations, and passes the complete local suite.
+- [x] ISC-33: GitHub history and current phase reconcile without reopening completed work.
+- [x] ISC-34: Source imports are revisioned and idempotent; missing content remains explicit.
+- [x] ISC-35: Indexed retrieval rejects escaped paths and surfaces provenance and conflicts.
+- [x] ISC-36: Exact-action human approval is required regardless of confidence.
+- [x] ISC-37: Reviewed correction affects next local draft and rejects stale or conflicting acceptance.
+- [x] ISC-38: Shadow Jev results validate candidates and receipts without claiming live calls.
+- [x] ISC-39: Failed compaction preserves context and retained messages remain byte-identical.
+- [x] ISC-40: Content trial deduplicates, preserves citations, and passes the complete local suite.
 
 ## Test Strategy
 
@@ -142,3 +144,21 @@ Research verification, 2026-09-27 (historical ISC-1–21 were not re-run):
 - ISC-32: Git status — only ISA.md and docs/research/ change in this checkout; no company, connector, skill or runtime file changes.
 
 Library mirror created with ft library create; verified by reading it back and comparing its content hash. Content and source inventory are research artifacts; future integration remains proposed. Fresh sync and linked-body completion remain pending authenticated retrieval.
+
+## Implementation verification — 2026-09-27
+
+ISC-33: GitHub CLI — 58 issues closed and project entries Done; plan state reconciled.
+ISC-34–35: CLI — knowledge and checker tests verify immutable revisions, idempotency, indexed retrieval, provenance, conflicts and path containment.
+ISC-36: CLI — exact approval tests reject high confidence, changed scope/payload and expired/forged/cross-company records.
+ISC-37: CLI — correction and content tests verify reviewed replay, stale-page/conflict rejection and citation preservation.
+ISC-38–39: CLI — typed shadow outcomes and verbatim context/fallback tests; no live Jev invocation.
+ISC-40: CLI — full 222-test suite passes; 11 concrete synthetic demo checks pass; git diff --check passes.
+
+All new criteria close on local evidence. Source/live/installed/external-action claims are excluded. Own FT refresh remains failed/pending authentication from the earlier research scope. Original checkout WIP preserved; managed branch holds implementation.
+
+### Implementation learning
+
+- conjectured: successful external worker status and passing worker tests would satisfy the execution contract.
+  refuted by: no task-specific gateway correlation rows and review found overwritten revisions, loose index matching, insufficient correction checks and missing approval root binding.
+  learned: fleet status is dispatch evidence; independent behavioral checks establish local implementation quality.
+  criterion now: ISC-34–40 require real boundary tests and trial receipts; external provider attribution remains unresolved explicitly.

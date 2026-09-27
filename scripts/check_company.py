@@ -8,6 +8,8 @@ import re
 import sys
 from pathlib import Path
 
+from knowledge import wiki_index_problems
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "connectors" / "registry.json"
 
@@ -48,7 +50,6 @@ def problems(root: Path) -> list[str]:
 
 
 AMOUNT = re.compile(r"\$\d[\d,]*(?:\.\d+)?")
-WIKILINK = re.compile(r"\[\[([^\]]+)\]\]")
 SOUL_LINES = 80
 INSTINCT_LINES = 40
 
@@ -69,19 +70,8 @@ def length_problems(root: Path) -> list[str]:
 
 
 def wiki_problems(root: Path) -> list[str]:
-    index = root / "wiki" / "index.md"
-    if not index.is_file():
-        return []
-    stems = {path.stem for path in root.rglob("*.md") if path.is_file()}
-    found: list[str] = []
-    seen: set[str] = set()
-    for name in WIKILINK.findall(index.read_text(encoding="utf-8")):
-        if "/" in name or name in seen:
-            continue
-        seen.add(name)
-        if name not in stems:
-            found.append(f"missing wiki page {name}")
-    return found
+    """Use the same contained, unambiguous index resolution as retrieval."""
+    return wiki_index_problems(root)
 
 
 def fill_problems(root: Path) -> list[str]:

@@ -35,3 +35,7 @@ Use this before calling any MCP tool, plugin tool, or third-party CLI that is no
 ## Verification
 
 Name the connector id and the line in `enabled.yaml` you relied on. If you stopped, say which rule fired.
+
+## Exact action approval
+
+A comment must explicitly approve the company, card, action, target and exact content. An old or general yes is not reusable permission. The local `scripts/approvals.py` validator binds send/spend/publish payload digests and expiry; the trusted caller must establish founder identity. It is not an authenticated sending adapter. A future connector executor must validate and consume approval immediately before its side effect. Changed content requires fresh approval. Other high-risk actions retain the explicit founder gate until their executor contract exists.

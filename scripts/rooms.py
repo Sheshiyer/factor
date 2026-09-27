@@ -38,7 +38,7 @@ def room_problems(root: Path) -> list[str]:
     gates = root / "desks" / "gates.md"
     if gates.is_file():
         text = gates.read_text(encoding="utf-8")
-        for gate in ("Send: wait", "Spend: wait", "Publish: wait", "0.85"):
+        for gate in ("Send: wait", "Spend: wait", "Publish: wait", "Approval required"):
             if gate not in text:
                 found.append(f"gates missing {gate}")
     return found

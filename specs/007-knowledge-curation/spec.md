@@ -1,6 +1,6 @@
 # 007 — Company knowledge curation
 
-Status: implementation authorized 2026-09-27. Extends shipped v0.5.0; does not reopen historical R1–R3.
+Status: local implementation verified 2026-09-27; 222 tests pass. Extends shipped v0.5.0; does not reopen historical R1–R3.
 
 The human supplies intent, judgment and approval. The company owns facts, voice and corrections. Factor supplies reusable procedures. Hermes remains the runtime. Claude/Codex produce prose/code; optional Jev makes bounded decisions. All doors retain the existing intent contract.
 

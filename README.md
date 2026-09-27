@@ -61,7 +61,7 @@ Hermes remembers a little, and that little fills. Factor does not put the compan
 
 **Instinct** is the pocket notebook. Who the owner is, how the voice measures, and what is locked. It loads every time. It stays short.
 
-**Memory** is the card catalog. The wiki, the brand, and the correction log live on disk. The employee reads the index, then the one page the job needs. A correction is written down as the original line, the rewrite, and the reason. The same reason twice becomes a rule. The business does not have to be re-explained next week.
+**Memory** is the card catalog. The wiki, the brand, and the correction log live on disk. The employee reads the index, then the one page the job needs. A correction is written down as the original line, the rewrite, and the reason. The same reason twice proposes a rule for your review. Accepted rules improve the next draft. The business does not have to be re-explained next week.
 
 When the numbers room sees a problem, the growth room can use it. When a partner angle works, the content room can use it. Six rooms. One picture of the business.
 
@@ -79,7 +79,7 @@ From it, Factor keeps three layers, and each has a size:
 
 A job comes in as a sentence, a room, and the pages that match. It leaves as a draft, the pages it read, every number with the page that number came from, and a yes or no on whether you must see it.
 
-Jev only picks and scores. It chooses the room from the list, the page from the index, and whether a person is required. It does not write the draft, and it does not invent the choices. Under half confidence, it asks. Anything that sends, spends, or publishes needs a high confidence or your yes. When the chat gets long, Jev may drop a tool trace. It keeps the lines it keeps word for word. It does not retell them.
+Jev only picks and scores. It chooses the room from the list, the page from the index, and whether a person is required. It does not write the draft, and it does not invent the choices. Under half confidence, it asks. Anything that sends, spends, or publishes needs your explicit approval of the exact action and content. Confidence cannot replace that approval. When the chat gets long, Jev may drop a tool trace. It keeps the lines it keeps word for word. It does not retell them.
 
 Claude or Codex write. You send.
 
@@ -109,6 +109,10 @@ scripts/onboard.py --company ~/companies/acme \
 That writes the instinct, the rooms, and the business. Tools come after, and only the one the first room needs.
 
 Then pick a door: `apps/mac/run.sh`, the Factor command in Raycast, or the `take-intent` skill in Hermes.
+
+## Local knowledge curation
+
+The [curation walkthrough](docs/knowledge-curation.md) imports source revisions, reviews attributed claims and replays accepted corrections in a local content packet. It preserves source gaps and conflicts, deduplicates unchanged runs and validates exact-action approval records. The [implementation plan](specs/007-knowledge-curation/plan.md) builds on the [Hermes, Grok and Jev research](docs/research/2026-09-27-agent-knowledge/README.md). These local tools do not publish or schedule work.
 
 ## Shipped
 

@@ -224,7 +224,8 @@ def write_io_and_evals(company: Path) -> None:
         "- Every number it claims, and the page that number came from.\n"
         "- A yes or no on whether a person must see it, with a confidence from 0 to 1.\n\n"
         "A number with no page is a failed output. Under 0.5, ask Claude or the founder. "
-        "0.85 or above before anything that sends, spends, or publishes. "
+        "Send, spend, and publish require an explicit founder approval record. "
+        "Confidence alone cannot authorise an action. "
         "Jev may pick and score. It may not write the draft.\n",
         encoding="utf-8",
     )
@@ -234,7 +235,8 @@ def write_io_and_evals(company: Path) -> None:
         "# Checks\n\n"
         "- Every figure in a draft under `output/` appears in `wiki/` or `context/`.\n"
         "- A line that still says `FILL:` is not a fact.\n"
-        "- Send, spend, and publish need a confidence of 0.85 or an approval comment.\n\n"
+        "- Send, spend, and publish require an explicit approval record from the founder.\n"
+        "- Confidence alone cannot authorise a send, spend, or publish.\n\n"
         "Record the result in `wiki/log.md` as pass, fail, or could not tell.\n",
         encoding="utf-8",
     )
@@ -345,7 +347,7 @@ def write_business_and_brand(company: Path, sections: dict[str, str], harvest: P
     if not corrections.exists():
         corrections.write_text(
             "# Corrections\n\n"
-            "One row each time the founder rewrites a draft. The same reason twice becomes a voice rule.\n\n"
+            "One row each time the founder rewrites a draft. The same reason twice proposes a voice rule for explicit founder review before acceptance.\n\n"
             "| Original | Rewrite | Reason |\n"
             "| --- | --- | --- |\n",
             encoding="utf-8",

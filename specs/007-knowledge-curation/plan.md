@@ -19,3 +19,7 @@ Review gateway attribution and diffs before accepting output. Integrate independ
 ## Deferred research
 
 Source refresh authentication, missing article bodies, authenticated approval transport/one-time consumption at an eventual executor, provider calibration, semantic number entailment beyond explicit claim attribution, proven routine scheduling and Grok bridge remain separate milestones. Never promote source-exact attribution as automatic truth verification.
+
+## Execution outcome
+
+Implemented and locally verified; see verification.md and demo-receipt.json. Gateway-attribution gaps prevented direct acceptance of the external worker outputs; independent non-Sol review hardened them. Final integration additionally repaired the legacy company index checker and reconciled README, generated correction guidance and historical Jev threshold text. No remote GitHub state or live runtime changed.

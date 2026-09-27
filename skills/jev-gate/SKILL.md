@@ -1,7 +1,7 @@
 ---
 name: jev-gate
 description: "Use Jev only to pick, score, or say yes or no. Options come from files. Jev does not write drafts, prices, or claims."
-version: 0.1.0
+version: 0.2.0
 author: Thoughtseed
 license: MIT
 metadata:
@@ -26,8 +26,11 @@ The options already exist in a file.
 ## Thresholds
 
 - Under 0.5, stop and ask Claude or the founder.
-- 0.85 or above before a send, a spend, or a publish. Otherwise wait for an approval comment.
 - Record pass, fail, or could not tell as one line in `wiki/log.md`.
+
+## Approval is separate from confidence
+
+A send, spend, or publish requires an explicit approval record from the founder. Confidence alone cannot authorise a gated action. A Jev score of 0.99 does not satisfy the approval requirement. The approval record binds the company root, card, action, target, canonical payload digest, approver, and expiry.
 
 ## When it is missing
 
@@ -39,4 +42,4 @@ Do not answer the choice with Claude or Codex and call it Jev.
 
 ## Never
 
-Do not let Jev invent options, write prose, name a price, or state a claim. A number in `output/` must already appear in `wiki/` or `context/`.
+Do not let Jev invent options, write prose, name a price, or state a claim. A number in `output/` must already appear in `wiki/` or `context/`. Do not use a confidence score as a substitute for a founder approval record.
