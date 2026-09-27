@@ -1,0 +1,135 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "language": "fr",
+  "sources": [
+    {
+      "file": "../ecosystem.fr.md",
+      "sha256": "02a65790face2e586b2fd1e042e57b1b2d1df46e4fcacb12f753568c6fb06526",
+      "result": {
+        "source": {
+          "id": "768d41e3-adc7-4bd8-bca5-39435c5c892b",
+          "title": "08-reviewed-factor-framework-FR",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "../playbook.fr.md",
+      "sha256": "9838b24a92bb4f294239059388f3d5eb96cd664e7320aa9e3721b52fae348ad3",
+      "result": {
+        "source": {
+          "id": "bdb766cf-b118-4ed6-b239-a3b1c2a16ce3",
+          "title": "09-reviewed-factor-operations-FR",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "key": "framework-slides",
+      "type": "slide-deck",
+      "title": "Factor — Comprendre le framework",
+      "language": "fr",
+      "generation": {
+        "task_id": "8718c202-fc63-4a69-9fa0-8797b8812321",
+        "status": "pending"
+      }
+    },
+    {
+      "key": "operations-slides",
+      "type": "slide-deck",
+      "title": "Factor — Du premier travail à l’apprentissage",
+      "language": "fr",
+      "generation": {
+        "task_id": "8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c",
+        "status": "pending"
+      }
+    },
+    {
+      "key": "overview-video",
+      "type": "video",
+      "title": "Factor — Vue d’ensemble",
+      "language": "fr",
+      "generation": {
+        "task_id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+        "status": "pending"
+      }
+    },
+    {
+      "key": "architecture-infographic",
+      "type": "infographic",
+      "title": "Factor — Le framework en un regard",
+      "language": "fr",
+      "generation": {
+        "task_id": "a822293b-5fe0-4597-ae95-3467b1926ffa",
+        "status": "pending"
+      }
+    },
+    {
+      "key": "learning-infographic",
+      "type": "infographic",
+      "title": "Factor — Apprendre d’un travail vérifié",
+      "language": "fr",
+      "generation": {
+        "task_id": "332745dd-9970-4579-bff3-8ab1012c2344",
+        "status": "pending"
+      }
+    }
+  ],
+  "output_directory": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr",
+  "selected_source_ids": [
+    "768d41e3-adc7-4bd8-bca5-39435c5c892b",
+    "bdb766cf-b118-4ed6-b239-a3b1c2a16ce3",
+    "43ac3741-df08-4d8a-b891-f03f5b4a939e"
+  ],
+  "all_selected_sources_ready": true,
+  "revisions": [
+    {
+      "key": "architecture-infographic-v2",
+      "type": "infographic",
+      "language": "fr",
+      "exit_code": 0,
+      "generation": {
+        "task_id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+        "status": "pending"
+      },
+      "stderr": ""
+    },
+    {
+      "key": "learning-infographic-v2",
+      "type": "infographic",
+      "language": "fr",
+      "exit_code": 0,
+      "generation": {
+        "task_id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+        "status": "pending"
+      },
+      "stderr": ""
+    },
+    {
+      "key": "framework-slides-v2",
+      "type": "slide-deck",
+      "language": "fr",
+      "exit_code": 0,
+      "generation": {
+        "task_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+        "status": "pending"
+      },
+      "stderr": ""
+    },
+    {
+      "key": "operations-slides-v2",
+      "type": "slide-deck",
+      "language": "fr",
+      "exit_code": 0,
+      "generation": {
+        "task_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+        "status": "pending"
+      },
+      "stderr": ""
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 project: factor
 effort: E3
 phase: complete
-progress: 53/53
+progress: 60/60
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -193,3 +193,17 @@ ISC-41–47 verified locally: `specs/008-native-learning/verification.md`. 237 t
 ## Bilingual documentation verification — 2026-09-27
 
 ISC-48–53 complete: four NotebookLM-generated EN/FR reports, preserved raw exports, reviewed derivatives, seven scoped source bundles and an editorial correction source. All four reviewed notes read back byte-identically from the restricted notebook. English disposable CLI example passed; French static review passed; extracted shell syntax checks were blocked and are not claimed. Evidence: docs/ecosystem/2026-09-27/verification.md.
+
+## French visual documentation
+
+- [x] ISC-54: Visual generation selects corrected Factor-only sources with explicit French language.
+- [x] ISC-55: French framework slide deck is generated and downloaded.
+- [x] ISC-56: French operations slide deck is generated and downloaded.
+- [x] ISC-57: French video overview is generated and downloaded.
+- [x] ISC-58: French architecture infographic is generated and downloaded.
+- [x] ISC-59: French learning infographic is generated and downloaded.
+- [x] ISC-60: Visual/media checks and generation receipts document results and limitations.
+
+## French media verification — 2026-09-27
+
+ISC-54–60 complete: five Factor-only French NotebookLM supports downloaded (two eight-slide decks in PDF/PPTX, one 309.731-second MP4 and two PNG infographics). Initial decks and images rejected and preserved; revised decks and images visually reviewed. Video fully decoded and visually sampled; narration was not independently reviewed. Minor labels and the required pilot-pending infographic caption remain documented. Thirteen export hashes verified, seven final files selected. Evidence: `docs/ecosystem/2026-09-27/media-fr/verification.md` and `delivery-manifest.json`. No framework code or runtime/profile configuration changed.

@@ -1,0 +1,85 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "language": "fr",
+  "scope": "Factor framework only",
+  "date": "2026-09-27",
+  "artifacts": [
+    {
+      "key": "framework-slides-v2",
+      "artifact_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pdf",
+          "bytes": 6646937,
+          "sha256": "d6c8317fd20a1d9e46eb11a9be3e75a104c109cf845d6e0311bc5448d2464c71"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pptx",
+          "bytes": 7284021,
+          "sha256": "382d49f4d4116f096c65f095a8e528b6f87b8270b9e59e7218c856b4f4be67cf"
+        }
+      ]
+    },
+    {
+      "key": "operations-slides-v2",
+      "artifact_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pdf",
+          "bytes": 6248764,
+          "sha256": "7f34f22a355b18c6905141fb53180742f9688725994b100888d713f8a0020772"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pptx",
+          "bytes": 6829660,
+          "sha256": "abfd8a04fc0fd54c46545f37c87ab9d06cdab19c3fdd57b1f53ba3fecd1ef9d9"
+        }
+      ]
+    },
+    {
+      "key": "overview-video",
+      "artifact_id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+      "downloads": [
+        {
+          "format": "mp4",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/overview-video.mp4",
+          "bytes": 26399263,
+          "sha256": "98cd474db88f6c9c7abc82e663fd84330f0375c1772fddb465981c76256a3aea"
+        }
+      ]
+    },
+    {
+      "key": "architecture-infographic-v2",
+      "artifact_id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/architecture-infographic-v2.png",
+          "bytes": 4204071,
+          "sha256": "af2e8d99d28617bfd3d7c246651caabd0612befa84080e3b33736a21f8f09ccd"
+        }
+      ]
+    },
+    {
+      "key": "learning-infographic-v2",
+      "artifact_id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/learning-infographic-v2.png",
+          "bytes": 4443580,
+          "sha256": "eb6b01f0baa2a13c98dcad093a61564c085eb0751b06ba39039ae4b6574f1714"
+        }
+      ]
+    }
+  ],
+  "review_limits": [
+    "Video narration not independently listened to or transcribed; visual review sampled.",
+    "Learning infographic caption: Protocole proposé ; pilote Hermes à valider.",
+    "PowerPoint exports do not guarantee separately editable graphic elements."
+  ]
+}

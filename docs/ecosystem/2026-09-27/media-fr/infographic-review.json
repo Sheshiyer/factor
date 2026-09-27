@@ -1,0 +1,58 @@
+{
+  "scope": "Full visual inspection of both original and both revised downloaded PNGs.",
+  "originals": [
+    {
+      "key": "architecture-infographic",
+      "artifact_id": "a822293b-5fe0-4597-ae95-3467b1926ffa",
+      "status": "rejected",
+      "findings": [
+        "Founder text contains unintelligible French.",
+        "Test count rendered as 227 instead of 237.",
+        "Company memory inaccurately described as immutable.",
+        "Prompt-style example labels leaked into legend."
+      ]
+    },
+    {
+      "key": "learning-infographic",
+      "artifact_id": "332745dd-9970-4579-bff3-8ab1012c2344",
+      "status": "rejected",
+      "findings": [
+        "Malformed final table row.",
+        "Typo in tools label.",
+        "Fresh-session test omits requirement for a different held-out case.",
+        "Footer date collides with watermark."
+      ]
+    }
+  ],
+  "revisions": [
+    {
+      "key": "architecture-infographic-v2",
+      "artifact_id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+      "status": "accepted",
+      "checks": [
+        "All visible French labels read and legible.",
+        "Framework/runtime/company roles distinct.",
+        "Pilot pending and human action permission explicit.",
+        "No wrong test count, gibberish, or false immutability."
+      ],
+      "limitations": [
+        "Concept overview; four traceability stages are labels without directional arrows."
+      ]
+    },
+    {
+      "key": "learning-infographic-v2",
+      "artifact_id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+      "status": "accepted_with_context",
+      "checks": [
+        "All seven numbered steps legible in French.",
+        "Wiki facts, memory context, skill procedure distinct.",
+        "Human review before durable writes.",
+        "New session and different case explicitly required.",
+        "No model-weight training claimed."
+      ],
+      "limitations": [
+        "Generated image omits requested pilot-pending subtitle. Use accompanying caption: Protocole proposé; pilote Hermes à valider. The image itself describes a protocol without claiming pilot success."
+      ]
+    }
+  ]
+}

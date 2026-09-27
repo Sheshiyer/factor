@@ -1,0 +1,32 @@
+[
+  {
+    "key": "framework-slides",
+    "type": "slide-deck",
+    "title": "Factor — Comprendre le framework",
+    "language": "fr"
+  },
+  {
+    "key": "operations-slides",
+    "type": "slide-deck",
+    "title": "Factor — Du premier travail à l’apprentissage",
+    "language": "fr"
+  },
+  {
+    "key": "overview-video",
+    "type": "video",
+    "title": "Factor — Vue d’ensemble",
+    "language": "fr"
+  },
+  {
+    "key": "architecture-infographic",
+    "type": "infographic",
+    "title": "Factor — Le framework en un regard",
+    "language": "fr"
+  },
+  {
+    "key": "learning-infographic",
+    "type": "infographic",
+    "title": "Factor — Apprendre d’un travail vérifié",
+    "language": "fr"
+  }
+]

@@ -1,0 +1,303 @@
+{
+  "schema": "factor.notebooklm-media-download.v1",
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "language": "fr",
+  "output_directory": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr",
+  "updated_at": "2026-09-27T13:01:24.498106+00:00",
+  "original_downloads_unchanged": true,
+  "artifacts": [
+    {
+      "key": "framework-slides",
+      "type": "slide-deck",
+      "artifact_id": "8718c202-fc63-4a69-9fa0-8797b8812321",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides.pdf",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "8718c202-fc63-4a69-9fa0-8797b8812321",
+              "title": "Le Cadre Factor",
+              "selection_reason": "matched by ID: 8718c202-fc63-4a69-9fa0-8797b8812321"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides.pdf",
+            "status": "downloaded"
+          },
+          "bytes": 8758771,
+          "sha256": "ec75ec979c7b209cb69f5afc02ca6da6f66c2315272a8e9d88998782377b37ad"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides.pptx",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "8718c202-fc63-4a69-9fa0-8797b8812321",
+              "title": "Le Cadre Factor",
+              "selection_reason": "matched by ID: 8718c202-fc63-4a69-9fa0-8797b8812321"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides.pptx",
+            "status": "downloaded"
+          },
+          "bytes": 9324221,
+          "sha256": "6ca351e3aae4bfadbed32f4186794799b0e7081b0dee4e757bf509386a55c8c5"
+        }
+      ]
+    },
+    {
+      "key": "operations-slides",
+      "type": "slide-deck",
+      "artifact_id": "8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides.pdf",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c",
+              "title": "Architecture et Intégration Factor",
+              "selection_reason": "matched by ID: 8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides.pdf",
+            "status": "downloaded"
+          },
+          "bytes": 17722563,
+          "sha256": "0175a8260dead9c9ecb2a16bbe30f059ad8c0232f387bcb05699740225c5ab0f"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides.pptx",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c",
+              "title": "Architecture et Intégration Factor",
+              "selection_reason": "matched by ID: 8058ea9c-cfb9-42fb-a3bc-f5f0b429ec4c"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides.pptx",
+            "status": "downloaded"
+          },
+          "bytes": 18915213,
+          "sha256": "8abcdfdadaa6c5b2ae52205974c43234d4ba8c36f7342647db47b7f49a027489"
+        }
+      ]
+    },
+    {
+      "key": "overview-video",
+      "type": "video",
+      "artifact_id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "mp4",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/overview-video.mp4",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "2596a013-b4de-4bc0-bfc8-df520d497b3b",
+              "title": "L'Écosystème Factor",
+              "selection_reason": "matched by ID: 2596a013-b4de-4bc0-bfc8-df520d497b3b"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/overview-video.mp4",
+            "status": "downloaded"
+          },
+          "bytes": 26399263,
+          "sha256": "98cd474db88f6c9c7abc82e663fd84330f0375c1772fddb465981c76256a3aea"
+        }
+      ]
+    },
+    {
+      "key": "architecture-infographic",
+      "type": "infographic",
+      "artifact_id": "a822293b-5fe0-4597-ae95-3467b1926ffa",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/architecture-infographic.png",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "a822293b-5fe0-4597-ae95-3467b1926ffa",
+              "title": "Architecture IA et Autorité Humaine",
+              "selection_reason": "matched by ID: a822293b-5fe0-4597-ae95-3467b1926ffa"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/architecture-infographic.png",
+            "status": "downloaded"
+          },
+          "bytes": 4487877,
+          "sha256": "703b1e9eac521513f86da537eddcfbb42677ed7c98e3f89e6344c1f3d1407cba"
+        }
+      ]
+    },
+    {
+      "key": "learning-infographic",
+      "type": "infographic",
+      "artifact_id": "332745dd-9970-4579-bff3-8ab1012c2344",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/learning-infographic.png",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "332745dd-9970-4579-bff3-8ab1012c2344",
+              "title": "Le cycle d'apprentissage Factor",
+              "selection_reason": "matched by ID: 332745dd-9970-4579-bff3-8ab1012c2344"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/learning-infographic.png",
+            "status": "downloaded"
+          },
+          "bytes": 4781196,
+          "sha256": "815917e7891feb702674ebdd8594b66601fc275dff8f8ecb9ed6874ddd13e8f2"
+        }
+      ]
+    },
+    {
+      "key": "architecture-infographic-v2",
+      "type": "infographic",
+      "artifact_id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/architecture-infographic-v2.png",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "e84ecb6c-f557-48ff-8a3f-e494ea3cb010",
+              "title": "Aperçu du framework Factor",
+              "selection_reason": "matched by ID: e84ecb6c-f557-48ff-8a3f-e494ea3cb010"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/architecture-infographic-v2.png",
+            "status": "downloaded"
+          },
+          "bytes": 4204071,
+          "sha256": "af2e8d99d28617bfd3d7c246651caabd0612befa84080e3b33736a21f8f09ccd"
+        }
+      ]
+    },
+    {
+      "key": "learning-infographic-v2",
+      "type": "infographic",
+      "artifact_id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "png",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/learning-infographic-v2.png",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "710c0423-f404-4ab0-b865-25b561d8e9ae",
+              "title": "Protocole de validation humaine",
+              "selection_reason": "matched by ID: 710c0423-f404-4ab0-b865-25b561d8e9ae"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/learning-infographic-v2.png",
+            "status": "downloaded"
+          },
+          "bytes": 4443580,
+          "sha256": "eb6b01f0baa2a13c98dcad093a61564c085eb0751b06ba39039ae4b6574f1714"
+        }
+      ]
+    },
+    {
+      "key": "framework-slides-v2",
+      "type": "slide-deck",
+      "artifact_id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pdf",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+              "title": "Framework Factor",
+              "selection_reason": "matched by ID: 51d7525f-3f84-4a22-9337-672ddce7cfdd"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pdf",
+            "status": "downloaded"
+          },
+          "bytes": 6646937,
+          "sha256": "d6c8317fd20a1d9e46eb11a9be3e75a104c109cf845d6e0311bc5448d2464c71"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pptx",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "51d7525f-3f84-4a22-9337-672ddce7cfdd",
+              "title": "Framework Factor",
+              "selection_reason": "matched by ID: 51d7525f-3f84-4a22-9337-672ddce7cfdd"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/framework-slides-v2.pptx",
+            "status": "downloaded"
+          },
+          "bytes": 7284021,
+          "sha256": "382d49f4d4116f096c65f095a8e528b6f87b8270b9e59e7218c856b4f4be67cf"
+        }
+      ]
+    },
+    {
+      "key": "operations-slides-v2",
+      "type": "slide-deck",
+      "artifact_id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+      "status": "downloaded",
+      "downloads": [
+        {
+          "format": "pdf",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pdf",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+              "title": "Méthode d'automatisation et gouvernance humaine",
+              "selection_reason": "matched by ID: b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pdf",
+            "status": "downloaded"
+          },
+          "bytes": 6248764,
+          "sha256": "7f34f22a355b18c6905141fb53180742f9688725994b100888d713f8a0020772"
+        },
+        {
+          "format": "pptx",
+          "path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pptx",
+          "status": "downloaded",
+          "cli_result": {
+            "operation": "download_single",
+            "artifact": {
+              "id": "b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc",
+              "title": "Méthode d'automatisation et gouvernance humaine",
+              "selection_reason": "matched by ID: b7314a98-cebb-4b0b-98a1-7e06b7ccb6cc"
+            },
+            "output_path": "/Users/sheshnarayaniyer/.codex/visualizations/2026/09/27/01a0e252-a2b2-7c60-8f34-299222f39f26/factor-fr/operations-slides-v2.pptx",
+            "status": "downloaded"
+          },
+          "bytes": 6829660,
+          "sha256": "abfd8a04fc0fd54c46545f37c87ab9d06cdab19c3fdd57b1f53ba3fecd1ef9d9"
+        }
+      ]
+    }
+  ]
+}
