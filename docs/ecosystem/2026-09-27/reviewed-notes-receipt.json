@@ -1,0 +1,57 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "notes": [
+    {
+      "file": "ecosystem.en.md",
+      "title": "Reviewed \u2014 Factor Framework Guide \u2014 EN",
+      "sha256": "6aec3078e84262cc47af6ff3f7ee13987ca373e4ff25465172da5ad5921ce94b",
+      "result": {
+        "id": "fe0c8e40-40c8-4f04-91f3-2f1c25db4456",
+        "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+        "title": "Reviewed \u2014 Factor Framework Guide \u2014 EN",
+        "created": true
+      },
+      "read_back_equal": true,
+      "read_back_sha256": "6aec3078e84262cc47af6ff3f7ee13987ca373e4ff25465172da5ad5921ce94b"
+    },
+    {
+      "file": "playbook.en.md",
+      "title": "Reviewed \u2014 Factor Operator Playbook \u2014 EN",
+      "sha256": "7d2598e3359b5a2d675172f91d39ce1b7781d7f49cd8ce957baa42dd856b66df",
+      "result": {
+        "id": "7db5418e-16d9-47b9-adc9-e6c5623dfc93",
+        "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+        "title": "Reviewed \u2014 Factor Operator Playbook \u2014 EN",
+        "created": true
+      },
+      "read_back_equal": true,
+      "read_back_sha256": "7d2598e3359b5a2d675172f91d39ce1b7781d7f49cd8ce957baa42dd856b66df"
+    },
+    {
+      "file": "ecosystem.fr.md",
+      "title": "Reviewed \u2014 Guide du framework Factor \u2014 FR",
+      "sha256": "02a65790face2e586b2fd1e042e57b1b2d1df46e4fcacb12f753568c6fb06526",
+      "result": {
+        "id": "bacc62fe-04a9-4129-9492-37ca471c8dcf",
+        "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+        "title": "Reviewed \u2014 Guide du framework Factor \u2014 FR",
+        "created": true
+      },
+      "read_back_equal": true,
+      "read_back_sha256": "02a65790face2e586b2fd1e042e57b1b2d1df46e4fcacb12f753568c6fb06526"
+    },
+    {
+      "file": "playbook.fr.md",
+      "title": "Reviewed \u2014 Guide op\u00e9rationnel Factor \u2014 FR",
+      "sha256": "9838b24a92bb4f294239059388f3d5eb96cd664e7320aa9e3721b52fae348ad3",
+      "result": {
+        "id": "e91cb8d0-fc74-4326-a7ce-0320abb7521b",
+        "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+        "title": "Reviewed \u2014 Guide op\u00e9rationnel Factor \u2014 FR",
+        "created": true
+      },
+      "read_back_equal": true,
+      "read_back_sha256": "9838b24a92bb4f294239059388f3d5eb96cd664e7320aa9e3721b52fae348ad3"
+    }
+  ]
+}

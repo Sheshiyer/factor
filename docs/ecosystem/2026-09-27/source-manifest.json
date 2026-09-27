@@ -1,0 +1,159 @@
+{
+  "date": "2026-09-27",
+  "repo_head": "b00dfcd1f17b500b9f2a406729c5345085b4d052",
+  "scope": "Factor framework only",
+  "bundles": [
+    {
+      "file": "sources/00-current-truth.md",
+      "sha256": "4948bcdd3929511b59425805b744181a05cc0275df16d72b0aa13c43b5decec3",
+      "sources": [
+        "conversation decisions and current verified repository artifacts"
+      ]
+    },
+    {
+      "file": "sources/01-factor-architecture.md",
+      "sha256": "1f510369f81f37edb4e62d40e117484872d8d828d02b409784e2ed1e1d64bd34",
+      "sources": [
+        {
+          "path": "README.md",
+          "sha256": "043ebc4fab17b1381d03e1f748abb7879c897b0dd25e079a52e3f3889746d786"
+        },
+        {
+          "path": "docs/seats.md",
+          "sha256": "d8ae09b5f6606b6b8dfa9873823de91a9eaf55a830ecd5dc449d75327fc9b2e4"
+        },
+        {
+          "path": "docs/doors.md",
+          "sha256": "5980f747402570aa40cc1120881e7b3c700a4c9e8394d2a070336146d3097890"
+        },
+        {
+          "path": "docs/rooms.md",
+          "sha256": "f20f6a54e937e98f13855ef4cf07721cc0191cef1f1d0fa954c5881c87078066"
+        },
+        {
+          "path": "SOUL.md",
+          "sha256": "1b34eec4d8d8e9a631188051f49a1b396f26d459dacdf74e6e799aa347b716d7"
+        },
+        {
+          "path": "config.yaml",
+          "sha256": "89a78f89a4d6d0b86c82452afab94f379b388779225af29263c944356bb44ab9"
+        }
+      ]
+    },
+    {
+      "file": "sources/02-knowledge-and-intake.md",
+      "sha256": "7c4eba53c671c9a793acfd4917815ed9927f4ad059bb0b7f145027850291fa35",
+      "sources": [
+        {
+          "path": "docs/knowledge-curation.md",
+          "sha256": "f0295226ee3bd7983270548f8ca8d94935d4111a5fdd124e9db85a8da21eb743"
+        },
+        {
+          "path": "docs/bookmark-ingest.md",
+          "sha256": "7d91a46234cf30d75f65e4a14cc3dee0a4207bbe001c86a26ac7eb3feb1a1b09"
+        }
+      ]
+    },
+    {
+      "file": "sources/03-native-learning.md",
+      "sha256": "2d37620ab37ee8403ed9d14ca21bd803bc05c807cc2144290e98dc55a92a430e",
+      "sources": [
+        {
+          "path": "docs/hermes-learning-loop.md",
+          "sha256": "5014a1674bf21988d3884725be56c8907e0ac4343f38b84889f703f4e29b0a08"
+        },
+        {
+          "path": "prompts/hermes-learn-reviewed-workflow.md",
+          "sha256": "62e5f342ffec334402a316d620be28a0ef4f84a775c4ecfa81242378b851b277"
+        },
+        {
+          "path": "docs/research/2026-09-27-latest-seven/hermes-native-audit.md",
+          "sha256": "68d19fb9f8853c62cfa457eda32cf50ebe47bcb601d66044ee26eec4483abd95"
+        }
+      ]
+    },
+    {
+      "file": "sources/04-implementation-and-evidence.md",
+      "sha256": "eb8e38603e6770fb65e8b85aa08725c03993a01389ff3b9295d8d769ac855fa8",
+      "sources": [
+        {
+          "path": "specs/007-knowledge-curation/spec.md",
+          "sha256": "6e7e757acd6b313eb11fa62c42db0831571f5f3ed1e599f92a583f2d8460c229"
+        },
+        {
+          "path": "specs/007-knowledge-curation/verification.md",
+          "sha256": "ef63095a88e9d56095107ffe4992a4524185bbd2e08d594a9fa5c3b62c510e0e"
+        },
+        {
+          "path": "specs/008-native-learning/spec.md",
+          "sha256": "d1b6107ae9ed79b0e4da33d1fd916aeb5056bffba97a65bfc566178583e5d376"
+        },
+        {
+          "path": "specs/008-native-learning/plan.md",
+          "sha256": "b00cf49bcdd408557b73225415e7aafa56e5b93950184b2ba3bc83db16ebef09"
+        },
+        {
+          "path": "specs/008-native-learning/verification.md",
+          "sha256": "460295a83e83d53f7e6b4a1c6cdbb7889efdd6caa6612a59707167861b137602"
+        },
+        {
+          "path": ".planning/STATE.md",
+          "sha256": "c833c59498497558e903b5b1ae6676b62bb90d3bd14a098792155ea4f4812b07"
+        },
+        {
+          "path": ".planning/GITHUB-RECONCILIATION.md",
+          "sha256": "1ceb854e7b19058d3b30c47af75559d875c1d95492edcc758a667ac9ad235496"
+        }
+      ]
+    },
+    {
+      "file": "sources/05-research-and-use-cases.md",
+      "sha256": "835ef3f7d2b8e96a5263002f5c7163647fb8adfbc7836b82570fdb0704787e4c",
+      "sources": [
+        {
+          "path": "docs/research/2026-09-27-agent-knowledge/README.md",
+          "sha256": "5745b8fe3efd2d5b3d0ba0b2e1fa9f0f24361b8685d68f8baba84bebc71b7bb2"
+        },
+        {
+          "path": "docs/research/2026-09-27-agent-knowledge/implementation-brief.md",
+          "sha256": "b6a13d9255d206b6f569a94856e7c013c800035f8f821f4c6d1cc4c642d6ce9d"
+        },
+        {
+          "path": "docs/research/2026-09-27-latest-seven/README.md",
+          "sha256": "ddebecce7882de43164238a050d52fda1c6f050211742a07b4201a9813c0b9e3"
+        },
+        {
+          "path": "docs/research/2026-09-27-latest-seven/primary-source-review.md",
+          "sha256": "2ac30d40e84d008ac6ff6e94f90fd5cd794e03b8bdadf89fdefe3b7e38252537"
+        }
+      ]
+    },
+    {
+      "file": "sources/06-design-contracts.md",
+      "sha256": "53581a46ea0997fdcd33087cecb8f4705583ac9bc0c1f7d60203d2cb8a819017",
+      "sources": [
+        {
+          "path": "specs/002-memory/spec.md",
+          "sha256": "2fe01a2445294aa7f411f9482a16ecc86b594285fb18c8a10c9dee25c8eb2afa"
+        },
+        {
+          "path": "specs/003-jev/spec.md",
+          "sha256": "2f517e86b056a57094a957c372fef18c8e998a3cffff87542bd8801bcaffb58d"
+        },
+        {
+          "path": "specs/004-evals/spec.md",
+          "sha256": "8e64dfae6bb71a9a3d77683d0ae15c867b6b94df64a7588632377f8c346bf4ff"
+        },
+        {
+          "path": "specs/006-debug-rollback/spec.md",
+          "sha256": "2dc1aef62b4f42027ed2e1314daf56daaa9b3b090f7b520e6f673c1bcabb98be"
+        },
+        {
+          "path": "connectors/catalog.md",
+          "sha256": "160a66a0f7ce55eaf011d18c1c30c7be66f7ef01d8960a940cc5c849eb09666b"
+        }
+      ]
+    }
+  ],
+  "source_transformations": "Personal machine paths generalized; development-orchestration material excluded from uploaded derivative bundles; source hashes identify originals, bundle hashes identify uploaded bytes."
+}

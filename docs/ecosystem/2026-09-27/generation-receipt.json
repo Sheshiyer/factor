@@ -1,0 +1,154 @@
+{
+  "notebook_id": "ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "notebook_url": "https://notebooklm.google.com/notebook/ed5305d5-9bca-4a00-b2a8-5d2f811c1222",
+  "cli_version": "0.8.0",
+  "sources": [
+    {
+      "file": "sources/00-current-truth.md",
+      "result": {
+        "source": {
+          "id": "440f65ca-f1e7-4f38-b6b8-98a1a044b241",
+          "title": "00-current-truth",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/01-factor-architecture.md",
+      "result": {
+        "source": {
+          "id": "1689622e-79cf-44d4-8d61-33656951cce4",
+          "title": "01-factor-architecture",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/02-knowledge-and-intake.md",
+      "result": {
+        "source": {
+          "id": "b52cd38b-1874-40b2-a5b8-fc5fbddcb744",
+          "title": "02-knowledge-and-intake",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/03-native-learning.md",
+      "result": {
+        "source": {
+          "id": "2c6e8d46-f50a-45a8-ad27-6c8499ead927",
+          "title": "03-native-learning",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/04-implementation-and-evidence.md",
+      "result": {
+        "source": {
+          "id": "4056d280-3662-4c63-a907-04b58930d89d",
+          "title": "04-implementation-and-evidence",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/05-research-and-use-cases.md",
+      "result": {
+        "source": {
+          "id": "bc946005-049c-4cae-a579-18e091a0ab0f",
+          "title": "05-research-and-use-cases",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    },
+    {
+      "file": "sources/06-design-contracts.md",
+      "result": {
+        "source": {
+          "id": "bb91979e-59d1-4d1a-9296-81ffa600f5e6",
+          "title": "06-design-contracts",
+          "type": "unknown",
+          "url": null
+        }
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "ecosystem",
+      "language": "en",
+      "generation": {
+        "task_id": "d16cfb89-ce2c-412a-9070-e11bcd74c8d4",
+        "status": "pending"
+      },
+      "output": "ecosystem.en.md"
+    },
+    {
+      "kind": "ecosystem",
+      "language": "fr",
+      "generation": {
+        "task_id": "493bb12f-0f77-4e32-8f04-659d571e2717",
+        "status": "pending"
+      },
+      "output": "ecosystem.fr.md"
+    },
+    {
+      "kind": "playbook",
+      "language": "en",
+      "generation": {
+        "task_id": "02e376eb-99c9-4719-8d31-edee9ac29451",
+        "status": "pending"
+      },
+      "output": "playbook.en.md"
+    },
+    {
+      "kind": "playbook",
+      "language": "fr",
+      "generation": {
+        "task_id": "e2ed1c67-2d0b-4dcf-a660-9a5183674848",
+        "status": "pending"
+      },
+      "output": "playbook.fr.md"
+    }
+  ],
+  "scope": "Factor framework only",
+  "source_replacements": [
+    {
+      "removed_source_id": "4b666a23-0d3e-46fa-a43e-1f813053b765",
+      "replacement_source_id": "440f65ca-f1e7-4f38-b6b8-98a1a044b241",
+      "reason": "narrowed to Factor framework per user"
+    },
+    {
+      "removed_source_id": "567f1ce9-88bd-417e-8621-44d97538ab0c",
+      "replacement_source_id": "4056d280-3662-4c63-a907-04b58930d89d",
+      "reason": "narrowed to Factor framework per user"
+    }
+  ],
+  "all_sources_ready_before_generation": true,
+  "post_generation_correction_source": {
+    "file": "editorial-corrections.md",
+    "sha256": "94aa08ec7dbd16a3afd70998ca7b2107a25dc082fcf8ac78240438091d6e3cf4",
+    "result": {
+      "source": {
+        "id": "43ac3741-df08-4d8a-b891-f03f5b4a939e",
+        "title": "07-reviewed-documentation-corrections",
+        "type": "unknown",
+        "url": null
+      }
+    },
+    "indexed_content_sha256": "e2f814f77dcd6300b56a5da043edb3e49aa50329c42ee3df720ffe0c1abda770",
+    "indexed_verified": true
+  },
+  "sharing_verified": {
+    "is_public": false,
+    "access": "restricted"
+  }
+}

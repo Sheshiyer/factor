@@ -2,7 +2,7 @@
 project: factor
 effort: E3
 phase: complete
-progress: 47/47
+progress: 53/53
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -178,3 +178,18 @@ All new criteria close on local evidence. Source/live/installed/external-action 
 ## Latest-seven verification — 2026-09-27
 
 ISC-41–47 verified locally: `specs/008-native-learning/verification.md`. 237 tests pass; full-cache disposable-company intake and repeat are byte-stable. Seven post IDs/hash records, 45 resolved shortlinks, 44 disabled repository candidates, native source audit and a reviewed `/learn` handoff are saved. Two missing X articles and the actual company/profile native learning pilot remain explicit future evidence. No native learning improvement is claimed.
+
+## Bilingual ecosystem documentation
+
+- [x] ISC-48: NotebookLM receives a versioned, curated Factor ecosystem source set.
+- [x] ISC-49: English ecosystem guide is generated and downloaded from NotebookLM.
+- [x] ISC-50: French ecosystem guide is generated and downloaded from NotebookLM.
+- [x] ISC-51: English operator playbook is generated and downloaded from NotebookLM.
+- [x] ISC-52: French operator playbook is generated and downloaded from NotebookLM.
+- [x] ISC-53: All four documents preserve verified/planned boundaries and have generation receipts.
+
+2026-09-27 documentation scope refined: only the Factor framework and its product integrations; seven curated NotebookLM source bundles exclude development-orchestration material. Four EN/FR reports requested; explicit notebook IDs prevent shared-context changes.
+
+## Bilingual documentation verification — 2026-09-27
+
+ISC-48–53 complete: four NotebookLM-generated EN/FR reports, preserved raw exports, reviewed derivatives, seven scoped source bundles and an editorial correction source. All four reviewed notes read back byte-identically from the restricted notebook. English disposable CLI example passed; French static review passed; extracted shell syntax checks were blocked and are not claimed. Evidence: docs/ecosystem/2026-09-27/verification.md.

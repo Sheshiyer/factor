@@ -15,3 +15,5 @@ Next: run the native research-brief learning pilot in the exact user-selected co
 Pending source gaps: two X article bodies. Current batch is first seven records from the user-refreshed 456-record cache; save chronology unknown. No new ft sync run in this phase. Earlier agent sync authentication failure remains historical evidence, not a claim that the user's refresh failed.
 
 Historical orchestration JSON and tasks/todo.md do not describe this new execution. No native profile install/configuration, runtime learning write, merge, deployment or connector activation is included.
+
+Documentation: NotebookLM-generated and reviewed English/French framework guides and operator playbooks at docs/ecosystem/2026-09-27/. Four reviewed notes verified remotely; original reports and source receipts retained. Product/runtime state above is unchanged by documentation generation.

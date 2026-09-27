@@ -1,0 +1,44 @@
+{
+  "reviewed_at": "2026-09-27T12:27:52.330734+00:00",
+  "files": {
+    "ecosystem.fr.md": {
+      "before_sha256": "74638988f34bd9cbf4afc1835e4a8fd6ba5c343f3463f4b46060a2f8afb3bf5c",
+      "after_sha256": "02a65790face2e586b2fd1e042e57b1b2d1df46e4fcacb12f753568c6fb06526",
+      "bytes": 46241,
+      "lines": 498
+    },
+    "playbook.fr.md": {
+      "before_sha256": "a551c12c5cbbb2c7d1ed0c176bd09087296f39625d9679fb2f024e76142dcadb",
+      "after_sha256": "9838b24a92bb4f294239059388f3d5eb96cd664e7320aa9e3721b52fae348ad3",
+      "bytes": 44679,
+      "lines": 542
+    }
+  },
+  "status": "complete",
+  "scope": "French pair only; original NotebookLM reports preserved under raw/",
+  "checks": [
+    {
+      "file": "ecosystem.fr.md",
+      "local_links_passed": 2,
+      "fences_balanced": true,
+      "runtime_examples_executed": false
+    },
+    {
+      "file": "playbook.fr.md",
+      "local_links_passed": 8,
+      "fences_balanced": true,
+      "runtime_examples_executed": false
+    }
+  ],
+  "syntax_check": "Not executed: PAI security hook rejected proposed shell syntax check. Static text, local links and fences checked; no runtime examples executed.",
+  "edit_log": [
+    "Removed invented authorship and controlling authority; identified reviewed NotebookLM derivatives.",
+    "Preserved Factor seats, dispatcher and worktrees; corrected 58 closed issues versus four open milestone containers.",
+    "Corrected native memory staging, source-only audit scope, profile unknowns, pending persistence and held-out evaluation.",
+    "Completed disposable examples, corrected literal shell annotations, case-sensitive French correction, source/claim setup and ID parsing.",
+    "Corrected correction storage, proposal/acceptance lifecycle, semantic evidence limits, blocked packets and exit codes, local approval limitations.",
+    "Corrected stale-page renewed review, native skill rollback and limited snapshot scope.",
+    "Removed invented Growth/Ads paths and source paths; corrected missing-body attribution, tests timing and runtime activation claims.",
+    "Improved French terminology and translated native learning prompt."
+  ]
+}
