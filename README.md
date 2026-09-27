@@ -1,3 +1,5 @@
+**English** · [Français](README.fr.md)
+
 <div align="center">
 
 <img src="assets/morning.jpg" width="100%" alt="The work is finished before you sit down" />
@@ -90,6 +92,25 @@ You own what to build, what to publish, where to spend, and which opportunities 
 The employee owns the checking, the research, and the draft.
 
 Nothing goes out because a model finished a paragraph. It goes out because you approved it.
+
+## Learn it, then use it
+
+The [learning library](docs/learning.md) brings the reviewed English and French guides together with the NotebookLM slide decks, video and infographics. They are bundled with this repository, so onboarding does not depend on access to a private notebook.
+
+| Start here | Resource |
+|---|---|
+| Understand Factor | [English guide](docs/ecosystem/2026-09-27/ecosystem.en.md) · [Guide français](docs/ecosystem/2026-09-27/ecosystem.fr.md) |
+| Run your first task | [English playbook](docs/ecosystem/2026-09-27/playbook.en.md) · [Guide opérationnel](docs/ecosystem/2026-09-27/playbook.fr.md) |
+| Watch or present | [French video, two decks and two infographics](docs/learning.md#watch-present-or-explain) |
+
+English is the default. Select **FR** in the Mac menu or switch the onboarding interface with `--language fr`. Save a company preference with:
+
+```bash
+python3 scripts/onboard.py --company /absolute/path/to/company --set-language fr
+python3 scripts/onboard.py --company /absolute/path/to/company --resources
+```
+
+The preference guides Factor's explanations and drafts without rewriting existing company documents. Visual media currently remain French, including when opened from the English interface. [Language behavior and resource commands](docs/learning.md#choose-a-language).
 
 ## Begin
 

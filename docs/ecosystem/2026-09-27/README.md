@@ -1,3 +1,5 @@
+[English learning library](../../learning.md) · [Ressources en français](../../learning.fr.md)
+
 # Factor framework documentation — English / Français
 
 Source snapshot: 27 September 2026, Factor framework through local commit `b00dfcd`. These documents cover Factor, the company workspace, Hermes integration, knowledge curation and learning workflows. Development-orchestration material is excluded.
@@ -24,3 +26,5 @@ Source precedence: current status snapshot and dated verification, then current 
 ## Supports visuels en français
 
 Deux présentations, une vidéo de synthèse et deux infographies complètent les guides. Les exports et les résultats de contrôle sont regroupés dans [le dossier des supports français](media-fr/README.md). Les sources de génération sont les deux guides français revus et la note de corrections éditoriales.
+
+The accepted media are now bundled under `docs/assets/fr/`. Use the [portable learning library](../../learning.md) for onboarding links; generation and download receipts retain their original provenance.

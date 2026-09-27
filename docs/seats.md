@@ -29,5 +29,8 @@ Set the company path on the Claude profile only:
 
 ```bash
 hermes -p factor config set skills.config.factor.company_root /absolute/path/to/company
+hermes -p factor config set skills.config.factor.framework_root /absolute/path/to/factor
 hermes -p factor config set skills.config.factor.codex_profile coder
 ```
+
+The framework path lets the onboarding skill resolve the shared learning library and language commands. The company language is `preferences.json` (`en` by default, `fr` when selected); it is separate from model/provider selection. See [learning resources](learning.md).

@@ -40,3 +40,7 @@ Any card, draft, or answer that depends on the business. Load it before writing.
 ## Verification
 
 Quote the path you read for each fact you use. If you stopped, the message names the file and the `FILL:` line.
+
+## Working language
+
+Read `<company>/preferences.json` once the configured company root is known. `language` is `en` or `fr`; missing file/key means English. Use it for explanations and new drafts unless the task explicitly requests another language or an approved brand rule governs the output. Preserve source quotations, facts, canonical room IDs, filenames and schema keys. Do not translate or rewrite existing company files when the preference changes. Report malformed or unsupported preferences instead of repairing them silently. Save a change only when the founder chooses it; the framework command is `python3 scripts/onboard.py --company <company_root> --set-language fr` (use `en` to return to English). Use the actual framework checkout for commands, never a guessed company-relative scripts directory.

@@ -17,6 +17,12 @@ import json
 import sys
 from pathlib import Path
 
+scripts_dir = Path(__file__).resolve().parent
+if str(scripts_dir) not in sys.path:
+    sys.path.insert(0, str(scripts_dir))
+from preferences import load_language, save_language
+from learning_resources import resources as _learning_resources, _open_resource, _format_text
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "connectors" / "registry.json"
 CARDS = ROOT / "catalog" / "cards"
@@ -44,6 +50,29 @@ LABELS = {
     "plugins": "Plugins",
     "other": "Other capabilities",
 }
+LABELS_FR = {
+    "skills": "Compétences",
+    "plugins": "Plugins",
+    "other": "Autres capacités",
+}
+STEPS_FR = """Intégration Factor
+1. Récolte. Dans le projet que vous avez construit, collez prompts/harvest-claude.fr.md dans Claude, ou prompts/harvest-codex.fr.md dans Codex. Enregistrez la réponse sous le nom factor-harvest.md.
+2. Appliquez. scripts/onboard.py --company <company> --apply-harvest <project>/factor-harvest.md
+   Cela écrit SOUL.md, les six fichiers de contexte, et les dossiers business et brand. SOUL.md définit qui est le propriétaire et comment l'entreprise s'exprime.
+3. Choisissez. Compétences, puis plugins, puis autres capacités.
+4. Confirmez. python3 scripts/check_company.py <company>
+"""
+def labels(language: str) -> dict[str, str]:
+    return LABELS_FR if language == "fr" else LABELS
+
+
+def ui(english: str, french: str, language: str) -> str:
+    return french if language == "fr" else english
+
+
+def source_note(language: str) -> str:
+    return ui("Source content: catalog names, descriptions and codes remain in their original language (English).",
+              "Contenu source : les noms, descriptions et codes du catalogue restent dans leur langue d’origine (anglais).", language)
 
 
 def load_items() -> list[dict[str, str]]:
@@ -54,24 +83,24 @@ def by_category(items: list[dict[str, str]], category: str) -> list[dict[str, st
     return [item for item in items if item["category"] == category]
 
 
-def text_catalog(items: list[dict[str, str]], category: str | None) -> str:
+def text_catalog(items: list[dict[str, str]], category: str | None, language: str = "en") -> str:
     chosen = items if category is None else by_category(items, category)
-    lines: list[str] = []
+    lines: list[str] = [source_note(language), ""]
     groups = (category,) if category else CATEGORIES
     for group in groups:
         rows = [item for item in chosen if item["category"] == group]
-        lines.append(LABELS[group].upper())
+        lines.append(labels(language)[group].upper())
         for disposition, title in (
-            ("add", "offered"),
-            ("builtin", "already in Hermes"),
-            ("shelf", "not offered"),
+            ("add", ui("offered", "proposés", language)),
+            ("builtin", ui("already in Hermes", "déjà dans Hermes", language)),
+            ("shelf", ui("not offered", "non proposés", language)),
         ):
             block = [item for item in rows if item["disposition"] == disposition]
             if not block:
                 continue
             lines.append(f"  {title}")
             for item in block:
-                repo = item["repo"] or "no repo in the cache"
+                repo = item["repo"] or ui("no repo in the cache", "aucun dépôt dans le cache", language)
                 lines.append(
                     f"  - {item['id']} | {item['name']} | {item['kind']} | {item['risk']} | {repo}"
                 )
@@ -421,49 +450,115 @@ def resolve_enable(items: list[dict[str, str]], raw: str) -> list[dict[str, str]
     return found
 
 
-def show_prompt(seat: str) -> None:
-    path = PROMPTS / f"harvest-{seat}.md"
-    print(path.read_text(encoding="utf-8"), end="" if path.read_text(encoding="utf-8").endswith("\n") else "\n")
+def show_prompt(seat: str, language: str = "en") -> None:
+    suffix = f".{language}" if language != "en" else ""
+    path = PROMPTS / f"harvest-{seat}{suffix}.md"
+    if not path.is_file():
+        path = PROMPTS / f"harvest-{seat}.md"
+    text = path.read_text(encoding="utf-8")
+    print(text, end="" if text.endswith("\n") else "\n")
 
 
-def picker(items: list[dict[str, str]], company: Path | None) -> int:
+def picker(items: list[dict[str, str]], company: Path | None, language: str = "en") -> int:
     selected: set[str] = set()
     offered = [item for item in items if item["disposition"] == "add"]
-    print(STEPS)
+    steps = STEPS_FR if language == "fr" else STEPS
+    print(steps)
     while True:
-        print("\nFactor onboarding")
-        if company:
-            print(f"Company: {company}")
-        print("1  Show the Claude harvest prompt")
-        print("2  Show the Codex harvest prompt")
-        print("3  Apply a harvest file (writes SOUL.md)")
-        print("4  Choose skills, plugins, and other capabilities")
-        print("5  Show the four steps")
-        print("q  quit")
-        choice = input("> ").strip().lower()
-        if choice in {"q", "quit"}:
+        if language == "fr":
+            print("\nIntégration Factor")
+            if company:
+                print(f"Entreprise : {company}")
+            print("1  Afficher le prompt de récolte Claude")
+            print("2  Afficher le prompt de récolte Codex")
+            print("3  Appliquer un fichier de récolte (écrit SOUL.md)")
+            print("4  Choisir les compétences, plugins et autres capacités")
+            print("5  Afficher les quatre étapes")
+            print("L  Basculer la langue (actuellement fr → en)")
+            print("R  Afficher les ressources d'apprentissage")
+            print("q  quitter")
+        else:
+            print("\nFactor onboarding")
+            if company:
+                print(f"Company: {company}")
+            print("1  Show the Claude harvest prompt")
+            print("2  Show the Codex harvest prompt")
+            print("3  Apply a harvest file (writes SOUL.md)")
+            print("4  Choose skills, plugins, and other capabilities")
+            print("5  Show the four steps")
+            print("L  Toggle language (currently en → fr)")
+            print("R  Show learning resources")
+            print("q  quit")
+        choice = input("> ").strip()
+        lower = choice.lower()
+        if lower in {"q", "quit"}:
             break
-        if choice == "1":
-            show_prompt("claude")
+        if lower == "l":
+            language = "fr" if language == "en" else "en"
+            if company is not None:
+                save_language(company, language)
+            steps = STEPS_FR if language == "fr" else STEPS
+            print(steps)
             continue
-        if choice == "2":
-            show_prompt("codex")
-            continue
-        if choice == "3":
-            if company is None:
-                print("Start onboarding with --company so the harvest has a home.")
+        if lower == "r":
+            res_list = _learning_resources(language)
+            if not res_list:
+                msg = "Aucune ressource disponible." if language == "fr" else "No resources available."
+                print(msg)
+                prompt = "entrée pour revenir " if language == "fr" else "enter to go back "
+                input(prompt)
                 continue
-            harvest = input("path to factor-harvest.md> ").strip()
+            while True:
+                print()
+                for idx, r in enumerate(res_list, start=1):
+                    exists_mark = "" if r["path"].exists() else "  [fichier manquant]" if language == "fr" else "  [file missing]"
+                    content_label = ui("content language", "langue du contenu", language)
+                    print(f"  {idx}  [{r['kind']}]  {r['title']}{exists_mark}  ({content_label}: {r['source_language']})")
+                if language == "fr":
+                    print("numéro pour ouvrir une ressource, b pour revenir")
+                    note = "Note : les résumés de registre restent en anglais."
+                else:
+                    print("number to open a resource, b to go back")
+                    note = ""
+                if note:
+                    print(note)
+                rchoice = input("> ").strip().lower()
+                if rchoice == "b":
+                    break
+                if rchoice.isdigit() and 1 <= int(rchoice) <= len(res_list):
+                    r = res_list[int(rchoice) - 1]
+                    result = _open_resource(r["id"], language)
+                    if result:
+                        return result
+                    continue
+                bad = "Pas un choix sur cet écran." if language == "fr" else "Not a choice on this screen."
+                print(bad)
+            continue
+        if lower == "1":
+            show_prompt("claude", language)
+            continue
+        if lower == "2":
+            show_prompt("codex", language)
+            continue
+        if lower == "3":
+            if company is None:
+                msg = "Démarrez l'intégration avec --company pour que la récolte ait un dossier." if language == "fr" else "Start onboarding with --company so the harvest has a home."
+                print(msg)
+                continue
+            prompt_harvest = "chemin vers factor-harvest.md> " if language == "fr" else "path to factor-harvest.md> "
+            harvest = input(prompt_harvest).strip()
             apply_harvest(company, Path(harvest))
-            print(f"wrote {company / 'SOUL.md'} and context/")
+            msg = f"écrit {company / 'SOUL.md'} et context/" if language == "fr" else f"wrote {company / 'SOUL.md'} and context/"
+            print(msg)
             continue
-        if choice == "5":
-            print(STEPS)
+        if lower == "5":
+            print(steps)
             continue
-        if choice != "4":
-            print("Use 1, 2, 3, 4, 5, or q.")
+        if lower != "4":
+            bad = "Utilisez 1, 2, 3, 4, 5, L, R ou q." if language == "fr" else "Use 1, 2, 3, 4, 5, L, R, or q."
+            print(bad)
             continue
-        if not choose_capabilities(items, offered, selected, company):
+        if not choose_capabilities(items, offered, selected, company, language):
             continue
     return 0
 
@@ -473,62 +568,65 @@ def choose_capabilities(
     offered: list[dict[str, str]],
     selected: set[str],
     company: Path | None,
+    language: str = "en",
 ) -> bool:
     while True:
-        print("\nStep 3. Choose. q returns to the steps.")
+        print(ui("\nStep 3. Choose. q returns to the steps.", "\nÉtape 3. Choisissez. q revient aux étapes.", language))
+        print(source_note(language))
         for index, category in enumerate(CATEGORIES, start=1):
             count = sum(1 for item in offered if item["category"] == category)
             chosen = sum(1 for item in offered if item["category"] == category and item["id"] in selected)
-            print(f"  {index}  {LABELS[category]}  ({chosen}/{count} selected)")
-        print("  4  Already in Hermes")
-        print("  5  Not offered")
+            print(f"  {index}  {labels(language)[category]}  ({chosen}/{count} " + ui("selected)", "sélectionnés)", language))
+        print(ui("  4  Already in Hermes", "  4  Déjà dans Hermes", language))
+        print(ui("  5  Not offered", "  5  Non proposés", language))
         choice = input("> ").strip().lower()
         if choice in {"q", "quit", "w", "write"}:
             break
         if choice in {"1", "2", "3"}:
             category = CATEGORIES[int(choice) - 1]
-            if not toggle_category(offered, category, selected):
+            if not toggle_category(offered, category, selected, language):
                 continue
         elif choice == "4":
-            show_fixed(items, "builtin", "Already in Hermes")
+            show_fixed(items, "builtin", ui("Already in Hermes", "Déjà dans Hermes", language), language)
         elif choice == "5":
-            show_fixed(items, "shelf", "Not offered")
+            show_fixed(items, "shelf", ui("Not offered", "Non proposés", language), language)
         else:
-            print("Use 1, 2, 3, 4, 5, or q.")
+            print(ui("Use 1, 2, 3, 4, 5, or q.", "Utilisez 1, 2, 3, 4, 5 ou q.", language))
     chosen = [item for item in offered if item["id"] in selected]
     payload = [{"id": item["id"], "category": item["category"], "name": item["name"]} for item in chosen]
     print(json.dumps(payload, indent=2))
     if company:
         write_enabled(company, chosen)
-        print(f"wrote {company / 'connectors' / 'enabled.yaml'}")
+        print(ui("wrote ", "écrit ", language) + str(company / "connectors" / "enabled.yaml"))
     return 0
 
 
-def row_line(index: int, item: dict[str, str], selected: set[str]) -> str:
+def row_line(index: int, item: dict[str, str], selected: set[str], language: str = "en") -> str:
     mark = "x" if item["id"] in selected else " "
-    repo = "repo" if item["repo"] else "no repo"
+    repo = ui("repo", "dépôt", language) if item["repo"] else ui("no repo", "aucun dépôt", language)
     return (
-        f"  {index:2} [{mark}] {item['id']}  risk {item['risk']}  "
-        f"approval {item['approval']}  {repo}  {item['summary']}"
+        f"  {index:2} [{mark}] {item['id']}  {ui('risk', 'risque', language)} {item['risk']}  "
+        f"{ui('approval', 'approbation', language)} {item['approval']}  {repo}  {item['summary']}"
     )
 
 
-def show_detail(item: dict[str, str]) -> None:
-    repo = item["repo"] or "no repository URL in the bookmark cache"
+def show_detail(item: dict[str, str], language: str = "en") -> None:
+    repo = item["repo"] or ui("no repository URL in the bookmark cache", "aucune URL de dépôt dans le cache de favoris", language)
     install = (
         f"npx skills add {item['repo']}"
         if item["repo"].startswith("https://github.com/")
-        else "no install command until a repository URL exists"
+        else ui("no install command until a repository URL exists", "aucune commande d’installation sans URL de dépôt", language)
     )
     print(f"\n{item['id']}  {item['name']}")
-    print(f"  {LABELS[item['category']]}  {item['kind']}  risk {item['risk']}  approval {item['approval']}")
+    print(f"  {labels(language)[item['category']]}  {item['kind']}  {ui('risk', 'risque', language)} {item['risk']}  {ui('approval', 'approbation', language)} {item['approval']}")
+    print(source_note(language))
     print(f"  {item['summary']}")
-    print(f"  bookmark {item['bookmark']}")
+    print(f"  {ui('bookmark', 'favori', language)} {item['bookmark']}")
     print(f"  {repo}")
     print(f"  {install}")
 
 
-def toggle_category(offered: list[dict[str, str]], category: str, selected: set[str]) -> bool:
+def toggle_category(offered: list[dict[str, str]], category: str, selected: set[str], language: str = "en") -> bool:
     rows = [item for item in offered if item["category"] == category]
     query = ""
     while True:
@@ -537,10 +635,10 @@ def toggle_category(offered: list[dict[str, str]], category: str, selected: set[
             for item in rows
             if not query or query in item["id"] or query in item["summary"].lower()
         ]
-        print(f"\n{LABELS[category]}" + (f"  /{query}" if query else ""))
+        print(f"\n{labels(language)[category]}" + (f"  /{query}" if query else ""))
         for index, item in enumerate(visible, start=1):
-            print(row_line(index, item, selected))
-        print("number toggles, d number details, /text filters, a all, c clear, b back")
+            print(row_line(index, item, selected, language))
+        print(ui("number toggles, d number details, /text filters, a all, c clear, b back", "numéro pour sélectionner, d numéro pour les détails, /texte pour filtrer, a tous, c effacer, b retour", language))
         choice = input("> ").strip()
         lowered = choice.lower()
         if lowered == "b":
@@ -559,9 +657,9 @@ def toggle_category(offered: list[dict[str, str]], category: str, selected: set[
         if lowered.startswith("d ") and lowered[2:].strip().isdigit():
             number = int(lowered[2:].strip())
             if 1 <= number <= len(visible):
-                show_detail(visible[number - 1])
+                show_detail(visible[number - 1], language)
             else:
-                print("Not a row on this screen.")
+                print(ui("Not a row on this screen.", "Aucune ligne correspondante sur cet écran.", language))
             continue
         if lowered.isdigit() and 1 <= int(lowered) <= len(visible):
             item_id = visible[int(lowered) - 1]["id"]
@@ -570,16 +668,16 @@ def toggle_category(offered: list[dict[str, str]], category: str, selected: set[
             else:
                 selected.add(item_id)
             continue
-        print("Not a choice on this screen.")
+        print(ui("Not a choice on this screen.", "Pas un choix sur cet écran.", language))
 
 
-def show_fixed(items: list[dict[str, str]], disposition: str, title: str) -> None:
+def show_fixed(items: list[dict[str, str]], disposition: str, title: str, language: str = "en") -> None:
     print(f"\n{title}")
     for item in items:
         if item["disposition"] != disposition:
             continue
-        print(f"  {item['id']}  [{LABELS[item['category']]}]  {item['summary']}")
-    input("enter to go back ")
+        print(f"  {item['id']}  [{labels(language)[item['category']]}]  {item['summary']}")
+    input(ui("enter to go back ", "entrée pour revenir ", language))
 
 
 def main(argv: list[str]) -> int:
@@ -594,14 +692,48 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--prompt", choices=("claude", "codex"), help="print the harvest prompt to copy")
     parser.add_argument("--apply-harvest", type=Path, help="write SOUL.md and context files from a harvest")
     parser.add_argument("--debug", action="store_true", help="append a redacted line to io/debug.log")
+    parser.add_argument("--language", choices=("en", "fr"), help="language for this invocation (does not persist)")
+    parser.add_argument("--set-language", choices=("en", "fr"), dest="set_language", help="persist language in company/preferences.json and exit unless other actions follow")
+    parser.add_argument("--resources", action="store_true", help="display the learning resource list")
+    parser.add_argument("--open-resource", metavar="ID", dest="open_resource", help="open a learning resource by ID")
     args = parser.parse_args(argv[1:])
     items = load_items()
+    # Resolve effective language: --language > --set-language > company pref > default en
+    if args.language:
+        lang = args.language
+    elif args.set_language:
+        lang = args.set_language
+    else:
+        lang = load_language(args.company)
 
+    if args.set_language:
+        if args.company is None:
+            raise SystemExit("--set-language needs --company")
+        save_language(args.company, args.set_language)
+        # Exit unless another explicit action was also requested
+        has_other_action = bool(
+            args.steps or args.prompt or args.apply_harvest
+            or args.json or args.text or args.enable or args.enable_category
+            or args.resources or args.open_resource
+        )
+        if not has_other_action:
+            return 0
     if args.steps:
-        print(STEPS, end="" if STEPS.endswith("\n") else "\n")
+        steps_text = STEPS_FR if lang == "fr" else STEPS
+        print(steps_text, end="" if steps_text.endswith("\n") else "\n")
         return 0
     if args.prompt:
-        show_prompt(args.prompt)
+        show_prompt(args.prompt, lang)
+        return 0
+    if args.open_resource:
+        return _open_resource(args.open_resource, lang)
+    if args.resources:
+        res_list = _learning_resources(lang)
+        if args.json:
+            printable = [{"id": r["id"], "kind": r["kind"], "language": r["language"], "source_language": r["source_language"], "title": r["title"], "path": str(r["path"])} for r in res_list]
+            print(json.dumps(printable, indent=2, ensure_ascii=False))
+            return 0
+        print(_format_text(res_list, lang))
         return 0
     if args.apply_harvest:
         if args.company is None:
@@ -612,7 +744,7 @@ def main(argv: list[str]) -> int:
             from debug_log import append_log
 
             append_log(args.company, "apply", "fail" if problems(args.company) else "pass")
-        print(f"wrote {args.company / 'SOUL.md'}")
+        print(ui("wrote ", "écrit ", lang) + str(args.company / "SOUL.md"))
         if not args.enable and not args.enable_category:
             return 0
 
@@ -622,8 +754,8 @@ def main(argv: list[str]) -> int:
         return 0
     if args.text or (not sys.stdin.isatty() and not args.enable and not args.enable_category):
         if not args.text:
-            print(STEPS)
-        print(text_catalog(items, args.category), end="")
+            print(STEPS_FR if lang == "fr" else STEPS)
+        print(text_catalog(items, args.category, lang), end="")
         if not args.enable and not args.enable_category:
             return 0
 
@@ -643,13 +775,13 @@ def main(argv: list[str]) -> int:
         print(json.dumps([{"id": item["id"], "category": item["category"]} for item in chosen], indent=2))
         if args.company:
             write_enabled(args.company, chosen)
-            print(f"wrote {args.company / 'connectors' / 'enabled.yaml'}", file=sys.stderr)
+            print(ui("wrote ", "écrit ", lang) + str(args.company / "connectors" / "enabled.yaml"), file=sys.stderr)
         return 0
 
     if not sys.stdin.isatty():
-        print(text_catalog(items, args.category), end="")
+        print(text_catalog(items, args.category, lang), end="")
         return 0
-    return picker(items, args.company)
+    return picker(items, args.company, lang)
 
 
 if __name__ == "__main__":

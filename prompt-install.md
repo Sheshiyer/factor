@@ -27,6 +27,7 @@ Use these values when provided; otherwise discover existing values before asking
 - Coding profile: `coder`, optional; preserve the existing choice.
 - Listener: the Hermes messaging gateway, reusing the host's existing service when it already serves this profile.
 - Mac menu bar: launch if I selected that door; otherwise keep it available as an optional step.
+- Language: English by default. Reuse the company preference; offer French without translating existing facts or identifiers.
 
 Use task-specific variables such as `FACTOR_REPO`, `FACTOR_COMPANY`, `FACTOR_PROFILE`, `FACTOR_CODER_PROFILE`, `FACTOR_TARGET_REF`, and `FACTOR_BACKUP_DIR`. Do not repurpose `HOME`, `PATH`, or the coding assistant's configuration variables. Quote paths, including paths with spaces.
 
@@ -128,6 +129,7 @@ For a new profile, set its company path; for an upgrade, verify the existing val
 
 ```sh
 hermes -p "$FACTOR_PROFILE" config set skills.config.factor.company_root "$FACTOR_COMPANY"
+hermes -p "$FACTOR_PROFILE" config set skills.config.factor.framework_root "$FACTOR_REPO"
 ```
 
 On a fresh profile, use `hermes -p "$FACTOR_PROFILE" model` to choose the intended Claude provider/model. Preserve the existing model on upgrades. Let me complete interactive authentication privately; never request that I paste credentials into chat.
@@ -148,7 +150,11 @@ hermes -p "$FACTOR_PROFILE" config set skills.config.factor.codex_profile "$FACT
 
 Run the create command only for a missing coding profile. Keep one Factor board dispatcher; do not start a second dispatcher on the coding seat. Optional connectors and catalog skills stay unselected until the company chooses them. Do not enable the whole catalog, schedules, background learning, messaging platforms, or new external actions as a side effect of setup.
 
-### 5. Run doctor and verify the local company
+### 5. Choose the language, offer learning resources, and run checks
+
+Offer the framework and operator guides from `docs/learning.md` or `docs/learning.fr.md` before the first task. List resources with `python3 "$FACTOR_REPO/scripts/onboard.py" --company "$FACTOR_COMPANY" --resources`; open a selected resource only when requested using `--open-resource ID`. If I choose French, persist it with `python3 "$FACTOR_REPO/scripts/onboard.py" --company "$FACTOR_COMPANY" --set-language fr`; use `en` to switch back. Preserve an existing choice on upgrade. Mac, CLI and Hermes use `<company>/preferences.json`. The video/decks/infographics are currently French-only and must be labeled that way. The bundled files do not require NotebookLM access.
+
+Run the following checks:
 
 ```sh
 hermes -p "$FACTOR_PROFILE" doctor

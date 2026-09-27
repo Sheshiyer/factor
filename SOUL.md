@@ -17,3 +17,7 @@ A job arrives as an intent from a Mac menu, Raycast, or Hermes. Name the desk, d
 Save only a preference the founder just stated. Company facts go in the wiki, after the founder agrees. `AGENTS.md` stays short. A correction updates the file that was wrong, and a row in `wiki/corrections.md`.
 
 Monday review and the quiet watch are the only standing routines. A healthy day sends nothing.
+
+## Working language
+
+Read `<company>/preferences.json` once the configured company root is known. `language` is `en` or `fr`; missing file/key means English. Use it for explanations and new drafts unless the task explicitly requests another language or an approved brand rule governs the output. Preserve source quotations, facts, canonical room IDs, filenames and schema keys. Do not translate or rewrite existing company files when the preference changes. Report malformed or unsupported preferences instead of repairing them silently. Save a change only when the founder chooses it; the framework command is `python3 scripts/onboard.py --company <company_root> --set-language fr` (use `en` to return to English). Use the actual framework checkout for commands, never a guessed company-relative scripts directory.

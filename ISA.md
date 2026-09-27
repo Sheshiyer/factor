@@ -2,7 +2,7 @@
 project: factor
 effort: E3
 phase: complete
-progress: 67/67
+progress: 80/80
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -230,3 +230,35 @@ ISC-67: all 16 shell blocks pass `sh -n`; README link exists; disposable scaffol
   refuted by: installed Hermes update uses its recorded distribution source and gateway services may be shared.
   learned: reusable upgrade prompts must branch on provenance, existing profiles and service ownership.
   criterion now: ISC-63 and ISC-64 require those decisions before mutation.
+
+## Bilingual onboarding and learning resources
+
+- [x] ISC-68: Seven reviewed NotebookLM media files are bundled with verified hashes and portable paths.
+- [x] ISC-69: Company language defaults to English and accepts only en/fr.
+- [x] ISC-70: Explicit language persistence preserves unrelated company preferences.
+- [x] ISC-71: CLI invocation language overrides do not silently change saved preferences.
+- [x] ISC-72: Onboarding offers localized steps and an explicit resource listing/open action.
+- [x] ISC-73: Native Mac interface offers EN/FR without changing canonical room/intent values.
+- [x] ISC-74: Native resource selection validates local paths and opens only on user action.
+- [x] ISC-75: Native package builds and preference/resource tests pass.
+- [x] ISC-76: French harvest instructions preserve the headings required by the parser.
+- [x] ISC-77: Hermes skills and Raycast entry points explain/use the shared language choice.
+- [x] ISC-78: README and docs offer EN/FR navigation and valid portable asset links.
+- [x] ISC-79: Anti: language/resource work activates no company connector, live profile or messaging service.
+- [x] ISC-80: Integration tests and independent review verify default, persistence, invalid-state and resource-opening behavior.
+
+2026-09-27 decision: language is a company preference in `preferences.json`, with a per-invocation CLI override and session-only Mac selection before choosing a company. Existing facts, catalog descriptions, source quotes and protocol identifiers are not translated. Guides have EN/FR variants; reviewed media currently remain French-only. Resource actions are on demand, without startup hooks or automatic tool activation.
+
+ISC-68: SHA-256/size check — all seven `docs/assets/fr/` files match the accepted generation originals; manifest records repository-relative paths.
+
+## Bilingual onboarding verification — 2026-09-27
+
+ISC-69–72: 300 Python tests pass, including 63 focused onboarding cases; disposable CLI acceptance verifies saved FR, temporary EN override, seven resource paths and no intent side effect.
+ISC-73–75: native production source wires localized selector/resources without schema changes; 9 production-target Swift tests and `swift build` pass. Disposable app launch observed, but Computer Use attachment timed out; visual menu acceptance remains follow-up UI-01, not claimed.
+ISC-76–78: French harvest headings exactly match English; profile/skill language instructions, framework_root config guidance, Raycast wrappers and EN/FR learning/README paths verified. Seven bundled asset hashes match original reviewed exports.
+ISC-79–80: no real profile/service/company activation; read-only review and disposable tests found and repaired persistence, invalid-state, localization and opener defects. Documentation: `docs/onboarding-verification.md`. Runtime Hermes response and Raycast GUI acceptance remain separate from local source validation.
+
+- 2026-09-27 | conjectured: worker test success would prove native preference persistence.
+  refuted by: review found swallowed save errors and tests copying helpers rather than calling production code.
+  learned: acceptance must exercise the exact persistence and opening paths used by the product.
+  criterion now: ISC-75 and ISC-80 require production-target tests plus explicit runtime-review limitations.

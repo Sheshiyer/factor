@@ -10,6 +10,10 @@ let package = Package(
         .executable(name: "FactorMenu", targets: ["FactorMenu"])
     ],
     targets: [
-        .executableTarget(name: "FactorMenu")
+        .executableTarget(name: "FactorMenu"),
+        .testTarget(
+            name: "FactorMenuTests",
+            dependencies: ["FactorMenu"]
+        )
     ]
 )
