@@ -1,8 +1,8 @@
 ---
 project: factor
 effort: E3
-phase: complete
-progress: 80/80
+phase: verify
+progress: 84/86
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -32,6 +32,8 @@ Hermes profile install owns `skills/` at the repo root. Catalog cards stay outsi
 
 ## Goal
 
+Release follow-up: commit the completed framework work, bump to v0.6.0 and publish a GitHub release from a CI-verified merged commit. Preserve the original checkout and distinguish release source from installed/runtime acceptance.
+
 Current follow-up: reconcile GitHub and prior memory work, write spec 007, and execute the local knowledge/approval/correction/content loop using temperance-parallel-dispatch. Verification and scope limits: `specs/007-knowledge-curation/verification.md`. Prior research and criteria 1–32 remain historical records.
 
 2026-09-27 research extension: curate the available Field Theory corpus into a traceable research packet and implementation brief for Factor. Attempt a fresh sync, record its real result, and keep inaccessible material explicitly pending.
@@ -39,6 +41,13 @@ Current follow-up: reconcile GitHub and prior memory work, write spec 007, and e
 A founder or an agent chooses offered skills, plugins, and other capabilities by category. The choice is written to that company's `connectors/enabled.yaml`, and only those cards are copied into that company's `skills/`.
 
 ## Criteria
+
+- [x] ISC-81: Distribution metadata declares version 0.6.0.
+- [x] ISC-82: Release notes describe features, upgrade path and unresolved runtime checks.
+- [x] ISC-83: Release source passes Python tests, Swift tests/build and media hash verification.
+- [ ] ISC-84: GitHub main contains the release commit after successful pull-request CI.
+- [ ] ISC-85: Published v0.6.0 tag resolves to the merged release commit.
+- [x] ISC-86: Anti: original checkout research and ISA edits remain preserved.
 
 - [x] ISC-1: `skills/catalog/` does not exist.
 - [x] ISC-2: `catalog/cards/openspec/SKILL.md` exists and names `Fission-AI/OpenSpec`.
@@ -97,6 +106,8 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 
 ## Test Strategy
 
+Release probes: read distribution.yaml and release notes (ISC-81–82); execute Python/Swift checks and SHA-256 validation (ISC-83); inspect GitHub PR checks and main ref (ISC-84); compare published tag/ref (ISC-85); compare original working-file hashes (ISC-86).
+
 Research extension: compare manifest IDs, hashes and count against the read-only cache; inspect synthesis and brief; run git diff boundary checks. Historical ISC-1–21 remain prior evidence, not fresh runtime acceptance.
 
 | ISC | Type | Check | Tool |
@@ -106,6 +117,8 @@ Research extension: compare manifest IDs, hashes and count against the read-only
 | 14–18 | cli | temp company, then onboard and check_company | `python3 -m unittest` |
 
 ## Features
+
+Release v0.6.0: metadata and notes (ISC-81–82), local verification (ISC-83), PR/CI/merge and tag publication (ISC-84–85), original work preservation (ISC-86). These steps form a sequential release chain.
 
 Research extension: sync receipt (ISC-22); source inventory (ISC-23–26, ISC-31); architecture synthesis (ISC-27–28); implementation brief (ISC-29–30); boundary verification (ISC-32). These are documentation artifacts, not runtime activation.
 
@@ -118,6 +131,11 @@ Research extension: sync receipt (ISC-22); source inventory (ISC-23–26, ISC-31
 | Docs and this ISA | ISC-21 | the rest | false |
 
 ## Decisions
+
+- 2026-09-27: Independent read-only release audit found no critical scoped blocker; preserve explicit native/UI/Hermes pilot limits. Advisor invocation failed on configured 1M-context usage credits; no advisor endorsement or exhaustive secret scan is claimed.
+
+- 2026-09-27: User authorized committing all completed work and creating a version-bumped release. Choose 0.6.0 for additive workflows with stricter exact-action approval behavior. Publish through PR checks, merge and a tag on the merged commit; runtime installation is separate.
+- 2026-09-27: Original research packet matches the committed worktree copies; its index and ISA are superseded by cumulative records. Preserve original local bytes. Release edits are bounded metadata/documentation changes; no bulk coding dispatch is needed. Existing review agent performs independent release audit.
 
 - 2026-09-22: Catalog cards stay in the repo and leave the profile skill path. Upstream packs are not vendored.
 - 2026-09-22: Rows with an empty repo stay offered. The card says the cache has no URL.
@@ -136,6 +154,14 @@ Research extension: sync receipt (ISC-22); source inventory (ISC-23–26, ISC-31
   criterion now: ISC-23 verifies the final snapshot count and the receipt separates observed refresh from own sync execution.
 
 ## Verification
+
+Release preparation evidence, 2026-09-27:
+
+- ISC-81: File read — distribution.yaml declares `version: 0.6.0`; English README badge agrees.
+- ISC-82: File read — docs/releases/v0.6.0.md includes EN/FR features, install/upgrade path and native/UI/media/source limitations.
+- ISC-83: Command — `Ran 300 tests ... OK`; Swift `Executed 9 tests, with 0 failures`; `Build complete!`; all seven media hashes and sizes verified. Hosted CI runs Python on Ubuntu; local Swift evidence is separate.
+- ISC-86: SHA-256 — original ISA plus seven research files captured and compared unchanged; research packet is already in this branch and the index is a superset.
+- Publication checks ISC-84 and ISC-85 occur after this source snapshot is committed; their authoritative evidence is the merged PR, remote main/tag refs and published GitHub release. No publication is claimed at preparation time.
 
 `python3 -m unittest discover tests` — 10 tests, OK. `skills/catalog` is absent. `catalog/cards/openspec/SKILL.md` names Fission-AI/OpenSpec. 60 card directories. Pipe run of `onboard.py` exits 0 and prints SKILLS.
 

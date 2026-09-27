@@ -1,6 +1,6 @@
 # Factor roadmap
 
-Current phase: [007 Company knowledge curation](../specs/007-knowledge-curation/plan.md). Original releases are complete per the [GitHub reconciliation](GITHUB-RECONCILIATION.md). Sections below retain the historical design.
+Current release: [v0.6.0 — knowledge curation and bilingual onboarding](../docs/releases/v0.6.0.md). Specs 007 and 008 have local implementation evidence; the native company/profile learning pilot remains next. Original releases are complete per the [GitHub reconciliation](GITHUB-RECONCILIATION.md). Sections below retain the historical design.
 
 Three releases. One employee. The founder keeps the decisions.
 
@@ -15,7 +15,7 @@ Discovery, locked from the work already in the repo:
 
 ## Releases as shipped
 
-Inception, memory, Jev, evals, and rollback shipped as v0.2.0. The menu-bar tray is the last release. Open it with `apps/mac/run.sh`. It is unsigned and local.
+Inception, memory, Jev, evals, and rollback shipped as v0.2.0. The menu-bar tray shipped as v0.3.0. Open it with `apps/mac/run.sh`. It is unsigned and local.
 
 Raycast and Hermes ship with the menu bar. They write the same intent. The rooms ship as the weekday list, the figures, and the wait before anything is sent. `tasks/todo.md` is the earlier ledger, not the queue.
 
@@ -51,7 +51,7 @@ Release 1 is three waves. Each wave has two swarms that can proceed once the wav
 
 **Wave 3, Approval.** Send, spend, and publish require explicit human approval independent of confidence. Partners and money draft only.
 
-The next implementation is spec 007; R1 issues are closed. `tasks/todo.md` is the earlier ledger.
+The next acceptance work is the spec 008 native learning pilot and UI-01 visual verification; R1 issues are closed. `tasks/todo.md` is the earlier ledger.
 
 ## Verification
 

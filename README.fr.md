@@ -89,7 +89,7 @@ L’instinct reste court et accompagne le travail. Le wiki, la marque et les cor
 
 Les outils locaux de [curation](docs/knowledge-curation.md) conservent provenance, versions et corrections. Le [flux de bookmarks](docs/bookmark-ingest.md) signale les articles manquants. Le [protocole d’apprentissage Hermes](docs/hermes-learning-loop.md) prévoit relecture, approbation et essai dans une nouvelle session sur un cas différent.
 
-La base publiée est v0.5.0. Les ajouts de curation et d’accueil bilingue doivent être distingués d’une installation réelle. **Le pilote d’apprentissage sur une entreprise et un profil réels reste à valider.** Un succès local ne démontre ni publication automatique ni amélioration du modèle.
+La version [v0.6.0](https://github.com/Sheshiyer/factor/releases/tag/v0.6.0) ajoute la curation, l’accueil bilingue et la bibliothèque de ressources. Consultez les [notes de version](docs/releases/v0.6.0.md). Une mise à jour du dépôt reste distincte de la mise à jour d’un profil installé. **Le pilote d’apprentissage sur une entreprise et un profil réels reste à valider.** Un succès local ne démontre ni publication automatique ni amélioration du modèle.
 
 ## Repères
 

@@ -14,7 +14,7 @@ You keep the decisions.
 <!-- readme-gen:start:badges -->
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-0.5.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.6.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/github/license/Sheshiyer/factor?style=for-the-badge)
 
 </div>
@@ -148,6 +148,7 @@ The [English and French framework documentation](docs/ecosystem/2026-09-27/READM
 | [v0.2.0](https://github.com/Sheshiyer/factor/releases/tag/v0.2.0) | Harvest, instinct, memory, Jev, evals, rollback |
 | [v0.3.0](https://github.com/Sheshiyer/factor/releases/tag/v0.3.0) | Menu-bar tray |
 | [v0.4.0](https://github.com/Sheshiyer/factor/releases/tag/v0.4.0) | Raycast and Hermes |
+| [v0.6.0](https://github.com/Sheshiyer/factor/releases/tag/v0.6.0) | Knowledge curation, bilingual onboarding and learning library |
 | [v0.5.0](https://github.com/Sheshiyer/factor/releases/tag/v0.5.0) | Rooms |
 
 <!-- readme-gen:start:footer -->
