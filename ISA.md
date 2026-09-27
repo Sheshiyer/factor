@@ -2,7 +2,7 @@
 project: factor
 effort: E3
 phase: complete
-progress: 40/40
+progress: 47/47
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -85,6 +85,16 @@ A founder or an agent chooses offered skills, plugins, and other capabilities by
 - [x] ISC-39: Failed compaction preserves context and retained messages remain byte-identical.
 - [x] ISC-40: Content trial deduplicates, preserves citations, and passes the complete local suite.
 
+## Latest-seven native learning extension
+
+- [x] ISC-41: Selected seven source IDs and cache-order uncertainty are preserved with hashes.
+- [x] ISC-42: Each bookmark has a sourced use-case and adopt/adapt/defer or gap decision.
+- [x] ISC-43: Installed and upstream Hermes learning mechanisms are distinguished with source evidence.
+- [x] ISC-44: Repeatable bookmark intake stages sources without accepting claims or installing skills.
+- [x] ISC-45: Native learning handoff specifies reviewed memory/skill writes and next-session replay evidence.
+- [x] ISC-46: Integration plan names a usable pilot, success metrics and promotion/rollback boundaries.
+- [x] ISC-47: Intake dry-run, repeat ingestion and full local suite are verified.
+
 ## Test Strategy
 
 Research extension: compare manifest IDs, hashes and count against the read-only cache; inspect synthesis and brief; run git diff boundary checks. Historical ISC-1–21 remain prior evidence, not fresh runtime acceptance.
@@ -162,3 +172,9 @@ All new criteria close on local evidence. Source/live/installed/external-action 
   refuted by: no task-specific gateway correlation rows and review found overwritten revisions, loose index matching, insufficient correction checks and missing approval root binding.
   learned: fleet status is dispatch evidence; independent behavioral checks establish local implementation quality.
   criterion now: ISC-34–40 require real boundary tests and trial receipts; external provider attribution remains unresolved explicitly.
+
+2026-09-27 follow-up: use seven cache-order records from the user-refreshed FT store. Processing and local intake are authorized; native Hermes runtime/profile activation is not inferred. Source-only verification separates installed from upstream capabilities.
+
+## Latest-seven verification — 2026-09-27
+
+ISC-41–47 verified locally: `specs/008-native-learning/verification.md`. 237 tests pass; full-cache disposable-company intake and repeat are byte-stable. Seven post IDs/hash records, 45 resolved shortlinks, 44 disabled repository candidates, native source audit and a reviewed `/learn` handoff are saved. Two missing X articles and the actual company/profile native learning pilot remain explicit future evidence. No native learning improvement is claimed.

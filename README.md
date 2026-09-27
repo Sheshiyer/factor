@@ -114,6 +114,8 @@ Then pick a door: `apps/mac/run.sh`, the Factor command in Raycast, or the `take
 
 The [curation walkthrough](docs/knowledge-curation.md) imports source revisions, reviews attributed claims and replays accepted corrections in a local content packet. It preserves source gaps and conflicts, deduplicates unchanged runs and validates exact-action approval records. The [implementation plan](specs/007-knowledge-curation/plan.md) builds on the [Hermes, Grok and Jev research](docs/research/2026-09-27-agent-knowledge/README.md). These local tools do not publish or schedule work.
 
+The [bookmark intake](docs/bookmark-ingest.md) captures a bounded FT cache selection with explicit article gaps. The [native learning guide](docs/hermes-learning-loop.md) connects reviewed work and corrections to Hermes `/learn`, pending-write review and fresh-session evaluation. The intake is locally verified; a real company/profile learning trial remains pending.
+
 ## Shipped
 
 | Release | What it is |

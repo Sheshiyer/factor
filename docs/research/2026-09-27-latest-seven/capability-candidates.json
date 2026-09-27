@@ -1,0 +1,442 @@
+[
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/xYXZu5LLdS",
+    "repository": "https://github.com/bmad-code-org/bmad-method",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "A concise spec and acceptance criteria for the chosen workflow",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/N3l1KqYYYz",
+    "repository": "https://github.com/mattpocock/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Domain model and implementation planning for the concrete bottleneck",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/cJvsWxkxrS",
+    "repository": "https://github.com/google/agents-cli",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/A1OGTdEjh1",
+    "repository": "https://github.com/getsentry/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/wPo1ApiQhm",
+    "repository": "https://github.com/mastra-ai/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/Yng7FApAxg",
+    "repository": "https://github.com/typesafe-ai/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/BHwp9nESeH",
+    "repository": "https://github.com/mcollina/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/2V231sLL34",
+    "repository": "https://github.com/neondatabase/agent-skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/I1SGYygCk8",
+    "repository": "https://github.com/prisma/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/ST5b8vBb6u",
+    "repository": "https://github.com/clerk/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/WvaX7k74XJ",
+    "repository": "https://github.com/emilkowalski/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/oOfu8aoLq5",
+    "repository": "https://github.com/remotion-dev/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/OPbBLzIJC2",
+    "repository": "https://github.com/microsoft/playwright-cli",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/TXvEIX00cp",
+    "repository": "https://github.com/semgrep/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/p9wRL8m6Nn",
+    "repository": "https://github.com/getsentry/sentry-agent-skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/iqGqhUxwPK",
+    "repository": "https://github.com/posthog/skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Measure user outcomes before changing the system",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103828182541734166",
+    "short_url": "https://t.co/chpnUcweco",
+    "repository": "https://github.com/resend/resend-skills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/InxyRwMZtz",
+    "repository": "https://github.com/chubbyguan/chubbyskills",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Source-format routing and capture completeness",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/bLeUouBLuu",
+    "repository": "https://github.com/kdsz001/OpenWiki",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/WANfN9tVP4",
+    "repository": "https://github.com/smixs/agent-second-brain",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/rQsMrIDGh0",
+    "repository": "https://github.com/JetXu-LLM/DocMason",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/R8DF9NI0tt",
+    "repository": "https://github.com/docsagent/docsagent",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/uhwe1f5n6X",
+    "repository": "https://github.com/AgriciDaniel/claude-obsidian",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/QNxk0QvLYH",
+    "repository": "https://github.com/swarmclawai/swarmvault",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/OQIkSucHAA",
+    "repository": "https://github.com/xoai/sage-wiki",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/FeR1r3vLle",
+    "repository": "https://github.com/notoriouslab/vault-curate",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/1gtpmSyJuy",
+    "repository": "https://github.com/huytieu/COG-second-brain",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/3cXNIFAyDN",
+    "repository": "https://github.com/vectorize-io/hindsight",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Retain, recall and reflect as evaluation categories; defer backend",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/iCoOwoBIT3",
+    "repository": "https://github.com/NevaMind-AI/memU",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Cross-session memory use cases; defer alternate backend",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/i2DaJnwGhu",
+    "repository": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/3OlbQk5CPq",
+    "repository": "https://github.com/rohitg00/agentmemory",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/Ydr8K54XxW",
+    "repository": "https://github.com/volcengine/OpenViking",
+    "identity_status": "redirect_resolved",
+    "content_review": "primary_repository_review",
+    "disposition": "adapt_pattern",
+    "pattern_or_reason": "Separate resource, memory and procedural retrieval; defer backend",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/DiOBxmK4Gh",
+    "repository": "https://github.com/itechmeat/open-second-brain",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/WlokLe12JV",
+    "repository": "https://github.com/rahilp/second-brain-cloudflare",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/Q1RQFhStsL",
+    "repository": "https://github.com/coreyhaines31/makerskills",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/I1KBQwA7hk",
+    "repository": "https://github.com/siddsachar/row-bot",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103757085393490284",
+    "short_url": "https://t.co/N9vGfry4no",
+    "repository": "https://github.com/mateaix/mateclaw",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/woB8qwyqLG",
+    "repository": "https://github.com/arxhr007/Aliens_eye",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/XOOtN4KPYh",
+    "repository": "https://github.com/antoniaci/blackbird",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/65nzOWq1Zp",
+    "repository": "https://github.com/soxoj/maigret",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/LiPxYuWb15",
+    "repository": "https://github.com/smicallef/spiderfoot",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/QltiLJ0eVI",
+    "repository": "https://github.com/laramies/theHarvester",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/Nrw13OXY6N",
+    "repository": "https://github.com/achillean/shodan-python",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  },
+  {
+    "bookmark_id": "2103457845203116338",
+    "short_url": "https://t.co/N0FOQPPluM",
+    "repository": "https://github.com/HKUDS/ViMax",
+    "identity_status": "redirect_resolved",
+    "content_review": "identity_only_not_code_audited",
+    "disposition": "shelf_until_selected_use_case",
+    "pattern_or_reason": "Catalog candidate; choose only when a specific company task needs this capability.",
+    "enabled": false
+  }
+]

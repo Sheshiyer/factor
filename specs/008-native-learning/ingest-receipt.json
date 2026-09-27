@@ -1,0 +1,39 @@
+{
+  "schema": "factor.bookmark-intake-verification.v1",
+  "verified_at": "2026-09-27",
+  "cache_sha256": "c773460e42e8a76a505177c92d7481cd9aef7f62b356866a747e273e00b19698",
+  "cache_records": 456,
+  "selected_ids": [
+    "2103828182541734166",
+    "2103668795843973538",
+    "2103757085393490284",
+    "2103605464382488798",
+    "2103700886186848294",
+    "2103668051468300701",
+    "2103457845203116338"
+  ],
+  "ordering": "cache_order; newest acquisition is not proven",
+  "batch_id": "fe1b971aa2f6d605309d548c7dce3721ba7b0f3a649d19b711c03f6d3ff54f1d",
+  "selected_posts": 7,
+  "stored_sources": 12,
+  "cache_source_gaps": 5,
+  "store_source_gaps": 5,
+  "missing_x_articles": [
+    "https://x.com/i/article/2099316575006240776",
+    "https://x.com/i/article/2103652547227750400"
+  ],
+  "claims_created": 0,
+  "checks": {
+    "dry_run_no_writes": true,
+    "apply_cli_exit_0": true,
+    "repeat_manifest_equal": true,
+    "repeat_store_byte_identical": true,
+    "cache_unchanged": true,
+    "exact_seven_cache_order_ids": true
+  },
+  "knowledge_store_sha256": "87f3d0f91663728e653215deafd3393798e4d8ca17901da63adf8b66d9e1892a",
+  "company_target": "disposable temporary directory; removed after verification",
+  "native_runtime_executed": false,
+  "skills_installed": [],
+  "connectors_enabled": []
+}

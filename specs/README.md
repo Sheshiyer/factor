@@ -10,3 +10,5 @@ The next release is R1, the employee on the Mac. An issue does not start until i
 - [Debug and rollback](006-debug-rollback/spec.md). 11 issues.
 
 - [Company knowledge curation](007-knowledge-curation/spec.md). Current local implementation phase after v0.5.0; GitHub history reconciled.
+
+- [Bookmark intake and native learning](008-native-learning/spec.md). Repeatable local capture and source-verified Hermes learning pilot design.
