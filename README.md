@@ -93,6 +93,8 @@ Nothing goes out because a model finished a paragraph. It goes out because you a
 
 ## Begin
 
+For an assisted fresh install or upgrade, open this checkout in your coding assistant and paste [prompt-install.md](prompt-install.md). It covers the existing shell runners, Hermes doctor, profile updates, and the messaging gateway, with company data preserved.
+
 ```bash
 git clone https://github.com/Sheshiyer/factor.git
 cd factor

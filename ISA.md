@@ -2,7 +2,7 @@
 project: factor
 effort: E3
 phase: complete
-progress: 60/60
+progress: 67/67
 mode: algorithm
 started: 2026-09-22
 updated: 2026-09-27
@@ -207,3 +207,26 @@ ISC-48–53 complete: four NotebookLM-generated EN/FR reports, preserved raw exp
 ## French media verification — 2026-09-27
 
 ISC-54–60 complete: five Factor-only French NotebookLM supports downloaded (two eight-slide decks in PDF/PPTX, one 309.731-second MP4 and two PNG infographics). Initial decks and images rejected and preserved; revised decks and images visually reviewed. Video fully decoded and visually sampled; narration was not independently reviewed. Minor labels and the required pilot-pending infographic caption remain documented. Thirteen export hashes verified, seven final files selected. Evidence: `docs/ecosystem/2026-09-27/media-fr/verification.md` and `delivery-manifest.json`. No framework code or runtime/profile configuration changed.
+
+## Install-or-upgrade prompt
+
+- [x] ISC-61: Root prompt-install.md contains a complete copyable coding-session prompt.
+- [x] ISC-62: Fresh installation uses verified existing scaffold and profile commands.
+- [x] ISC-63: Upgrade flow verifies recorded distribution source and preserves company/config state.
+- [x] ISC-64: Doctor and Hermes gateway commands match installed CLI help.
+- [x] ISC-65: Mac shell runner and optional doors are accurately separated from the listener.
+- [x] ISC-66: Anti: prompt verification does not modify real profiles, services, or company data.
+- [x] ISC-67: README links the prompt; shell examples parse and disposable intent smoke check passes.
+
+2026-09-27 decision: listener means Hermes gateway, as clarified by the user. This task creates a reusable prompt, not a new daemon or installer implementation. Explicitly branch fresh versus existing state; preserve recorded-source semantics and shared gateway ownership. The source/install/runtime/end-to-end distinctions are independent acceptance claims.
+
+## Install prompt verification — 2026-09-27
+
+ISC-61–65: file read-back and installed Hermes v0.21.5 help/source confirm copyable boundaries, new-company shell runner, install/update source semantics, doctor/gateway lifecycle and the Mac runner. Independent read-only review identified and resolved fresh platform setup, existing coder binding, foreground lifetime and linked-state backup coverage.
+ISC-66: this task invoked CLI help and a disposable local scaffold/intent check only; no real profile installation/update, doctor repair, gateway mutation or company write was performed.
+ISC-67: all 16 shell blocks pass `sh -n`; README link exists; disposable scaffold → write_intent → intent_card passes with a spaced directory path. The prompt is verified documentation; a live fresh install/upgrade was not run or claimed.
+
+- 2026-09-27 | conjectured: one install/update command sequence could cover each local setup.
+  refuted by: installed Hermes update uses its recorded distribution source and gateway services may be shared.
+  learned: reusable upgrade prompts must branch on provenance, existing profiles and service ownership.
+  criterion now: ISC-63 and ISC-64 require those decisions before mutation.
